@@ -1,0 +1,203 @@
+export const personal = {
+  name: "Arrozy Adi Falaqi",
+  role: "UI/UX Designer",
+  tagline: "Designing user-centered digital experiences for government & private sector clients.",
+  location: "Bandung, West Java, Indonesia",
+  email: "arrozyadifalaqioi@gmail.com",
+  phone: "+6281298023537",
+  whatsapp: "6281298023537",
+  linkedin: "https://www.linkedin.com/in/arrozy-adi-falaqi-6a25ba14a",
+  behance: "https://www.behance.net/arrozyadifalaqi",
+  photo: "/photo.jpg", // taruh foto kamu di folder public/ dengan nama photo.jpg
+  available: true,
+  bio: [
+    "Hi! I'm Arrozy — a UI/UX Designer with a background in Computer Science and a passion for crafting intuitive, impactful digital experiences.",
+    "I specialize in designing responsive, user-centered interfaces that help users achieve their goals and businesses meet their objectives. With 2+ years of experience across government and private sector clients, I lead end-to-end design from research to high-fidelity prototyping.",
+  ],
+  education: {
+    university: "Universitas Pendidikan Indonesia",
+    major: "Computer Science",
+    year: "2019 – 2024",
+    gpa: "3.73 / 4.00",
+    thesis: "Website Design and Development for Orion Guest House Using the Double Diamond Method and Content Marketing",
+  },
+};
+
+export const stats = [
+  { value: "2+", label: "Years Experience" },
+  { value: "10+", label: "Projects Delivered" },
+  { value: "3.73", label: "GPA / 4.00" },
+  { value: "25%", label: "Avg. Satisfaction Boost" },
+];
+
+export const experiences = [
+  {
+    id: 1,
+    role: "UI/UX Designer",
+    company: "PT Mitra Sinerji Teknoindo",
+    location: "Bandung",
+    period: "Aug 2023 – Present",
+    current: true,
+    highlights: [
+      "Redesigned Kominfo e-certificate platform, enhancing accessibility and user efficiency.",
+      "Overhauled Kemendikbud SIMONTILA admin dashboard — improved data management by 30%.",
+      "Redesigned PUPR BRAVO project monitoring system with modern, user-friendly interface.",
+      "Designed Universitas Terbuka MBKM website & mobile attendance app (TTM).",
+      "Built interactive data analytics dashboard, improving decision-making for government client.",
+      "Created public service mobile app prototype — 25% increase in user satisfaction.",
+      "Developed internal company information system, reducing data access time by 40%.",
+    ],
+    tags: ["Figma", "UX Research", "Prototyping", "Government", "Mobile App"],
+  },
+  {
+    id: 2,
+    role: "Graphic Designer",
+    company: "PT Intelligo",
+    location: "Bandung",
+    period: "Jan – Mar 2023",
+    current: false,
+    highlights: [
+      "Created social media & marketing materials that boosted customer engagement by 40%.",
+      "Coordinated with clients to ensure design satisfaction, delivering visual assets on time.",
+      "Utilized Adobe Photoshop, Illustrator to produce compelling professional graphics.",
+    ],
+    tags: ["Adobe Photoshop", "Adobe Illustrator", "Social Media", "Marketing"],
+  },
+  {
+    id: 3,
+    role: "Web Developer",
+    company: "CV Mitra Yudha Xaviera",
+    location: "Bandung",
+    period: "Sep – Nov 2022",
+    current: false,
+    highlights: [
+      "Developed new website features using HTML, CSS, and JavaScript — improved loading speed by 20%.",
+      "Strengthened database security and ensured optimal performance through regular maintenance.",
+      "Increased organic traffic by 15% through intuitive web design.",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "Database", "Web Development"],
+  },
+  {
+    id: 4,
+    role: "UI/UX Design Bootcamp",
+    company: "Binar Academy",
+    location: "Remote",
+    period: "Feb – Jul 2022",
+    current: false,
+    highlights: [
+      "Designed mobile app & website prototypes for an e-commerce final project.",
+      "Conducted user research through surveys and interviews — delivered solutions increasing user efficiency by 30%.",
+      "Presented final project to a panel of mentors, receiving positive feedback on functionality and aesthetics.",
+    ],
+    tags: ["Design Thinking", "User Research", "E-commerce", "Figma", "Prototyping"],
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "e-Sertifikat Next Gen",
+    client: "Kominfo",
+    sector: "Government · UI/UX",
+    description: "Redesign of the next-generation e-certificate platform for the Ministry of Communication. Enhanced accessibility, modernized the interface, and streamlined user flows for certificate issuance.",
+    result: "↑ Accessibility & user efficiency improved",
+    color: "from-blue-950 to-blue-800",
+    emoji: "🏛️",
+    tags: ["Figma", "Web Design", "Accessibility"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+  {
+    id: 2,
+    title: "Admin SIMONTILA",
+    client: "Kemendikbud",
+    sector: "Government · Dashboard",
+    description: "Complete admin dashboard overhaul for the national education data management system. Improved data hierarchy, navigation structure, and visual clarity across complex workflows.",
+    result: "↑ 30% improvement in data management",
+    color: "from-teal-950 to-teal-800",
+    emoji: "📊",
+    tags: ["Dashboard", "Data Viz", "Admin UI"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+  {
+    id: 3,
+    title: "MBKM UT + TTM App",
+    client: "Universitas Terbuka",
+    sector: "Education · Web & Mobile",
+    description: "Designed the MBKM website and mobile attendance application for Universitas Terbuka students. Focused on simplicity and ease of use for diverse student demographics across Indonesia.",
+    result: "↑ Higher student engagement",
+    color: "from-violet-950 to-violet-800",
+    emoji: "🎓",
+    tags: ["Mobile App", "Web Design", "Education"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+  {
+    id: 4,
+    title: "BRAVO System Redesign",
+    client: "PUPR",
+    sector: "Government · Monitoring",
+    description: "Modern UI redesign for the Ministry of Public Works' BRAVO project monitoring system. Transformed a legacy interface into a clean, modern dashboard with improved usability.",
+    result: "↑ Modern, intuitive interface delivered",
+    color: "from-green-950 to-green-800",
+    emoji: "🏗️",
+    tags: ["Redesign", "Dashboard", "Gov Platform"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+  {
+    id: 5,
+    title: "Public Service App Prototype",
+    client: "Government Client",
+    sector: "Mobile · Public Sector",
+    description: "Mobile application prototype for a public service platform. Conducted full user research, wireframing, and high-fidelity prototyping focused on improving citizen satisfaction.",
+    result: "↑ 25% increase in user satisfaction",
+    color: "from-rose-950 to-rose-800",
+    emoji: "📱",
+    tags: ["Mobile", "Prototype", "UX Research"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+  {
+    id: 6,
+    title: "Data Analytics Dashboard",
+    client: "Government Client",
+    sector: "Government · Data Viz",
+    description: "Interactive data analytics dashboard for a government client, improving data visualization and supporting data-driven decision-making across departments.",
+    result: "↑ Better data-driven decisions",
+    color: "from-amber-950 to-amber-800",
+    emoji: "📈",
+    tags: ["Data Viz", "Dashboard", "Analytics"],
+    link: "https://www.behance.net/arrozyadifalaqi",
+  },
+];
+
+export const skills = [
+  { name: "Figma", level: 95, category: "Design" },
+  { name: "Adobe Photoshop", level: 85, category: "Design" },
+  { name: "Adobe Illustrator", level: 82, category: "Design" },
+  { name: "Prototyping", level: 93, category: "Design" },
+  { name: "UX Research", level: 88, category: "Research" },
+  { name: "User Testing", level: 84, category: "Research" },
+  { name: "HTML / CSS", level: 75, category: "Dev" },
+  { name: "JavaScript", level: 65, category: "Dev" },
+  { name: "InVision / Sketch", level: 70, category: "Design" },
+];
+
+export const softSkills = [
+  "Collaboration & Teamwork",
+  "Communication",
+  "Adaptability",
+  "Problem Solving",
+  "Stakeholder Management",
+  "Fast Learner",
+];
+
+export const certifications = [
+  {
+    title: "UI/UX Design",
+    issuer: "Binar Academy",
+    year: "2022",
+  },
+  {
+    title: "AV Web Developer",
+    issuer: "Certification Body",
+    year: "2022",
+  },
+];
