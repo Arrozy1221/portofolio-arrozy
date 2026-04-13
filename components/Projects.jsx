@@ -50,7 +50,7 @@ function ProjectCard({ project, index, inView }) {
           }}
         >
           <span className="text-white text-sm font-medium border border-white/30 px-5 py-2 rounded-full">
-            View on Behance ↗
+            View on Figma ↗
           </span>
         </motion.div>
       </div>

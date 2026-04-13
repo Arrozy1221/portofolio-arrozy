@@ -1,10 +1,10 @@
-import { Syne, DM_Sans } from "next/font/google";
+import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["400", "700", "800"],
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
 });
 
 const dmSans = DM_Sans({
@@ -34,7 +34,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="id" className={`${poppins.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="bg-navy text-white antialiased">
         {children}
       </body>

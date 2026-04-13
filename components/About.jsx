@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image"; // 1. Import Image dari Next.js ditambahkan di sini
 import { personal } from "../data/portfolio";
 
 const kpis = [
@@ -45,18 +46,21 @@ export default function About() {
         >
           {/* Avatar ring */}
           <div className="float-anim">
+            {/* 2. Tambahkan class "relative" dan "overflow-hidden" pada div pembungkus foto */}
             <div
-              className="w-44 h-44 rounded-full flex items-center justify-center font-syne font-extrabold text-5xl"
+              className="relative w-44 h-44 rounded-full overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #1E56F5, #00C9C8)",
                 boxShadow:
                   "0 0 0 6px rgba(30,86,245,.2), 0 0 60px rgba(30,86,245,.28)",
               }}
             >
-              {/* Ganti dengan foto nyata:
-                  <Image src={personal.photo} fill className="object-cover rounded-full" alt="Arrozy" />
-              */}
-              AF
+              {/* 3. Komponen Image yang sudah diaktifkan */}
+              <Image
+                src={personal.photo}
+                fill
+                className="object-cover"
+                alt="Foto Profil Arrozy Adi Falaqi"
+              />
             </div>
           </div>
 

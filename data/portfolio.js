@@ -1,7 +1,8 @@
 export const personal = {
   name: "Arrozy Adi Falaqi",
   role: "UI/UX Designer",
-  tagline: "Designing user-centered digital experiences for government & private sector clients.",
+  tagline:
+    "Designing user-centered digital experiences for government & private sector clients.",
   location: "Bandung, West Java, Indonesia",
   email: "arrozyadifalaqioi@gmail.com",
   phone: "+6281298023537",
@@ -19,7 +20,8 @@ export const personal = {
     major: "Computer Science",
     year: "2019 – 2024",
     gpa: "3.73 / 4.00",
-    thesis: "Website Design and Development for Orion Guest House Using the Double Diamond Method and Content Marketing",
+    thesis:
+      "Website Design and Development for Orion Guest House Using the Double Diamond Method and Content Marketing",
   },
 };
 
@@ -89,7 +91,13 @@ export const experiences = [
       "Conducted user research through surveys and interviews — delivered solutions increasing user efficiency by 30%.",
       "Presented final project to a panel of mentors, receiving positive feedback on functionality and aesthetics.",
     ],
-    tags: ["Design Thinking", "User Research", "E-commerce", "Figma", "Prototyping"],
+    tags: [
+      "Design Thinking",
+      "User Research",
+      "E-commerce",
+      "Figma",
+      "Prototyping",
+    ],
   },
 ];
 
@@ -99,55 +107,60 @@ export const projects = [
     title: "e-Sertifikat Next Gen",
     client: "Kominfo",
     sector: "Government · UI/UX",
-    description: "Redesign of the next-generation e-certificate platform for the Ministry of Communication. Enhanced accessibility, modernized the interface, and streamlined user flows for certificate issuance.",
+    description:
+      "Redesign of the next-generation e-certificate platform for the Ministry of Communication. Enhanced accessibility, modernized the interface, and streamlined user flows for certificate issuance.",
     result: "↑ Accessibility & user efficiency improved",
     color: "from-blue-950 to-blue-800",
     emoji: "🏛️",
     tags: ["Figma", "Web Design", "Accessibility"],
-    link: "https://www.behance.net/arrozyadifalaqi",
+    link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
   },
   {
     id: 2,
     title: "Admin SIMONTILA",
     client: "Kemendikbud",
     sector: "Government · Dashboard",
-    description: "Complete admin dashboard overhaul for the national education data management system. Improved data hierarchy, navigation structure, and visual clarity across complex workflows.",
+    description:
+      "Complete admin dashboard overhaul for the national education data management system. Improved data hierarchy, navigation structure, and visual clarity across complex workflows.",
     result: "↑ 30% improvement in data management",
     color: "from-teal-950 to-teal-800",
     emoji: "📊",
     tags: ["Dashboard", "Data Viz", "Admin UI"],
-    link: "https://www.behance.net/arrozyadifalaqi",
+    link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
   },
   {
     id: 3,
     title: "MBKM UT + TTM App",
     client: "Universitas Terbuka",
     sector: "Education · Web & Mobile",
-    description: "Designed the MBKM website and mobile attendance application for Universitas Terbuka students. Focused on simplicity and ease of use for diverse student demographics across Indonesia.",
+    description:
+      "Designed the MBKM website and mobile attendance application for Universitas Terbuka students. Focused on simplicity and ease of use for diverse student demographics across Indonesia.",
     result: "↑ Higher student engagement",
     color: "from-violet-950 to-violet-800",
     emoji: "🎓",
     tags: ["Mobile App", "Web Design", "Education"],
-    link: "https://www.behance.net/arrozyadifalaqi",
+    link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
   },
   {
     id: 4,
     title: "BRAVO System Redesign",
     client: "PUPR",
     sector: "Government · Monitoring",
-    description: "Modern UI redesign for the Ministry of Public Works' BRAVO project monitoring system. Transformed a legacy interface into a clean, modern dashboard with improved usability.",
+    description:
+      "Modern UI redesign for the Ministry of Public Works' BRAVO project monitoring system. Transformed a legacy interface into a clean, modern dashboard with improved usability.",
     result: "↑ Modern, intuitive interface delivered",
     color: "from-green-950 to-green-800",
     emoji: "🏗️",
     tags: ["Redesign", "Dashboard", "Gov Platform"],
-    link: "https://www.behance.net/arrozyadifalaqi",
+    // link: "https://www.behance.net/arrozyadifalaqi",
   },
   {
     id: 5,
     title: "Public Service App Prototype",
     client: "Government Client",
     sector: "Mobile · Public Sector",
-    description: "Mobile application prototype for a public service platform. Conducted full user research, wireframing, and high-fidelity prototyping focused on improving citizen satisfaction.",
+    description:
+      "Mobile application prototype for a public service platform. Conducted full user research, wireframing, and high-fidelity prototyping focused on improving citizen satisfaction.",
     result: "↑ 25% increase in user satisfaction",
     color: "from-rose-950 to-rose-800",
     emoji: "📱",
@@ -159,7 +172,8 @@ export const projects = [
     title: "Data Analytics Dashboard",
     client: "Government Client",
     sector: "Government · Data Viz",
-    description: "Interactive data analytics dashboard for a government client, improving data visualization and supporting data-driven decision-making across departments.",
+    description:
+      "Interactive data analytics dashboard for a government client, improving data visualization and supporting data-driven decision-making across departments.",
     result: "↑ Better data-driven decisions",
     color: "from-amber-950 to-amber-800",
     emoji: "📈",
