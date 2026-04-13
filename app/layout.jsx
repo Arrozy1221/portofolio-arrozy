@@ -35,7 +35,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${syne.variable} ${dmSans.variable}`}>
-      <body className="bg-navy text-white antialiased">{children}</body>
+      <body suppressHydrationWarning className="bg-navy text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
