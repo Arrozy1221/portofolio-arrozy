@@ -712,6 +712,32 @@ html.light .project-card:hover {
   background: linear-gradient(180deg, rgba(4, 7, 17, 0.06) 0%, rgba(4, 7, 17, 0.62) 100%);
 }
 
+html.light .project-cover {
+  filter: brightness(1.3) saturate(0.85);
+}
+
+html.light .project-cover::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.project-cover-image {
+  object-fit: cover;
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
+
+.group:hover .project-cover-image {
+  opacity: 0.55;
+}
+
+html.light .project-cover-image {
+  opacity: 0.65;
+}
+
+html.light .group:hover .project-cover-image {
+  opacity: 0.8;
+}
+
 .project-emoji { position: absolute; right: 1rem; top: 1rem; font-size: 4rem; opacity: 0.16; z-index: 1; }
 
 .project-cover-content {

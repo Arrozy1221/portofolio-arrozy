@@ -23,7 +23,7 @@ function ProjectCard({ project, index, inView, t }) {
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover opacity-40 group-hover:opacity-55 transition-opacity duration-500"
+            className="project-cover-image"
           />
         )}
         <div className="project-cover-content">
