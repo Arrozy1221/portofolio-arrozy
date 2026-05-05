@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { personal, stats } from "../data/portfolio";
+import Image from "next/image";
+import { personal } from "../data/portfolio";
+import { useLang } from "./LangProvider";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -10,158 +12,115 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Hero() {
-  return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 pb-24 overflow-hidden"
-    >
-      {/* Background orbs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute rounded-full orb-animate"
-          style={{
-            width: 560,
-            height: 560,
-            background: "#1E56F5",
-            top: -140,
-            left: -120,
-            filter: "blur(100px)",
-            opacity: 0.14,
-            animationDuration: "7s",
-          }}
-        />
-        <div
-          className="absolute rounded-full orb-animate"
-          style={{
-            width: 440,
-            height: 440,
-            background: "#00C9C8",
-            bottom: -100,
-            right: -100,
-            filter: "blur(100px)",
-            opacity: 0.12,
-            animationDuration: "9s",
-            animationDelay: "2s",
-          }}
-        />
-        <div
-          className="absolute rounded-full orb-animate"
-          style={{
-            width: 320,
-            height: 320,
-            background: "#7C3AED",
-            top: "42%",
-            left: "30%",
-            filter: "blur(90px)",
-            opacity: 0.09,
-            animationDuration: "6s",
-            animationDelay: "4s",
-          }}
-        />
+  const { t } = useLang();
 
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(30,86,245,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(30,86,245,.055) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
+  return (
+    <section id="hero" className="relative overflow-hidden px-6 pt-28 pb-20 md:pt-36 md:pb-24">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="hero-grid absolute inset-0" />
+        <div className="hero-orb hero-orb-1" />
+        <div className="hero-orb hero-orb-2" />
+        <div className="hero-orb hero-orb-3" />
       </div>
 
-      {/* Available badge */}
-      <motion.div {...fadeUp(0.15)} className="relative mb-8">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan/30 bg-cyan/5 text-cyan text-xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan blink" />
-          {personal.available
-            ? "Available for freelance & full-time"
-            : "Currently unavailable"}
-        </span>
-      </motion.div>
+      <div className="relative mx-auto grid min-h-[calc(100vh-8rem)] max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <motion.div {...fadeUp(0.05)} className="mb-6 flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-cyan">
+              <span className="h-2 w-2 rounded-full bg-cyan blink" />
+              {personal.available ? t.hero.available : t.hero.unavailable}
+            </span>
+            <span className="rounded-full border border-foreground/10 bg-foreground/[0.03] px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-muted-fg">
+              {t.hero.basedIn}
+            </span>
+          </motion.div>
 
-      {/* Heading */}
-      <motion.h1
-        {...fadeUp(0.28)}
-        className="relative font-syne font-extrabold leading-[1.04] tracking-tighter mb-5"
-        style={{ fontSize: "clamp(44px, 7vw, 88px)" }}
-      >
-        {personal.name}
-        <br />
-        <span className="gradient-text">{personal.role}</span>
-      </motion.h1>
+          <motion.p {...fadeUp(0.12)} className="mb-4 text-sm uppercase tracking-[0.22em] text-blue-l">
+            {t.hero.portfolioLabel}
+          </motion.p>
 
-      {/* Sub */}
-      <motion.p
-        {...fadeUp(0.42)}
-        className="relative max-w-lg text-muted leading-relaxed mb-10"
-        style={{ fontSize: 17 }}
-      >
-        {personal.tagline}
-      </motion.p>
-
-      {/* Buttons */}
-      <motion.div
-        {...fadeUp(0.55)}
-        className="relative flex gap-3 flex-wrap justify-center mb-20"
-      >
-        <a
-          href="#projects"
-          className="px-8 py-3.5 rounded-full bg-blue text-white text-sm font-medium hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(30,86,245,0.45)] transition-all duration-300"
-        >
-          View Projects
-        </a>
-        <a
-          href={`mailto:${personal.email}`}
-          className="px-8 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:border-blue-l hover:bg-blue/10 transition-all duration-300"
-        >
-          Get In Touch
-        </a>
-      </motion.div>
-
-      {/* Stats */}
-      <motion.div
-        {...fadeUp(0.68)}
-        className="relative flex flex-wrap justify-center"
-        style={{ borderTop: "0.5px solid rgba(30,86,245,0.18)" }}
-      >
-        {stats.map((s, i) => (
-          <div
-            key={i}
-            className="text-center px-8 py-5"
-            style={{
-              borderRight:
-                i < stats.length - 1
-                  ? "0.5px solid rgba(30,86,245,0.18)"
-                  : "none",
-            }}
+          <motion.h1
+            {...fadeUp(0.22)}
+            className="max-w-4xl font-syne font-extrabold leading-[0.98] tracking-[-0.05em] text-foreground"
+            style={{ fontSize: "clamp(36px, 6vw, 80px)" }}
           >
-            <div
-              className="font-syne font-extrabold gradient-text"
-              style={{ fontSize: 38 }}
-            >
-              {s.value}
+            <span className="whitespace-nowrap">{personal.name}</span>
+            <span className="mt-3 block gradient-text">{personal.role}</span>
+          </motion.h1>
+
+          <motion.p {...fadeUp(0.34)} className="mt-6 max-w-2xl text-base leading-8 text-muted-fg md:text-lg">
+            {t.hero.headline}
+          </motion.p>
+
+          <motion.p {...fadeUp(0.42)} className="mt-4 max-w-xl text-sm leading-7 text-muted-fg/90 md:text-[15px]">
+            {t.hero.tagline}
+          </motion.p>
+
+          <motion.div {...fadeUp(0.5)} className="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" className="primary-button">{t.hero.viewWork}</a>
+            <a href="#contact" className="secondary-button">{t.hero.collaborate}</a>
+          </motion.div>
+
+          <motion.div {...fadeUp(0.58)} className="mt-8 flex flex-wrap gap-2">
+            {t.specialties.map((item) => (
+              <span key={item} className="chip-soft">{item}</span>
+            ))}
+          </motion.div>
+
+          <motion.div {...fadeUp(0.68)} className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {t.stats.map((s) => (
+              <div key={s.label} className="stat-card">
+                <div className="font-syne text-3xl font-extrabold gradient-text">{s.value}</div>
+                <p className="mt-2 text-xs uppercase tracking-[0.16em] text-muted-fg">{s.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div {...fadeUp(0.3)} className="relative">
+          <div className="hero-panel">
+            <div className="hero-panel-top">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.18em] text-cyan">{t.hero.snapshot}</p>
+                <h2 className="mt-3 font-syne text-3xl font-bold leading-tight text-foreground">
+                  {t.hero.snapshotTitle}
+                </h2>
+              </div>
+              <div className="hero-profile-ring">
+                <Image src={personal.photo} fill className="object-cover rounded-full" alt="Arrozy Adi Falaqi" />
+              </div>
             </div>
-            <div className="text-muted text-xs uppercase tracking-widest mt-1">
-              {s.label}
+
+            <div className="mt-8 space-y-4">
+              {t.strengths.map((item) => (
+                <div key={item.title} className="feature-card">
+                  <div className="feature-dot" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-muted-fg">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="mini-panel">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-muted-fg">{t.hero.focusSectors}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {t.focusAreas.map((item) => (
+                    <span key={item} className="chip-outline">{item}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="mini-panel">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-muted-fg">{t.hero.responseTime}</p>
+                <p className="mt-3 text-sm leading-6 text-foreground">{t.responseTimeText}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-fg">{t.hero.responseDesc}</p>
+              </div>
             </div>
           </div>
-        ))}
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        {...fadeUp(0.85)}
-        className="relative mt-14 flex flex-col items-center gap-2 float-anim"
-      >
-        <span className="text-muted text-[10px] uppercase tracking-[.16em]">
-          Scroll
-        </span>
-        <div
-          className="w-4 h-4 border-r border-b border-muted"
-          style={{ transform: "rotate(45deg)" }}
-        />
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

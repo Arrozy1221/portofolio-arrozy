@@ -2,91 +2,66 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { projects } from "../data/portfolio";
+import Image from "next/image";
+import { useLang } from "./LangProvider";
 
-function ProjectCard({ project, index, inView }) {
+function ProjectCard({ project, index, inView, t }) {
   return (
     <motion.a
       href={project.link}
       target="_blank"
       rel="noreferrer"
-      initial={{ opacity: 0, y: 36 }}
+      initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className="glass rounded-2xl overflow-hidden block group cursor-pointer"
-      style={{ border: "0.5px solid rgba(30,86,245,0.22)" }}
+      transition={{ duration: 0.7, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8 }}
+      className="project-card group"
     >
-      {/* Thumbnail */}
-      <div
-        className={`relative h-44 flex items-center justify-center overflow-hidden bg-gradient-to-br ${project.color}`}
-      >
-        {/* Emoji bg */}
-        <span
-          className="absolute text-6xl opacity-15 select-none group-hover:scale-110 group-hover:opacity-25 transition-all duration-500"
-          aria-hidden
-        >
-          {project.emoji}
-        </span>
-
-        {/* Label */}
-        <span className="relative font-syne font-bold text-xs uppercase tracking-[.14em] text-white/60 group-hover:text-white/80 transition-colors duration-300">
-          {project.client}
-        </span>
-
-        {/* Hover overlay */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.25 }}
-          style={{
-            background: "rgba(8,17,42,0.55)",
-            backdropFilter: "blur(4px)",
-          }}
-        >
-          <span className="text-white text-sm font-medium border border-white/30 px-5 py-2 rounded-full">
-            View on Figma ↗
-          </span>
-        </motion.div>
+      <div className={`project-cover bg-gradient-to-br ${project.color}`}>
+        {project.image && (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover opacity-40 group-hover:opacity-55 transition-opacity duration-500"
+          />
+        )}
+        <div className="project-cover-content">
+          <div className="project-cover-top">
+            <span className="project-cover-client">{project.client}</span>
+            <span className="project-cover-year">{project.year}</span>
+          </div>
+          <div>
+            <p className="project-cover-sector">{project.sector}</p>
+            <p className="mt-2 text-sm text-white/75">{project.role}</p>
+          </div>
+        </div>
       </div>
 
-      {/* Body */}
-      <div className="p-6">
-        <p className="text-cyan text-[11px] uppercase tracking-widest mb-1.5">
-          {project.sector}
-        </p>
-        <h3 className="font-syne font-bold text-base mb-2 group-hover:text-white transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-muted text-xs leading-relaxed mb-4">
-          {project.description}
-        </p>
-
-        {/* Result badge */}
-        <div
-          className="text-[11px] text-cyan px-3 py-2 rounded-lg"
-          style={{
-            background: "rgba(0,201,200,.07)",
-            borderLeft: "2px solid var(--cyan)",
-          }}
-        >
-          {project.result}
+      <div className="project-body">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start gap-3">
+            {project.logo && (
+              <span className="project-body-logo">
+                <Image src={project.logo} alt={project.client} width={40} height={40} className="object-contain w-10 h-10" />
+              </span>
+            )}
+            <div>
+              <p className="project-meta">{project.client}</p>
+              <h3 className="mt-1 font-syne text-xl font-bold text-foreground">{project.title}</h3>
+            </div>
+          </div>
+          <span className="project-link-arrow">↗</span>
         </div>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mt-4">
-          {project.tags.map((t) => (
-            <span
-              key={t}
-              className="text-[10px] px-2.5 py-1 rounded-full border border-white/10 text-muted"
-            >
-              {t}
-            </span>
+        <p className="mt-4 text-sm leading-7 text-muted-fg">{project.description}</p>
+        <div className="project-impact-box">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan">{t.projects.impact}</p>
+          <p className="mt-2 text-sm leading-6 text-foreground/90">{project.impact}</p>
+        </div>
+        <p className="mt-4 text-sm leading-6 text-muted-fg">{project.result}</p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span key={tag} className="chip-outline">{tag}</span>
           ))}
         </div>
       </div>
@@ -96,42 +71,27 @@ function ProjectCard({ project, index, inView }) {
 
 export default function Projects() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { t } = useLang();
 
   return (
-    <section id="projects" ref={ref} className="max-w-6xl mx-auto px-6 py-28">
-      {/* Header */}
+    <section id="projects" ref={ref} className="section-shell">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="mb-14"
+        className="section-heading"
       >
-        <p className="flex items-center gap-2 text-cyan text-xs uppercase tracking-[.16em] mb-3">
-          <span className="w-6 h-px bg-cyan" />
-          Portfolio
-        </p>
-        <div className="flex items-end justify-between flex-wrap gap-4">
-          <h2
-            className="font-syne font-extrabold tracking-tight"
-            style={{ fontSize: "clamp(28px,4vw,46px)" }}
-          >
-            Selected Projects
-          </h2>
-          <a
-            href="https://www.behance.net/arrozyadifalaqi"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-muted hover:text-cyan transition-colors"
-          >
-            View all on Behance →
+        <p className="section-eyebrow">{t.projects.eyebrow}</p>
+        <div className="section-heading-row">
+          <div><h2 className="section-title">{t.projects.title}</h2></div>
+          <a href="https://www.behance.net/arrozyadifalaqi" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-fg transition-colors hover:text-cyan">
+            {t.projects.viewAll} <span>↗</span>
           </a>
         </div>
       </motion.div>
-
-      {/* Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {projects.map((p, i) => (
-          <ProjectCard key={p.id} project={p} index={i} inView={inView} />
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {t.projectsList.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} inView={inView} t={t} />
         ))}
       </div>
     </section>

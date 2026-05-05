@@ -2,129 +2,146 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 import { personal } from "../data/portfolio";
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
-];
+import { useTheme } from "./ThemeProvider";
+import { useLang } from "./LangProvider";
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+  const { lang, t, toggleLang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#contact", label: t.nav.contact },
+  ];
+
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-      const sections = links.map((l) => l.href.replace("#", ""));
-      for (let i = sections.length - 1; i >= 0; i--) {
+      setScrolled(window.scrollY > 30);
+      const sections = links.map((link) => link.href.replace("#", ""));
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
         const el = document.getElementById(sections[i]);
-        if (el && window.scrollY >= el.offsetTop - 140) {
+        if (el && window.scrollY >= el.offsetTop - 160) {
           setActive(sections[i]);
           break;
         }
       }
     };
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [t]);
 
   return (
     <motion.nav
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-3 bg-navy/90 backdrop-blur-xl border-b border-white/5"
-          : "py-5 bg-transparent"
-      }`}
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="font-syne font-extrabold text-lg gradient-text">
-          Arrozy AF
-        </a>
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
+        <div className={`nav-shell ${scrolled ? "nav-shell-scrolled" : ""}`}>
+          <a href="#hero" className="flex items-center gap-2.5">
+            <span className="logo-mark">AF</span>
+            <span className="font-syne text-sm font-bold text-foreground whitespace-nowrap">Arrozy Adi Falaqi</span>
+          </a>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((l) => {
-            const id = l.href.replace("#", "");
-            return (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className={`text-xs uppercase tracking-widest transition-colors duration-200 ${
-                    active === id ? "text-white" : "text-muted hover:text-white"
-                  }`}
-                >
-                  {l.label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+          <ul className="hidden items-center gap-7 lg:flex">
+            {links.map((link) => {
+              const id = link.href.replace("#", "");
+              return (
+                <li key={link.href}>
+                  <a href={link.href} className={`nav-link ${active === id ? "is-active" : ""}`}>
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
 
-        {/* CTA */}
-        <a
-          href={`mailto:${personal.email}`}
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue text-white text-xs font-medium hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
-        >
-          Hire Me
-        </a>
+          <div className="hidden items-center gap-2 lg:flex">
+            <button
+              onClick={toggleLang}
+              className="toggle-btn"
+              aria-label="Toggle language"
+              type="button"
+            >
+              <span className="text-base leading-none">{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
+              <span className="text-[11px] font-semibold uppercase">{lang === "en" ? "ID" : "EN"}</span>
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="toggle-btn"
+              aria-label="Toggle theme"
+              type="button"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <a href={personal.behance} target="_blank" rel="noreferrer" className="nav-ghost-link">
+              Behance
+            </a>
+            <a href="#contact" className="nav-cta">
+              {t.nav.hireMe}
+            </a>
+          </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-          />
-        </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <button onClick={toggleLang} className="toggle-btn" aria-label="Toggle language" type="button">
+              <span className="text-sm leading-none">{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
+              <span className="text-[10px] font-semibold uppercase">{lang === "en" ? "ID" : "EN"}</span>
+            </button>
+            <button onClick={toggleTheme} className="toggle-btn" aria-label="Toggle theme" type="button">
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+            </button>
+            <button
+              className="menu-button"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Toggle menu"
+              type="button"
+            >
+              <span className={menuOpen ? "translate-y-[7px] rotate-45" : ""} />
+              <span className={menuOpen ? "opacity-0" : ""} />
+              <span className={menuOpen ? "-translate-y-[7px] -rotate-45" : ""} />
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-navy2 border-t border-white/5"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.22 }}
+            className="mx-auto mt-3 max-w-6xl px-6 lg:hidden"
           >
-            <ul className="flex flex-col px-6 py-4 gap-4">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-sm text-muted hover:text-white transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="text-sm text-cyan"
-                >
-                  Hire Me →
+            <div className="mobile-nav-panel">
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} onClick={() => setMenuOpen(false)} className="mobile-nav-link">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 flex flex-col gap-3">
+                <a href={personal.behance} target="_blank" rel="noreferrer" className="secondary-button text-center">
+                  {t.nav.viewBehance}
                 </a>
-              </li>
-            </ul>
+                <a href="#contact" onClick={() => setMenuOpen(false)} className="primary-button text-center">
+                  {t.nav.contactMe}
+                </a>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
