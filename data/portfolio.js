@@ -167,6 +167,8 @@ export const projects = [
     sector: "Government Platform",
     year: "2024",
     role: "UI/UX Redesign",
+    myRole: "Sole designer — owned the full redesign from audit to final prototype handoff",
+    process: ["Audited existing flow & collected stakeholder pain points", "Mapped user journey & identified redundant steps", "Created wireframes with simplified 4-step flow", "Built hi-fi prototype with progress indicators & inline validation", "Presented to stakeholders & iterated based on feedback"],
     impact: "Simplified issuance flow from 7 steps to 4, reducing user drop-off",
     description:
       "The existing e-certificate platform had a confusing multi-step flow that caused users to abandon midway. I mapped the entire journey, identified redundant steps, and redesigned the interface with clearer progress indicators and inline validation.",
@@ -184,6 +186,8 @@ export const projects = [
     sector: "Dashboard System",
     year: "2024",
     role: "Dashboard UX/UI",
+    myRole: "Lead UI/UX — restructured IA and designed all dashboard screens",
+    process: ["Analyzed existing admin workflows & identified navigation bottlenecks", "Restructured information architecture into logical groupings", "Designed filterable data tables & batch action patterns", "Created component library for consistent dashboard UI", "Validated with admin users & refined based on task completion tests"],
     impact: "Admins can now find and manage records without switching between multiple pages",
     description:
       "The original SIMONTILA dashboard scattered data across too many sub-pages. I restructured the information architecture, introduced filterable data tables, and grouped related actions together so admins could complete tasks in fewer clicks.",
@@ -201,6 +205,8 @@ export const projects = [
     sector: "Education Product",
     year: "2024",
     role: "Web & Mobile Design",
+    myRole: "Sole designer — designed both web platform and mobile app from scratch",
+    process: ["Researched student pain points across registration & attendance", "Mapped unified user flow for web + mobile", "Wireframed key screens with accessibility in mind", "Designed hi-fi UI for both platforms with shared design system", "Iterated based on internal review & student demographic considerations"],
     impact: "Unified registration and attendance into one seamless platform",
     description:
       "Students previously had to use separate systems for MBKM registration and attendance marking. I designed a unified web + mobile experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
@@ -218,6 +224,8 @@ export const projects = [
     sector: "Monitoring Dashboard",
     year: "2024",
     role: "Legacy System Redesign",
+    myRole: "Sole designer — audited legacy system and delivered modernized dashboard concept",
+    process: ["Audited legacy system & documented usability issues", "Interviewed project managers about their monitoring workflow", "Designed card-based layout with status grouping & progress indicators", "Simplified filtering system for quick project scanning", "Delivered annotated prototype with interaction specs for dev team"],
     impact: "Replaced cluttered legacy tables with a card-based status view",
     description:
       "The old BRAVO system displayed all projects in dense, unsorted tables. I introduced a card-based layout grouped by status and priority, added visual progress indicators, and simplified the filtering system so managers could scan project health at a glance.",
@@ -235,6 +243,8 @@ export const projects = [
     sector: "Mobile Service",
     year: "2023",
     role: "UX Research & Prototyping",
+    myRole: "UX researcher & designer — led research, wireframing, and prototype delivery",
+    process: ["Conducted field interviews with 12 citizens", "Synthesized findings into user personas & journey maps", "Created low-fi wireframes addressing key pain points", "Built hi-fi interactive prototype in Figma", "Ran usability tests & iterated until task success improved"],
     impact: "Validated through usability testing with 12 real citizens",
     description:
       "Conducted field interviews with 12 citizens to understand pain points in accessing public services. Built wireframes, iterated based on feedback, and delivered a high-fidelity prototype that was tested and validated before handoff to development.",
@@ -251,6 +261,8 @@ export const projects = [
     sector: "Data Visualization",
     year: "2023",
     role: "Analytics Dashboard Design",
+    myRole: "Sole designer — translated data requirements into visual dashboard concept",
+    process: ["Interviewed stakeholders about reporting needs & data sources", "Mapped data relationships & defined key metrics", "Designed chart types & layout for scannability", "Built interactive prototype with filter & drill-down patterns", "Validated with end-users during weekly reporting cycle"],
     impact: "Consolidated scattered spreadsheet data into one visual interface",
     description:
       "The client's team relied on multiple Excel files for weekly reporting. I designed an interactive dashboard that pulls the same data into filterable charts and summary cards, making it possible to spot trends without manual spreadsheet work.",

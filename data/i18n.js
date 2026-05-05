@@ -118,6 +118,8 @@ export const i18n = {
     projectsList: [
       {
         id: 1, title: "e-Sertifikat Next Gen", client: "Kominfo", sector: "Government Platform", year: "2024", role: "UI/UX Redesign",
+        myRole: "Sole designer — owned the full redesign from audit to final prototype handoff",
+        process: ["Audited existing flow & collected stakeholder pain points", "Mapped user journey & identified redundant steps", "Created wireframes with simplified 4-step flow", "Built hi-fi prototype with progress indicators & inline validation", "Presented to stakeholders & iterated based on feedback"],
         impact: "Simplified issuance flow from 7 steps to 4, reducing user drop-off",
         description: "The existing e-certificate platform had a confusing multi-step flow that caused users to abandon midway. I mapped the entire journey, identified redundant steps, and redesigned the interface with clearer progress indicators and inline validation.",
         result: "Stakeholders confirmed fewer support tickets related to certificate issuance after the redesign",
@@ -126,6 +128,8 @@ export const i18n = {
       },
       {
         id: 2, title: "Admin SIMONTILA", client: "Kemendikbud", sector: "Dashboard System", year: "2024", role: "Dashboard UX/UI",
+        myRole: "Lead UI/UX — restructured IA and designed all dashboard screens",
+        process: ["Analyzed existing admin workflows & identified navigation bottlenecks", "Restructured information architecture into logical groupings", "Designed filterable data tables & batch action patterns", "Created component library for consistent dashboard UI", "Validated with admin users & refined based on task completion tests"],
         impact: "Admins can now find and manage records without switching between multiple pages",
         description: "The original SIMONTILA dashboard scattered data across too many sub-pages. I restructured the information architecture, introduced filterable data tables, and grouped related actions so admins could complete tasks in fewer clicks.",
         result: "Clearer hierarchy and navigation reduced the learning curve for new admin users",
@@ -134,6 +138,8 @@ export const i18n = {
       },
       {
         id: 3, title: "MBKM UT + TTM App", client: "Universitas Terbuka", sector: "Education Product", year: "2024", role: "Web & Mobile Design",
+        myRole: "Sole designer — designed both web platform and mobile app from scratch",
+        process: ["Researched student pain points across registration & attendance", "Mapped unified user flow for web + mobile", "Wireframed key screens with accessibility in mind", "Designed hi-fi UI for both platforms with shared design system", "Iterated based on internal review & student demographic considerations"],
         impact: "Unified registration and attendance into one seamless platform",
         description: "Students previously had to use separate systems for MBKM registration and attendance marking. I designed a unified web + mobile experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
         result: "Students can now register and mark attendance from one platform without switching tools",
@@ -142,6 +148,8 @@ export const i18n = {
       },
       {
         id: 4, title: "BRAVO System Redesign", client: "PUPR", sector: "Monitoring Dashboard", year: "2024", role: "Legacy System Redesign",
+        myRole: "Sole designer — audited legacy system and delivered modernized dashboard concept",
+        process: ["Audited legacy system & documented usability issues", "Interviewed project managers about their monitoring workflow", "Designed card-based layout with status grouping & progress indicators", "Simplified filtering system for quick project scanning", "Delivered annotated prototype with interaction specs for dev team"],
         impact: "Replaced cluttered legacy tables with a card-based status view",
         description: "The old BRAVO system displayed all projects in dense, unsorted tables. I introduced a card-based layout grouped by status and priority, added visual progress indicators, and simplified the filtering system so managers could scan project health at a glance.",
         result: "Project managers reported faster identification of at-risk projects during weekly reviews",
@@ -150,6 +158,8 @@ export const i18n = {
       },
       {
         id: 5, title: "Public Service App Prototype", client: "Government Client", sector: "Mobile Service", year: "2023", role: "UX Research & Prototyping",
+        myRole: "UX researcher & designer — led research, wireframing, and prototype delivery",
+        process: ["Conducted field interviews with 12 citizens", "Synthesized findings into user personas & journey maps", "Created low-fi wireframes addressing key pain points", "Built hi-fi interactive prototype in Figma", "Ran usability tests & iterated until task success improved"],
         impact: "Validated through usability testing with 12 real citizens",
         description: "Conducted field interviews with 12 citizens to understand pain points in accessing public services. Built wireframes, iterated based on feedback, and delivered a high-fidelity prototype that was tested and validated before handoff to development.",
         result: "Usability test participants completed key tasks faster and with fewer errors compared to the existing flow",
@@ -158,6 +168,8 @@ export const i18n = {
       },
       {
         id: 6, title: "Data Analytics Dashboard", client: "Government Client", sector: "Data Visualization", year: "2023", role: "Analytics Dashboard Design",
+        myRole: "Sole designer — translated data requirements into visual dashboard concept",
+        process: ["Interviewed stakeholders about reporting needs & data sources", "Mapped data relationships & defined key metrics", "Designed chart types & layout for scannability", "Built interactive prototype with filter & drill-down patterns", "Validated with end-users during weekly reporting cycle"],
         impact: "Consolidated scattered spreadsheet data into one visual interface",
         description: "The client's team relied on multiple Excel files for weekly reporting. I designed an interactive dashboard that pulls the same data into filterable charts and summary cards, making it possible to spot trends without manual spreadsheet work.",
         result: "Weekly reporting preparation time was significantly reduced as data became self-service",
@@ -171,6 +183,7 @@ export const i18n = {
       viewAll: "View full portfolio on Behance",
       selectedCase: "Selected case",
       impact: "Impact",
+      process: "My Process",
     },
     creativeWorks: {
       eyebrow: "Beyond UI/UX",
@@ -322,6 +335,8 @@ export const i18n = {
     projectsList: [
       {
         id: 1, title: "e-Sertifikat Next Gen", client: "Kominfo", sector: "Platform Pemerintah", year: "2024", role: "Redesain UI/UX",
+        myRole: "Sole designer — mengelola seluruh redesain dari audit hingga handoff prototipe",
+        process: ["Audit alur yang ada & kumpulkan pain point stakeholder", "Petakan user journey & identifikasi langkah redundan", "Buat wireframe dengan alur 4 langkah yang disederhanakan", "Bangun prototipe hi-fi dengan progress indicator & validasi inline", "Presentasi ke stakeholder & iterasi berdasarkan feedback"],
         impact: "Menyederhanakan alur penerbitan dari 7 langkah menjadi 4, mengurangi drop-off pengguna",
         description: "Platform e-sertifikat yang ada memiliki alur multi-step yang membingungkan sehingga pengguna sering berhenti di tengah jalan. Saya memetakan seluruh journey, mengidentifikasi langkah yang redundan, dan mendesain ulang interface dengan progress indicator yang lebih jelas serta validasi inline.",
         result: "Stakeholder mengonfirmasi berkurangnya tiket support terkait penerbitan sertifikat setelah redesain diimplementasikan",
@@ -330,6 +345,8 @@ export const i18n = {
       },
       {
         id: 2, title: "Admin SIMONTILA", client: "Kemendikbud", sector: "Sistem Dashboard", year: "2024", role: "Dashboard UX/UI",
+        myRole: "Lead UI/UX — restrukturisasi IA dan desain seluruh layar dashboard",
+        process: ["Analisis workflow admin & identifikasi bottleneck navigasi", "Restrukturisasi information architecture ke pengelompokan logis", "Desain tabel data yang bisa difilter & pola batch action", "Buat component library untuk UI dashboard yang konsisten", "Validasi dengan admin user & perbaiki berdasarkan tes penyelesaian tugas"],
         impact: "Admin kini bisa menemukan dan mengelola data tanpa berpindah-pindah halaman",
         description: "Dashboard SIMONTILA yang lama menyebarkan data ke terlalu banyak sub-halaman. Saya merestrukturisasi information architecture, memperkenalkan tabel data yang bisa difilter, dan mengelompokkan aksi terkait agar admin bisa menyelesaikan tugas dengan lebih sedikit klik.",
         result: "Hierarki dan navigasi yang lebih jelas mengurangi learning curve untuk admin baru",
@@ -338,6 +355,8 @@ export const i18n = {
       },
       {
         id: 3, title: "MBKM UT + Aplikasi TTM", client: "Universitas Terbuka", sector: "Produk Pendidikan", year: "2024", role: "Desain Web & Mobile",
+        myRole: "Sole designer — mendesain platform web dan aplikasi mobile dari nol",
+        process: ["Riset pain point mahasiswa di registrasi & absensi", "Petakan alur pengguna terpadu untuk web + mobile", "Wireframe layar utama dengan pertimbangan aksesibilitas", "Desain UI hi-fi untuk kedua platform dengan shared design system", "Iterasi berdasarkan review internal & pertimbangan demografi mahasiswa"],
         impact: "Menyatukan registrasi dan absensi dalam satu platform yang seamless",
         description: "Mahasiswa sebelumnya harus menggunakan sistem terpisah untuk registrasi MBKM dan pencatatan kehadiran. Saya mendesain pengalaman web + mobile yang terpadu dengan single login, alur step-by-step yang jelas, dan pertimbangan aksesibilitas untuk demografi mahasiswa yang beragam.",
         result: "Mahasiswa kini bisa registrasi dan mencatat kehadiran dari satu platform tanpa berpindah tools",
@@ -346,6 +365,8 @@ export const i18n = {
       },
       {
         id: 4, title: "Redesain Sistem BRAVO", client: "PUPR", sector: "Dashboard Monitoring", year: "2024", role: "Redesain Sistem Legacy",
+        myRole: "Sole designer — audit sistem legacy dan deliver konsep dashboard modern",
+        process: ["Audit sistem legacy & dokumentasi masalah usability", "Wawancara manajer proyek tentang workflow monitoring mereka", "Desain layout card dengan pengelompokan status & indikator progress", "Sederhanakan sistem filter untuk scanning proyek cepat", "Deliver prototipe beranotasi dengan spesifikasi interaksi untuk tim dev"],
         impact: "Mengganti tabel legacy yang berantakan dengan tampilan card berbasis status",
         description: "Sistem BRAVO lama menampilkan semua proyek dalam tabel padat yang tidak terurut. Saya memperkenalkan layout berbasis card yang dikelompokkan berdasarkan status dan prioritas, menambahkan indikator progress visual, dan menyederhanakan sistem filter agar manajer bisa memindai kesehatan proyek secara sekilas.",
         result: "Manajer proyek melaporkan identifikasi proyek berisiko yang lebih cepat saat review mingguan",
@@ -354,6 +375,8 @@ export const i18n = {
       },
       {
         id: 5, title: "Prototipe Aplikasi Layanan Publik", client: "Klien Pemerintah", sector: "Layanan Mobile", year: "2023", role: "Riset UX & Prototyping",
+        myRole: "UX researcher & designer — memimpin riset, wireframing, dan delivery prototipe",
+        process: ["Wawancara lapangan dengan 12 warga", "Sintesis temuan menjadi persona & journey map", "Buat wireframe low-fi yang mengatasi pain point utama", "Bangun prototipe interaktif hi-fi di Figma", "Jalankan usability test & iterasi hingga task success meningkat"],
         impact: "Divalidasi melalui usability testing dengan 12 warga asli",
         description: "Melakukan wawancara lapangan dengan 12 warga untuk memahami pain point dalam mengakses layanan publik. Membangun wireframe, iterasi berdasarkan feedback, dan menghasilkan prototipe high-fidelity yang diuji dan divalidasi sebelum handoff ke development.",
         result: "Peserta usability test menyelesaikan tugas utama lebih cepat dan dengan lebih sedikit error dibanding alur yang ada",
@@ -362,6 +385,8 @@ export const i18n = {
       },
       {
         id: 6, title: "Dashboard Analitik Data", client: "Klien Pemerintah", sector: "Visualisasi Data", year: "2023", role: "Desain Dashboard Analitik",
+        myRole: "Sole designer — menerjemahkan kebutuhan data menjadi konsep dashboard visual",
+        process: ["Wawancara stakeholder tentang kebutuhan pelaporan & sumber data", "Petakan relasi data & definisikan metrik kunci", "Desain tipe chart & layout untuk scannability", "Bangun prototipe interaktif dengan pola filter & drill-down", "Validasi dengan end-user selama siklus pelaporan mingguan"],
         impact: "Mengkonsolidasi data spreadsheet yang tersebar ke satu interface visual",
         description: "Tim klien mengandalkan banyak file Excel untuk pelaporan mingguan. Saya mendesain dashboard interaktif yang menarik data yang sama ke dalam chart yang bisa difilter dan summary card, sehingga memungkinkan identifikasi tren tanpa kerja spreadsheet manual.",
         result: "Waktu persiapan pelaporan mingguan berkurang signifikan karena data menjadi self-service",
@@ -375,6 +400,7 @@ export const i18n = {
       viewAll: "Lihat portofolio lengkap di Behance",
       selectedCase: "Studi kasus",
       impact: "Dampak",
+      process: "Proses Saya",
     },
     creativeWorks: {
       eyebrow: "Selain UI/UX",

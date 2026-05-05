@@ -53,12 +53,33 @@ function ProjectCard({ project, index, inView, t }) {
           </div>
           <span className="project-link-arrow">↗</span>
         </div>
-        <p className="mt-4 text-sm leading-7 text-muted-fg">{project.description}</p>
+        {/* My Role */}
+        {project.myRole && (
+          <p className="mt-3 text-xs font-medium text-cyan/90 italic">{project.myRole}</p>
+        )}
+
+        <p className="mt-3 text-sm leading-7 text-muted-fg">{project.description}</p>
+
+        {/* Process Steps */}
+        {project.process && project.process.length > 0 && (
+          <div className="project-process-box">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-cyan mb-2">{t.projects.process || "Process"}</p>
+            <ol className="space-y-1">
+              {project.process.map((step, i) => (
+                <li key={i} className="text-xs leading-5 text-muted-fg flex gap-2">
+                  <span className="text-cyan/70 font-mono text-[10px] mt-px">{String(i + 1).padStart(2, '0')}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
         <div className="project-impact-box">
           <p className="text-[11px] uppercase tracking-[0.16em] text-cyan">{t.projects.impact}</p>
           <p className="mt-2 text-sm leading-6 text-foreground/90">{project.impact}</p>
         </div>
-        <p className="mt-4 text-sm leading-6 text-muted-fg">{project.result}</p>
+        <p className="mt-3 text-sm leading-6 text-muted-fg">{project.result}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span key={tag} className="chip-outline">{tag}</span>
