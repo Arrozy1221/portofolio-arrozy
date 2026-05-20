@@ -6,119 +6,200 @@ import Image from "next/image";
 import { personal } from "../data/portfolio";
 import { useLang } from "./LangProvider";
 
+const anim = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+});
+
 export default function About() {
-  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { t } = useLang();
 
   return (
-    <section id="about" ref={ref} className="section-shell">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="section-heading"
-      >
-        <p className="section-eyebrow">{t.about.eyebrow}</p>
-        <div className="section-heading-row">
-          <div><h2 className="section-title">{t.about.title}</h2></div>
-          <p className="section-copy max-w-xl">{t.about.subtitle}</p>
-        </div>
-      </motion.div>
+    <section id="about" ref={ref} className="section">
+      <div className="container">
+        <motion.div {...anim(0)} animate={inView ? { opacity: 1, y: 0 } : {}} className="section-header">
+          <p className="eyebrow">{t.about.eyebrow}</p>
+          <h2 className="section-title">{t.about.title}</h2>
+          <p className="section-subtitle">{t.about.subtitle}</p>
+        </motion.div>
 
-      <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="stack-card"
-        >
-          <div className="profile-card">
-            <div className="profile-avatar-wrap">
-              <div className="profile-avatar image-avatar">
-                <Image src={personal.photo} fill className="object-cover" alt="Foto Profil Arrozy Adi Falaqi" />
-              </div>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-cyan">{t.about.profile}</p>
-              <h3 className="mt-3 font-syne text-2xl font-bold text-foreground">{personal.role}</h3>
-              <p className="mt-2 text-sm leading-7 text-muted-fg">{personal.location}</p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                { label: "LinkedIn", href: personal.linkedin },
-                { label: "Behance", href: personal.behance },
-                { label: "Email", href: `mailto:${personal.email}` },
-                { label: "WhatsApp", href: `https://wa.me/${personal.whatsapp}` },
-              ].map((item) => (
-                <a key={item.label} href={item.href} target="_blank" rel="noreferrer" className="chip-outline">
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="info-card mt-5">
-            <p className="text-xs uppercase tracking-[0.16em] text-cyan">{t.about.education}</p>
-            <h3 className="mt-3 font-syne text-xl font-bold text-foreground">{personal.education.university}</h3>
-            <p className="mt-2 text-sm text-muted-fg">{personal.education.major}</p>
-            <p className="mt-1 text-sm text-muted-fg">{personal.education.year}</p>
-            <p className="mt-4 text-sm font-medium text-foreground">GPA {personal.education.gpa}</p>
-            <p className="mt-3 text-sm leading-6 text-muted-fg">{personal.education.thesis}</p>
-          </div>
-
-          <div className="mt-5 grid grid-cols-2 gap-3">
-            {t.kpis.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 18 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: 0.2 + index * 0.06 }}
-                className="metric-card"
+        {/* Row 1: Photo + Bio */}
+        <div className="grid gap-4 lg:grid-cols-[340px_1fr] mb-4">
+          {/* Photo card */}
+          <motion.div {...anim(0.05)} animate={inView ? { opacity: 1, y: 0 } : {}}
+            className="card overflow-hidden"
+            style={{ padding: 0, minHeight: "360px" }}
+          >
+            <div className="relative w-full h-full min-h-[360px]">
+              <Image
+                src={personal.photo}
+                alt="Arrozy Adi Falaqi"
+                fill
+                className="object-cover"
+                sizes="340px"
+                style={{ borderRadius: "var(--radius)" }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 p-5"
+                style={{
+                  background: "linear-gradient(transparent, rgba(0,0,0,0.75))",
+                  borderRadius: "0 0 var(--radius) var(--radius)",
+                }}
               >
-                <div className="font-syne text-3xl font-extrabold text-foreground">{item.value}</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-fg">{item.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-          className="space-y-6"
-        >
-          <div className="info-card">
-            {t.bio.map((paragraph, index) => (
-              <p key={index} className="text-[15px] leading-8 text-muted-fg">{paragraph}</p>
-            ))}
-          </div>
-
-          <div className="info-card">
-            <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
-              <div>
-                <p className="text-xs uppercase tracking-[0.16em] text-cyan">{t.about.approach}</p>
-                <h3 className="mt-2 font-syne text-2xl font-bold text-foreground">{t.about.approachTitle}</h3>
+                <p className="text-white font-bold text-lg font-heading">{personal.name}</p>
+                <p className="text-white/70 text-sm">{personal.role}</p>
+                <p className="text-white/50 text-xs mt-1">{personal.location}</p>
               </div>
-              <p className="max-w-sm text-sm leading-6 text-muted-fg">{t.about.approachDesc}</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {t.processSteps.map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.55, delay: 0.28 + index * 0.08 }}
-                  className="process-card"
-                >
-                  <span className="process-step">{step.step}</span>
-                  <h4 className="mt-4 font-syne text-lg font-bold text-foreground">{step.title}</h4>
-                  <p className="mt-2 text-sm leading-6 text-muted-fg">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
+          </motion.div>
+
+          {/* Bio + Social */}
+          <div className="flex flex-col gap-4">
+            <motion.div {...anim(0.1)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-6 flex-1">
+              <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "var(--accent-light)" }}>Bio</p>
+              <div className="space-y-3">
+                {t.bio.map((p, i) => (
+                  <p key={i} className="text-[0.95rem] leading-[1.85]" style={{ color: "var(--fg-muted)" }}>{p}</p>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div {...anim(0.15)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-5">
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { label: "LinkedIn", href: personal.linkedin },
+                  { label: "Behance", href: personal.behance },
+                  { label: "Email", href: `mailto:${personal.email}` },
+                  { label: "WhatsApp", href: `https://wa.me/${personal.whatsapp}` },
+                ].map((item) => (
+                  <a key={item.label} href={item.href} target="_blank" rel="noreferrer" className="tag tag-accent">
+                    {item.label} ↗
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Row 2: KPIs */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          {t.kpis.map((kpi, i) => (
+            <motion.div key={kpi.label} {...anim(0.2 + i * 0.05)} animate={inView ? { opacity: 1, y: 0 } : {}}
+              className="card p-5 text-center"
+            >
+              <div className="font-heading text-3xl font-extrabold text-gradient">{kpi.value}</div>
+              <p className="mt-2 text-xs font-medium uppercase tracking-widest" style={{ color: "var(--fg-dim)" }}>{kpi.label}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Row 3: Education + Process */}
+        <div className="grid gap-4 lg:grid-cols-[1fr_1.5fr]">
+          {/* Education */}
+          <motion.div {...anim(0.25)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-6">
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "var(--accent-light)" }}>{t.about.education}</p>
+            <h3 className="font-heading text-lg font-bold" style={{ color: "var(--fg)" }}>{personal.education.university}</h3>
+            <p className="mt-1 text-sm" style={{ color: "var(--fg-muted)" }}>{personal.education.major}</p>
+            <p className="text-sm" style={{ color: "var(--fg-muted)" }}>{personal.education.year}</p>
+            <div className="mt-3">
+              <span className="tag tag-accent">GPA {personal.education.gpa}</span>
+            </div>
+
+            {/* Thesis / Skripsi */}
+            <div className="mt-5 pt-5" style={{ borderTop: "1px solid var(--border)" }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--accent-2)" }}>
+                {t.about.thesisLabel || "Thesis / Skripsi"}
+              </p>
+              <h4 className="font-heading text-sm font-bold leading-relaxed" style={{ color: "var(--fg)" }}>
+                {personal.education.thesis}
+              </h4>
+              <p className="mt-2.5 text-[0.82rem] leading-[1.75]" style={{ color: "var(--fg-muted)" }}>
+                {personal.education.thesisDesc}
+              </p>
+
+              {/* Methods */}
+              <p className="mt-4 text-[0.65rem] font-bold uppercase tracking-widest" style={{ color: "var(--fg-dim)" }}>
+                {t.about.methodLabel || "Methods"}
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {personal.education.thesisMethod.map((m) => (
+                  <span key={m} className="tag tag-teal" style={{ fontSize: "0.65rem", padding: "0.25rem 0.6rem" }}>{m}</span>
+                ))}
+              </div>
+
+              {/* Deliverables */}
+              <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-widest" style={{ color: "var(--fg-dim)" }}>
+                {t.about.deliverablesLabel || "Deliverables"}
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {personal.education.thesisDeliverables.map((d) => (
+                  <span key={d} className="tag" style={{ fontSize: "0.65rem", padding: "0.25rem 0.6rem" }}>{d}</span>
+                ))}
+              </div>
+
+              {/* Tools */}
+              <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-widest" style={{ color: "var(--fg-dim)" }}>
+                {t.about.toolsLabel || "Tools"}
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {personal.education.thesisTools.map((tool) => (
+                  <span key={tool} className="tag tag-accent" style={{ fontSize: "0.65rem", padding: "0.25rem 0.6rem" }}>{tool}</span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Process — Visual Flow */}
+          <motion.div {...anim(0.3)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-6">
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--accent-light)" }}>{t.about.approach}</p>
+            <h3 className="font-heading text-lg font-bold mb-5" style={{ color: "var(--fg)" }}>{t.about.approachTitle}</h3>
+
+            {/* Visual flow diagram */}
+            <div className="flex flex-col gap-0">
+              {t.processSteps.map((step, i) => {
+                const icons = ["🔍", "🧩", "🎨", "🔄"];
+                const colors = [
+                  { bg: "rgba(108,92,231,0.08)", border: "rgba(108,92,231,0.15)", accent: "var(--accent-light)" },
+                  { bg: "rgba(0,206,201,0.08)", border: "rgba(0,206,201,0.15)", accent: "var(--accent-2)" },
+                  { bg: "rgba(253,121,168,0.08)", border: "rgba(253,121,168,0.15)", accent: "#fd79a8" },
+                  { bg: "rgba(108,92,231,0.08)", border: "rgba(108,92,231,0.15)", accent: "var(--accent-light)" },
+                ];
+                return (
+                  <div key={step.step}>
+                    <div className="flex items-start gap-3.5 p-3.5 rounded-xl transition-all hover:scale-[1.01]"
+                      style={{ background: colors[i].bg, border: `1px solid ${colors[i].border}` }}
+                    >
+                      <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                        <span className="text-2xl">{icons[i]}</span>
+                        <span className="text-[0.6rem] font-bold" style={{ color: colors[i].accent }}>{step.step}</span>
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-heading font-bold text-sm" style={{ color: "var(--fg)" }}>{step.title}</h4>
+                        <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "var(--fg-muted)" }}>{step.description}</p>
+                      </div>
+                    </div>
+                    {/* Arrow connector */}
+                    {i < t.processSteps.length - 1 && (
+                      <div className="flex justify-center py-1">
+                        <div className="flex flex-col items-center">
+                          <div className="w-0.5 h-3 rounded-full" style={{ background: "var(--border)" }} />
+                          <span className="text-[0.6rem]" style={{ color: "var(--fg-dim)" }}>▼</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Summary tagline */}
+            <div className="mt-4 pt-3.5 text-center" style={{ borderTop: "1px solid var(--border)" }}>
+              <p className="text-xs" style={{ color: "var(--fg-dim)" }}>
+                🔁 {t.about.approachDesc || "Iterative process — repeat until the solution fits"}
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

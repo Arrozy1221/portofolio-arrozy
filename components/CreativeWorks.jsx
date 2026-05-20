@@ -24,25 +24,21 @@ export default function CreativeWorks() {
   const webinarLabel = t.creativeWorks?.webinar || "Webinar Poster Design";
 
   return (
-    <section id="creative-works" ref={ref} className="section-shell">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="section-heading"
-      >
-        <p className="section-eyebrow">{sectionEyebrow}</p>
-        <h2 className="section-title">{sectionTitle}</h2>
-      </motion.div>
+    <section id="creative-works" ref={ref} className="section">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="section-header"
+        >
+          <p className="eyebrow">{sectionEyebrow}</p>
+          <h2 className="section-title">{sectionTitle}</h2>
+        </motion.div>
 
-      {/* Webinar Posters */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <h3 className="text-lg font-syne font-bold text-foreground mb-5">{webinarLabel}</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <p className="font-heading font-bold text-lg mb-5" style={{ color: "var(--fg)" }}>{webinarLabel}</p>
+
+        <div className="gallery-grid">
           {webinarPosters.map((poster, i) => (
             <motion.button
               key={poster.src}
@@ -50,26 +46,18 @@ export default function CreativeWorks() {
               onClick={() => setLightbox(poster)}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-              className="creative-work-card group cursor-pointer"
+              transition={{ duration: 0.5, delay: 0.05 + i * 0.07 }}
+              className="gallery-item"
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
-                <Image
-                  src={poster.src}
-                  alt={poster.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-2xl">⤢</span>
-                </div>
+              <Image src={poster.src} alt={poster.alt} fill className="object-cover" />
+              <div className="gallery-overlay">
+                <span>⤢</span>
               </div>
             </motion.button>
           ))}
         </div>
-      </motion.div>
+      </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightbox && (
           <motion.div
@@ -77,31 +65,22 @@ export default function CreativeWorks() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            className="lightbox-backdrop"
             onClick={() => setLightbox(null)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="relative max-w-3xl max-h-[90vh] w-full"
+              className="lightbox-content"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                type="button"
-                onClick={() => setLightbox(null)}
-                className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-slate-800/90 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-              >
-                <X size={18} />
+              <button type="button" onClick={() => setLightbox(null)} className="lightbox-close">
+                <X size={16} />
               </button>
-              <div className="relative w-full h-auto max-h-[85vh] overflow-hidden rounded-xl">
-                <img
-                  src={lightbox.src}
-                  alt={lightbox.alt}
-                  className="w-full h-auto max-h-[85vh] object-contain rounded-xl"
-                />
-              </div>
+              <img src={lightbox.src} alt={lightbox.alt} className="lightbox-img" />
+              <p className="mt-3 text-center text-sm" style={{ color: "var(--fg-dim)" }}>{lightbox.alt}</p>
             </motion.div>
           </motion.div>
         )}

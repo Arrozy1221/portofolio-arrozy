@@ -36,6 +36,11 @@ export const personal = {
     gpa: "3.73 / 4.00",
     thesis:
       "Website Design and Development for Orion Guest House Using the Double Diamond Method and Content Marketing",
+    thesisDesc:
+      "Designed and developed a full-stack website for Orion Guest House, a hospitality business in Bandung. Applied the Double Diamond design methodology (Discover, Define, Develop, Deliver) combined with Content Marketing strategy to increase online visibility and direct bookings.",
+    thesisMethod: ["Double Diamond", "Content Marketing", "Usability Testing", "SEO Optimization"],
+    thesisDeliverables: ["Responsive Website", "CMS Integration", "Booking Flow", "Content Strategy"],
+    thesisTools: ["Figma", "HTML/CSS/JS", "WordPress", "Google Analytics"],
   },
 };
 
@@ -104,6 +109,12 @@ export const experiences = [
     location: "Bandung",
     period: "Aug 2023 – Present",
     current: true,
+    logo: "/logos/mst.svg",
+    companyProfile: {
+      description: "IT consulting and software development company specializing in government digital transformation projects, building platforms for ministries and public institutions across Indonesia.",
+      industry: "IT Consulting & Software Development",
+      website: "",
+    },
     highlights: [
       "Redesigned Kominfo e-certificate platform — simplified the issuance flow from 7 steps to 4, reducing user confusion reported in stakeholder feedback sessions.",
       "Overhauled Kemendikbud SIMONTILA admin dashboard — restructured navigation and data tables so admins could locate records without switching between multiple pages.",
@@ -122,6 +133,12 @@ export const experiences = [
     location: "Bandung",
     period: "Jan – Mar 2023",
     current: false,
+    logo: "/logos/intelligo.svg",
+    companyProfile: {
+      description: "Digital marketing and creative agency providing branding, social media management, and visual content solutions for businesses in Bandung.",
+      industry: "Digital Marketing & Creative Agency",
+      website: "",
+    },
     highlights: [
       "Created social media and marketing assets — designed carousel posts and story templates that received noticeably higher saves and shares compared to previous content.",
       "Worked directly with clients to align visual output with brand guidelines, revising based on feedback within tight turnaround times.",
@@ -136,6 +153,12 @@ export const experiences = [
     location: "Bandung",
     period: "Sep – Nov 2022",
     current: false,
+    logo: "/logos/myx.svg",
+    companyProfile: {
+      description: "Web development and IT services company focused on building websites and digital solutions for small-to-medium businesses.",
+      industry: "Web Development & IT Services",
+      website: "",
+    },
     highlights: [
       "Developed website features using HTML, CSS, and JavaScript — optimized image loading and minified assets, resulting in faster page render times.",
       "Improved database security by implementing parameterized queries and regular backup routines.",
@@ -150,6 +173,12 @@ export const experiences = [
     location: "Remote",
     period: "Feb – Jul 2022",
     current: false,
+    logo: "/logos/binar.svg",
+    companyProfile: {
+      description: "Leading Indonesian tech education platform offering intensive bootcamps in software engineering, UI/UX design, data science, and product management.",
+      industry: "Tech Education & Bootcamp",
+      website: "https://www.binar.co.id",
+    },
     highlights: [
       "Designed mobile and web prototypes for an e-commerce final project — full flow from product discovery to checkout.",
       "Conducted surveys (50+ respondents) and 5 user interviews to identify pain points, then iterated the design based on findings.",

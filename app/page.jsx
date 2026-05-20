@@ -15,7 +15,13 @@ export default function Home() {
   return (
     <ThemeProvider>
       <LangProvider>
-        <main className="page-shell">
+        {/* Ambient background blobs */}
+        <div className="ambient-bg">
+          <div className="ambient-blob ambient-blob-1" />
+          <div className="ambient-blob ambient-blob-2" />
+          <div className="ambient-blob ambient-blob-3" />
+        </div>
+        <div className="page-wrap">
           <Navbar />
           <Hero />
           <Divider />
@@ -30,7 +36,7 @@ export default function Home() {
           <Skills />
           <Contact />
           <Footer />
-        </main>
+        </div>
       </LangProvider>
     </ThemeProvider>
   );

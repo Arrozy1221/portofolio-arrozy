@@ -1,3 +1,3 @@
 export default function Divider() {
-  return <div className="section-divider" />;
+  return <div className="divider" />;
 }

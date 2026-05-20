@@ -34,7 +34,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`dark ${poppins.variable} ${dmSans.variable}`}>
+    <html lang="id" className={`light ${poppins.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="antialiased">
         {children}
       </body>

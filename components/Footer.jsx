@@ -7,15 +7,19 @@ export default function Footer() {
   const { t } = useLang();
 
   return (
-    <footer className="footer-shell">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-muted-fg md:flex-row md:items-center md:justify-between">
-        <div>
-          © {new Date().getFullYear()} <span className="text-foreground">{personal.name}</span>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <span>{t.footer.role}</span>
-          <span className="hidden h-1 w-1 rounded-full bg-muted md:inline-block" />
-          <span>{personal.location}</span>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-inner">
+          <div className="flex items-center gap-2.5">
+            <span className="nav-logo-icon" style={{ width: "1.75rem", height: "1.75rem", fontSize: "0.65rem", borderRadius: "0.45rem" }}>AF</span>
+            <span>© {new Date().getFullYear()} <span style={{ color: "var(--fg)", fontWeight: 500 }}>{personal.name}</span></span>
+          </div>
+          <div className="footer-links">
+            <span>{t.footer.role}</span>
+            <a href={personal.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={personal.behance} target="_blank" rel="noreferrer">Behance</a>
+            <a href={`mailto:${personal.email}`}>Email</a>
+          </div>
         </div>
       </div>
     </footer>

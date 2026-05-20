@@ -24,11 +24,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 30);
-      const sections = links.map((link) => link.href.replace("#", ""));
-      for (let i = sections.length - 1; i >= 0; i -= 1) {
+      setScrolled(window.scrollY > 50);
+      const sections = links.map((l) => l.href.replace("#", ""));
+      for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
-        if (el && window.scrollY >= el.offsetTop - 160) {
+        if (el && window.scrollY >= el.offsetTop - 180) {
           setActive(sections[i]);
           break;
         }
@@ -41,71 +41,51 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -70, opacity: 0 }}
+      initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
+      style={{ padding: scrolled ? "0.6rem 0" : "1rem 0" }}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
-        <div className={`nav-shell ${scrolled ? "nav-shell-scrolled" : ""}`}>
-          <a href="#hero" className="flex items-center gap-2.5">
-            <span className="logo-mark">AF</span>
-            <span className="font-syne text-sm font-bold text-foreground whitespace-nowrap">Arrozy Adi Falaqi</span>
+      <div className="container">
+        <div className="navbar-inner">
+          <a href="#hero" className="nav-logo">
+            <span className="nav-logo-icon">AF</span>
+            <span className="nav-logo-text hidden sm:inline">Arrozy</span>
           </a>
 
-          <ul className="hidden items-center gap-7 lg:flex">
-            {links.map((link) => {
-              const id = link.href.replace("#", "");
-              return (
-                <li key={link.href}>
-                  <a href={link.href} className={`nav-link ${active === id ? "is-active" : ""}`}>
-                    {link.label}
-                  </a>
-                </li>
-              );
-            })}
+          <ul className="nav-links hidden lg:flex">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={active === link.href.replace("#", "") ? "active" : ""}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
-          <div className="hidden items-center gap-2 lg:flex">
-            <button
-              onClick={toggleLang}
-              className="toggle-btn"
-              aria-label="Toggle language"
-              type="button"
-            >
-              <span className="text-base leading-none">{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
-              <span className="text-[11px] font-semibold uppercase">{lang === "en" ? "ID" : "EN"}</span>
+          <div className="nav-actions hidden lg:flex">
+            <button onClick={toggleLang} className="nav-toggle" type="button" aria-label="Toggle language">
+              <span>{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
+              <span>{lang === "en" ? "ID" : "EN"}</span>
             </button>
-            <button
-              onClick={toggleTheme}
-              className="toggle-btn"
-              aria-label="Toggle theme"
-              type="button"
-            >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            <button onClick={toggleTheme} className="nav-toggle" type="button" aria-label="Toggle theme">
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
-            <a href={personal.behance} target="_blank" rel="noreferrer" className="nav-ghost-link">
-              Behance
-            </a>
-            <a href="#contact" className="nav-cta">
-              {t.nav.hireMe}
-            </a>
+            <a href="#contact" className="nav-hire">{t.nav.hireMe}</a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <button onClick={toggleLang} className="toggle-btn" aria-label="Toggle language" type="button">
-              <span className="text-sm leading-none">{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
-              <span className="text-[10px] font-semibold uppercase">{lang === "en" ? "ID" : "EN"}</span>
+            <button onClick={toggleLang} className="nav-toggle" type="button" aria-label="Toggle language">
+              <span className="text-sm">{lang === "en" ? "🇮🇩" : "🇬🇧"}</span>
             </button>
-            <button onClick={toggleTheme} className="toggle-btn" aria-label="Toggle theme" type="button">
+            <button onClick={toggleTheme} className="nav-toggle" type="button" aria-label="Toggle theme">
               {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
-            <button
-              className="menu-button"
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-label="Toggle menu"
-              type="button"
-            >
+            <button className="burger" onClick={() => setMenuOpen((v) => !v)} type="button" aria-label="Menu">
               <span className={menuOpen ? "translate-y-[7px] rotate-45" : ""} />
               <span className={menuOpen ? "opacity-0" : ""} />
               <span className={menuOpen ? "-translate-y-[7px] -rotate-45" : ""} />
@@ -117,27 +97,20 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22 }}
-            className="mx-auto mt-3 max-w-6xl px-6 lg:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="container lg:hidden"
           >
-            <div className="mobile-nav-panel">
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <a href={link.href} onClick={() => setMenuOpen(false)} className="mobile-nav-link">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-5 flex flex-col gap-3">
-                <a href={personal.behance} target="_blank" rel="noreferrer" className="secondary-button text-center">
-                  {t.nav.viewBehance}
+            <div className="mobile-menu">
+              {links.map((link) => (
+                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+                  {link.label}
                 </a>
-                <a href="#contact" onClick={() => setMenuOpen(false)} className="primary-button text-center">
+              ))}
+              <div className="mt-4 flex flex-col gap-2">
+                <a href="#contact" onClick={() => setMenuOpen(false)} className="btn btn-primary text-center">
                   {t.nav.contactMe}
                 </a>
               </div>
