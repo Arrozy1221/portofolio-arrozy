@@ -12,7 +12,7 @@ export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
+    const saved = localStorage.getItem("theme-v2");
     if (saved === "light" || saved === "dark") {
       setTheme(saved);
     }
@@ -27,7 +27,7 @@ export default function ThemeProvider({ children }) {
       root.classList.add("dark");
       root.classList.remove("light");
     }
-    localStorage.setItem("theme", theme);
+    localStorage.setItem("theme-v2", theme);
   }, [theme]);
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));

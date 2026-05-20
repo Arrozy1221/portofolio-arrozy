@@ -1,4 +1,4 @@
-﻿export const i18n = {
+export const i18n = {
  en: {
  nav: {
  about: "About",
@@ -96,13 +96,13 @@
  id: 2, role: "Graphic Designer", company: "PT Intelligo", location: "Bandung", period: "Jan – Mar 2023", current: false,
  logo: "/logos/intelligo.svg",
  companyProfile: {
- description: "Digital marketing and creative agency providing branding and visual content solutions.",
- industry: "Digital Marketing & Creative Agency",
+ description: "Data Science & AI Bootcamp providing job-ready curriculum and industry mentor guidance.",
+ industry: "Education & EdTech",
  },
  highlights: [
- "Created social media and marketing assets that increased engagement by 40%.",
- "Worked directly with clients to align visual output with expectations and deadlines.",
- "Produced digital assets using Adobe Photoshop and Illustrator for business promotion needs.",
+ "Created social media and marketing assets for Data Science & AI Bootcamp programs, increasing engagement.",
+ "Worked directly with the team to align visual output with brand guidelines and deadlines.",
+ "Produced digital assets using Adobe Photoshop and Illustrator for bootcamp promotions and launches.",
  ],
  tags: ["Adobe Photoshop", "Adobe Illustrator", "Social Media", "Marketing"],
  },
@@ -143,7 +143,7 @@
  impact: "Simplified issuance flow from 7 steps to 4, reducing user drop-off",
  description: "The existing e-certificate platform had a confusing multi-step flow that caused users to abandon midway. I mapped the entire journey, identified redundant steps, and redesigned the interface with clearer progress indicators and inline validation.",
  result: "Stakeholders confirmed fewer support tickets related to certificate issuance after the redesign",
- color: "from-blue-950 to-blue-800", emoji: "ðŸ›ï¸", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Web Design", "Accessibility"],
+ color: "from-blue-950 to-blue-800", emoji: "ðŸ ›ï¸ ", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Web Design", "Accessibility"],
  link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
  },
  {
@@ -173,7 +173,7 @@
  impact: "Replaced cluttered legacy tables with a card-based status view",
  description: "The old BRAVO system displayed all projects in dense, unsorted tables. I introduced a card-based layout grouped by status and priority, added visual progress indicators, and simplified the filtering system so managers could scan project health at a glance.",
  result: "Project managers reported faster identification of at-risk projects during weekly reviews",
- color: "from-green-950 to-green-800", emoji: "ðŸ — ï¸", image: "/projects/bravo.png", logo: "/logos/pupr.jpg", tags: ["Redesign", "Dashboard", "Gov Platform"],
+ color: "from-green-950 to-green-800", emoji: "ðŸ  — ï¸ ", image: "/projects/bravo.png", logo: "/logos/pupr.jpg", tags: ["Redesign", "Dashboard", "Gov Platform"],
  link: "https://www.behance.net/arrozyadifalaqi",
  },
  {
@@ -333,13 +333,13 @@
  id: 2, role: "Desainer Grafis", company: "PT Intelligo", location: "Bandung", period: "Jan – Mar 2023", current: false,
  logo: "/logos/intelligo.svg",
  companyProfile: {
- description: "Agensi pemasaran digital dan kreatif yang menyediakan solusi branding dan konten visual.",
- industry: "Pemasaran Digital & Agensi Kreatif",
+ description: "Bootcamp Data Science & AI dengan kurikulum job ready yang dibimbing oleh praktisi industri.",
+ industry: "Pendidikan & EdTech",
  },
  highlights: [
- "Membuat aset media sosial dan pemasaran — mendesain carousel post dan template story yang mendapat saves dan shares lebih tinggi dibanding konten sebelumnya.",
- "Bekerja langsung dengan klien untuk menyelaraskan output visual dengan brand guidelines, merevisi berdasarkan feedback dalam tenggat waktu yang ketat.",
- "Memproduksi aset digital menggunakan Adobe Photoshop dan Illustrator untuk peluncuran produk dan kampanye promosi.",
+ "Membuat aset media sosial dan pemasaran untuk program Bootcamp Data Science & AI.",
+ "Bekerja sama dengan tim untuk menyelaraskan output visual promosi dengan brand guidelines.",
+ "Memproduksi aset digital menggunakan Adobe Photoshop dan Illustrator untuk peluncuran program dan kebutuhan kelas.",
  ],
  tags: ["Adobe Photoshop", "Adobe Illustrator", "Media Sosial", "Pemasaran"],
  },
