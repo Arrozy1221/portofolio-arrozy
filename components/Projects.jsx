@@ -6,9 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "./LangProvider";
 
-function ProjectCardContent({ project, t, featured }) {
+function ProjectCardContent({ project, featured }) {
   return (
     <>
       <div className={`project-thumb ${featured ? "" : ""}`}>
         {project.image && (
           <Image src={project.image} alt={project.title} fill className="object-cover" />
+        )}
+
+        <div
