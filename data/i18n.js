@@ -166,6 +166,7 @@ export const i18n = {
  description: "Students previously had to use separate systems for MBKM registration and attendance marking. I designed a unified web + mobile experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
  result: "Students can now register and mark attendance from one platform without switching tools",
  color: "from-violet-950 to-violet-800", emoji: "ðŸŽ", image: "/projects/mbkm.png", logo: "/logos/ut.png", tags: ["Mobile App", "Web Design", "Education"],
+ caseStudyUrl: "/case-study/mbkm-ut.html",
  link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
  },
  {
@@ -405,6 +406,7 @@ export const i18n = {
  description: "Mahasiswa sebelumnya harus menggunakan sistem terpisah untuk registrasi MBKM dan pencatatan kehadiran. Saya mendesain pengalaman web + mobile yang terpadu dengan single login, alur step-by-step yang jelas, dan pertimbangan aksesibilitas untuk demografi mahasiswa yang beragam.",
  result: "Mahasiswa kini bisa registrasi dan mencatat kehadiran dari satu platform tanpa berpindah tools",
  color: "from-violet-950 to-violet-800", emoji: "ðŸŽ", image: "/projects/mbkm.png", logo: "/logos/ut.png", tags: ["Aplikasi Mobile", "Desain Web", "Pendidikan"],
+ caseStudyUrl: "/case-study/mbkm-ut.html",
  link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
  },
  {

@@ -6,3 +6,5 @@ build/
 *.log
 coverage/
 .next/
+Case Study/
+*CaseStudy_v2.html

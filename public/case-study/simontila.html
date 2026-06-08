@@ -122,9 +122,61 @@
     body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     section { page-break-inside:avoid; }
   }
+
+  /* BACK TO HOME BUTTON */
+  .back-to-home {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .back-to-home:hover {
+    background: #1A6BFF;
+    border-color: rgba(26, 107, 255, 0.3);
+    box-shadow: 0 6px 24px rgba(26, 107, 255, 0.4);
+    transform: translateY(-2px);
+  }
+  .back-to-home svg {
+    transition: transform 0.3s ease;
+  }
+  .back-to-home:hover svg {
+    transform: translateX(-3px);
+  }
+  @media (max-width: 768px) {
+    .back-to-home {
+      top: 16px;
+      left: 16px;
+      padding: 8px 14px;
+      font-size: 12px;
+    }
+  }
 </style>
 </head>
 <body>
+
+<a href="/" class="back-to-home">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"></line>
+    <polyline points="12 19 5 12 12 5"></polyline>
+  </svg>
+  <span>Back to Home</span>
+</a>
 
 <!-- HERO -->
 <div class="hero">
