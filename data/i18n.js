@@ -144,6 +144,7 @@ export const i18n = {
  description: "The existing e-certificate platform had a confusing multi-step flow that caused users to abandon midway. I mapped the entire journey, identified redundant steps, and redesigned the interface with clearer progress indicators and inline validation.",
  result: "Stakeholders confirmed fewer support tickets related to certificate issuance after the redesign",
  color: "from-blue-950 to-blue-800", emoji: "ðŸ ›ï¸ ", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Web Design", "Accessibility"],
+ caseStudyUrl: "/case-study/esertifikat-nextgen.html",
  link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
  },
  {
@@ -154,6 +155,7 @@ export const i18n = {
  description: "The original SIMONTILA dashboard scattered data across too many sub-pages. I restructured the information architecture, introduced filterable data tables, and grouped related actions so admins could complete tasks in fewer clicks.",
  result: "Clearer hierarchy and navigation reduced the learning curve for new admin users",
  color: "from-teal-950 to-teal-800", emoji: "ðŸŠ", image: "/projects/simontila.png", logo: "/logos/kemendikbud.png", tags: ["Dashboard", "Data Visualization", "Admin UI"],
+ caseStudyUrl: "/case-study/simontila.html",
  link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
  },
  {
@@ -380,7 +382,8 @@ export const i18n = {
  impact: "Menyederhanakan alur penerbitan dari 7 langkah menjadi 4, mengurangi drop-off pengguna",
  description: "Platform e-sertifikat yang ada memiliki alur multi-step yang membingungkan sehingga pengguna sering berhenti di tengah jalan. Saya memetakan seluruh journey, mengidentifikasi langkah yang redundan, dan mendesain ulang interface dengan progress indicator yang lebih jelas serta validasi inline.",
  result: "Stakeholder mengonfirmasi berkurangnya tiket support terkait penerbitan sertifikat setelah redesain diimplementasikan",
- color: "from-blue-950 to-blue-800", emoji: "ðŸ›ï¸", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Desain Web", "Aksesibilitas"],
+ color: "from-blue-950 to-blue-800", emoji: "ðŸ›ï¸", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Desain Web", "Aksesibilitas"],
+ caseStudyUrl: "/case-study/esertifikat-nextgen.html",
  link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
  },
  {
@@ -391,6 +394,7 @@ export const i18n = {
  description: "Dashboard SIMONTILA yang lama menyebarkan data ke terlalu banyak sub-halaman. Saya merestrukturisasi information architecture, memperkenalkan tabel data yang bisa difilter, dan mengelompokkan aksi terkait agar admin bisa menyelesaikan tugas dengan lebih sedikit klik.",
  result: "Hierarki dan navigasi yang lebih jelas mengurangi learning curve untuk admin baru",
  color: "from-teal-950 to-teal-800", emoji: "ðŸŠ", image: "/projects/simontila.png", logo: "/logos/kemendikbud.png", tags: ["Dashboard", "Visualisasi Data", "Admin UI"],
+ caseStudyUrl: "/case-study/simontila.html",
  link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
  },
  {

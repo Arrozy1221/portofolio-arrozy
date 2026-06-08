@@ -982,6 +982,30 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
   font-size: 1.8rem;
 }
 
+.project-case-study-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 2px 12px rgba(108, 92, 231, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-case-study-badge {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.5);
+}
+
 .project-content {
   padding: 1.25rem 1.5rem 1.5rem;
   flex: 1;
