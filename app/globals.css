@@ -443,7 +443,7 @@ html.light .nav-toggle { background: rgba(0,0,0,0.03); }
   box-shadow: var(--shadow-lg);
 }
 
-.mobile-menu a {
+.mobile-menu a:not(.btn) {
   display: block;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
@@ -453,7 +453,7 @@ html.light .nav-toggle { background: rgba(0,0,0,0.03); }
   transition: all 0.2s ease;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:not(.btn):hover {
   color: var(--fg);
   background: var(--glow);
 }
