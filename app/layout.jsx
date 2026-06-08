@@ -1,4 +1,5 @@
 import { Poppins, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
     <html lang="id" className={`light ${poppins.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
