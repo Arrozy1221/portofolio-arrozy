@@ -1,6 +1,8 @@
 import { Poppins, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import ThemeProvider from "../components/ThemeProvider";
+import LangProvider from "../components/LangProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,8 +39,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`light ${poppins.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="antialiased">
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          <LangProvider>
+            {children}
+            <Analytics />
+          </LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+import { caseStudiesEn, caseStudiesId } from './caseStudiesData';
+
 export const i18n = {
  en: {
  nav: {
@@ -238,6 +240,7 @@ export const i18n = {
  footer: {
  role: "UI/UX Designer",
  },
+ caseStudies: caseStudiesEn,
  },
  id: {
  nav: {
@@ -478,6 +481,6 @@ export const i18n = {
  footer: {
  role: "UI/UX Designer",
  },
+ caseStudies: caseStudiesId,
  },
 };
-

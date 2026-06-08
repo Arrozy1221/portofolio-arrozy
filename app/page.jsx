@@ -8,14 +8,11 @@ import CreativeWorks from "../components/CreativeWorks";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Divider from "../components/Divider";
-import ThemeProvider from "../components/ThemeProvider";
-import LangProvider from "../components/LangProvider";
 
 export default function Home() {
   return (
-    <ThemeProvider>
-      <LangProvider>
-        {/* Ambient background blobs */}
+    <>
+      {/* Ambient background blobs */}
         <div className="ambient-bg">
           <div className="ambient-blob ambient-blob-1" />
           <div className="ambient-blob ambient-blob-2" />
@@ -37,7 +34,6 @@ export default function Home() {
           <Contact />
           <Footer />
         </div>
-      </LangProvider>
-    </ThemeProvider>
+    </>
   );
 }
