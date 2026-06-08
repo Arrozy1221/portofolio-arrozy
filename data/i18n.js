@@ -144,7 +144,7 @@ export const i18n = {
  description: "The existing e-certificate platform had a confusing multi-step flow that caused users to abandon midway. I mapped the entire journey, identified redundant steps, and redesigned the interface with clearer progress indicators and inline validation.",
  result: "Stakeholders confirmed fewer support tickets related to certificate issuance after the redesign",
  color: "from-blue-950 to-blue-800", emoji: "ðŸ ›ï¸ ", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Web Design", "Accessibility"],
- caseStudyUrl: "/case-study/esertifikat-nextgen.html",
+ caseStudyUrl: "/case-study/esertifikat-nextgen",
  link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
  },
  {
@@ -155,7 +155,7 @@ export const i18n = {
  description: "The original SIMONTILA dashboard scattered data across too many sub-pages. I restructured the information architecture, introduced filterable data tables, and grouped related actions so admins could complete tasks in fewer clicks.",
  result: "Clearer hierarchy and navigation reduced the learning curve for new admin users",
  color: "from-teal-950 to-teal-800", emoji: "ðŸŠ", image: "/projects/simontila.png", logo: "/logos/kemendikbud.png", tags: ["Dashboard", "Data Visualization", "Admin UI"],
- caseStudyUrl: "/case-study/simontila.html",
+ caseStudyUrl: "/case-study/simontila",
  link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
  },
  {
@@ -166,7 +166,7 @@ export const i18n = {
  description: "Students previously had to use separate systems for MBKM registration and attendance marking. I designed a unified web + mobile experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
  result: "Students can now register and mark attendance from one platform without switching tools",
  color: "from-violet-950 to-violet-800", emoji: "ðŸŽ", image: "/projects/mbkm.png", logo: "/logos/ut.png", tags: ["Mobile App", "Web Design", "Education"],
- caseStudyUrl: "/case-study/mbkm-ut.html",
+ caseStudyUrl: "/case-study/mbkm-ut",
  link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
  },
  {
@@ -384,7 +384,7 @@ export const i18n = {
  description: "Platform e-sertifikat yang ada memiliki alur multi-step yang membingungkan sehingga pengguna sering berhenti di tengah jalan. Saya memetakan seluruh journey, mengidentifikasi langkah yang redundan, dan mendesain ulang interface dengan progress indicator yang lebih jelas serta validasi inline.",
  result: "Stakeholder mengonfirmasi berkurangnya tiket support terkait penerbitan sertifikat setelah redesain diimplementasikan",
  color: "from-blue-950 to-blue-800", emoji: "ðŸ›ï¸", image: "/projects/esertifikat.png", logo: "/logos/kominfo.svg", tags: ["Figma", "Desain Web", "Aksesibilitas"],
- caseStudyUrl: "/case-study/esertifikat-nextgen.html",
+ caseStudyUrl: "/case-study/esertifikat-nextgen",
  link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
  },
  {
@@ -395,7 +395,7 @@ export const i18n = {
  description: "Dashboard SIMONTILA yang lama menyebarkan data ke terlalu banyak sub-halaman. Saya merestrukturisasi information architecture, memperkenalkan tabel data yang bisa difilter, dan mengelompokkan aksi terkait agar admin bisa menyelesaikan tugas dengan lebih sedikit klik.",
  result: "Hierarki dan navigasi yang lebih jelas mengurangi learning curve untuk admin baru",
  color: "from-teal-950 to-teal-800", emoji: "ðŸŠ", image: "/projects/simontila.png", logo: "/logos/kemendikbud.png", tags: ["Dashboard", "Visualisasi Data", "Admin UI"],
- caseStudyUrl: "/case-study/simontila.html",
+ caseStudyUrl: "/case-study/simontila",
  link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
  },
  {
@@ -406,7 +406,7 @@ export const i18n = {
  description: "Mahasiswa sebelumnya harus menggunakan sistem terpisah untuk registrasi MBKM dan pencatatan kehadiran. Saya mendesain pengalaman web + mobile yang terpadu dengan single login, alur step-by-step yang jelas, dan pertimbangan aksesibilitas untuk demografi mahasiswa yang beragam.",
  result: "Mahasiswa kini bisa registrasi dan mencatat kehadiran dari satu platform tanpa berpindah tools",
  color: "from-violet-950 to-violet-800", emoji: "ðŸŽ", image: "/projects/mbkm.png", logo: "/logos/ut.png", tags: ["Aplikasi Mobile", "Desain Web", "Pendidikan"],
- caseStudyUrl: "/case-study/mbkm-ut.html",
+ caseStudyUrl: "/case-study/mbkm-ut",
  link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
  },
  {

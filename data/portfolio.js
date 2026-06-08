@@ -206,7 +206,7 @@ export const projects = [
     emoji: "🏛️",
     logo: "/logos/kominfo.svg",
     tags: ["Figma", "Web Design", "Accessibility"],
-    caseStudyUrl: "/case-study/esertifikat-nextgen.html",
+    caseStudyUrl: "/case-study/esertifikat-nextgen",
     link: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=818%2C786%2C0.2&t=XVYApJbd7sj3RDdN-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&page-id=240%3A2",
   },
   {
@@ -226,7 +226,7 @@ export const projects = [
     emoji: "📊",
     logo: "/logos/kemendikbud.png",
     tags: ["Dashboard", "Data Visualization", "Admin UI"],
-    caseStudyUrl: "/case-study/simontila.html",
+    caseStudyUrl: "/case-study/simontila",
     link: "https://www.figma.com/proto/em7T7SnGkOEsRo1aqm2jJq/SIMONTILA-WEB?node-id=3601-3038&viewport=60%2C78%2C0.11&t=Z5AsEC5UM1Q1XTOj-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
   },
   {
@@ -246,7 +246,7 @@ export const projects = [
     emoji: "🎓",
     logo: "/logos/ut.png",
     tags: ["Mobile App", "Web Design", "Education"],
-    caseStudyUrl: "/case-study/mbkm-ut.html",
+    caseStudyUrl: "/case-study/mbkm-ut",
     link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
   },
   {
