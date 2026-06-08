@@ -6,14 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "./LangProvider";
 
-function ProjectCardContent({ project, featured, impactLabel }) {
-  return (
-    <>
-      <div className={`project-thumb ${featured ? "" : ""}`}>
-        {project.image && (
-          <Image src={project.image} alt={project.title} fill className="object-cover" />
-        )}
+function getProjectHref(project) {
+  if (project.title === "MBKM UT + TTM App") {
+    return "/case-study/mbkm-ut";
+  }
 
-        <div className="project-thumb-overlay">
-          <div className="project-thumb-tags">
-            <span className="project-thumb-tag">{project
+  return project.link;
+}
+
+function isInternalProject(project) {
+  return getProjectHref(project).startsWith("/");
