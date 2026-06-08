@@ -81,12 +81,7 @@ export default function Projects() {
           className="section-header"
         >
           <p className="eyebrow">{t.projects.eyebrow}</p>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="section-title">{t.projects.title}</h2>
-            <a href="https://www.behance.net/arrozyadifalaqi" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: "0.6rem 1.2rem", fontSize: "0.8rem" }}>
-              {t.projects.viewAll} ↗
-            </a>
-          </div>
+          <h2 className="section-title">{t.projects.title}</h2>
         </motion.div>
 
         <div className="project-grid">
