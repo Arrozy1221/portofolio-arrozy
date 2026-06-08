@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "./LangProvider";
 
-function ProjectCardContent({ project, featured }) {
+function ProjectCardContent({ project, featured, impactLabel }) {
   return (
     <>
       <div className={`project-thumb ${featured ? "" : ""}`}>
@@ -14,4 +14,6 @@ function ProjectCardContent({ project, featured }) {
           <Image src={project.image} alt={project.title} fill className="object-cover" />
         )}
 
-        <div
+        <div className="project-thumb-overlay">
+          <div className="project-thumb-tags">
+            <span className="project-thumb-tag">{project
