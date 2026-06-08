@@ -23,7 +23,7 @@ const caseStudies = [
   }
 ];
 
-// 1. Helper to prefix CSS selectors so they don't leak outside .case-study-wrapper
+// Helper to prefix CSS selectors
 function prefixCssSelectors(cssString, prefix) {
   let result = '';
   let depth = 0;
@@ -42,7 +42,7 @@ function prefixCssSelectors(cssString, prefix) {
           inMediaQuery = true;
         } else if (sel.startsWith('@keyframes') || sel.startsWith('@-webkit-keyframes')) {
           result += sel + ' {\n';
-          inMediaQuery = true; // treat as media query to not prefix keyframe offsets
+          inMediaQuery = true;
         } else {
           result += prefixSelectorList(sel, prefix) + ' {\n';
         }
@@ -89,7 +89,7 @@ function prefixSelectorList(selectorList, prefix) {
   }).join(', ');
 }
 
-// 2. Helper to convert inline style attribute strings to React style objects
+// Helper to convert inline style attribute strings to React style objects
 function convertInlineStyles(html) {
   return html.replace(/\bstyle="([^"]*)"/g, (match, styleStr) => {
     const styles = styleStr.split(';').reduce((acc, pair) => {
@@ -106,7 +106,49 @@ function convertInlineStyles(html) {
   });
 }
 
-// 3. Process each case study
+// Helper to prefix all class names found in the HTML structure
+function prefixLocalClasses(htmlContent, cssContent) {
+  // Find all class="..." values
+  const classAttrRegex = /class="([^"]+)"/g;
+  const classes = new Set();
+  let match;
+  while ((match = classAttrRegex.exec(htmlContent)) !== null) {
+    match[1].split(/\s+/).forEach(c => {
+      const cleanClass = c.trim();
+      if (cleanClass && cleanClass !== 'back-to-home') {
+        classes.add(cleanClass);
+      }
+    });
+  }
+
+  // Sort classes by length descending so that longer names are replaced first
+  const sortedClasses = Array.from(classes).sort((a, b) => b.length - a.length);
+
+  let updatedHtml = htmlContent;
+  let updatedCss = cssContent;
+
+  // Replace classes in HTML (inside class="..." attributes)
+  updatedHtml = updatedHtml.replace(/class="([^"]+)"/g, (fullAttr, classVal) => {
+    const prefixedVal = classVal.split(/\s+/).map(c => {
+      if (c === 'back-to-home') return c; // keep back-to-home as-is since it is our specific route back button
+      if (sortedClasses.includes(c)) {
+        return 'cs-' + c;
+      }
+      return c;
+    }).join(' ');
+    return `class="${prefixedVal}"`;
+  });
+
+  // Replace classes in CSS
+  sortedClasses.forEach(c => {
+    const cssClassRegex = new RegExp('\\.(' + c + ')(?![a-zA-Z0-9_-])', 'g');
+    updatedCss = updatedCss.replace(cssClassRegex, '.cs-$1');
+  });
+
+  return { html: updatedHtml, css: updatedCss };
+}
+
+// Process each case study
 caseStudies.forEach(cs => {
   console.log(`Processing: ${cs.slug}...`);
   
@@ -134,18 +176,32 @@ caseStudies.forEach(cs => {
   if (styleMatch) {
     css = styleMatch[1];
   }
+
+  // Extract body HTML
+  let bodyHtml = '';
+  const bodyMatch = content.match(/<body>([\s\S]*?)<\/body>/i);
+  if (bodyMatch) {
+    bodyHtml = bodyMatch[1];
+  } else {
+    bodyHtml = content; // fallback
+  }
+
+  // Prefix local class names to completely avoid clashes
+  console.log(`- Prefixing local class names with "cs-"...`);
+  const prefixedData = prefixLocalClasses(bodyHtml, css);
+  bodyHtml = prefixedData.html;
+  css = prefixedData.css;
   
-  // Prefix CSS
-  console.log(`- Scoping CSS rules...`);
-  const prefixedCss = prefixCssSelectors(css, '.case-study-wrapper');
+  // Prefix CSS selectors using the scoped wrapper container
+  console.log(`- Scoping CSS rules to .cs-case-study-wrapper...`);
+  const prefixedCss = prefixCssSelectors(css, '.cs-case-study-wrapper');
   
   // Extract and Save Base64 Images
   console.log(`- Extracting Base64 images to static files...`);
   let imgCount = 0;
   const base64Regex = /src="data:image\/([^;]+);base64,([^"]+)"/g;
-  let match;
   
-  content = content.replace(base64Regex, (fullMatch, ext, base64Data) => {
+  bodyHtml = bodyHtml.replace(base64Regex, (fullMatch, ext, base64Data) => {
     imgCount++;
     if (ext === 'jpeg') ext = 'jpg';
     if (ext === 'svg+xml') ext = 'svg';
@@ -162,15 +218,6 @@ caseStudies.forEach(cs => {
   });
   console.log(`  Saved ${imgCount} images to /public/images/case-study/${cs.slug}/`);
 
-  // Extract body HTML
-  let bodyHtml = '';
-  const bodyMatch = content.match(/<body>([\s\S]*?)<\/body>/i);
-  if (bodyMatch) {
-    bodyHtml = bodyMatch[1];
-  } else {
-    bodyHtml = content; // fallback
-  }
-  
   // Remove the navigation <a> tag since we will add it manually as a Link component
   bodyHtml = bodyHtml.replace(/<a[^>]*class="back-to-home"[\s\S]*?<\/a>/i, '');
   
@@ -217,7 +264,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="case-study-wrapper">
+    <div className="cs-case-study-wrapper">
       <style dangerouslySetInnerHTML={{ __html: \`${prefixedCss.replace(/`/g, '\\`').replace(/\${/g, '\\${')}\` }} />
       
       <Link href="/" className="back-to-home">
@@ -241,4 +288,4 @@ export default function Page() {
   console.log('-----------------------------------');
 });
 
-console.log("SUCCESS: Case study conversion script completed successfully!");
+console.log("SUCCESS: Scoped Case study conversion script completed successfully!");
