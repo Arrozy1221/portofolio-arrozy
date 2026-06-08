@@ -345,7 +345,6 @@ html.light .ambient-blob-3 { opacity: 0.03; }
 }
 
 .nav-links {
-  display: flex;
   align-items: center;
   gap: 0.25rem;
   list-style: none;
@@ -370,7 +369,6 @@ html.light .ambient-blob-3 { opacity: 0.03; }
 }
 
 .nav-actions {
-  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
