@@ -48,14 +48,14 @@ export default function Page() {
             <div className="cs-hero-meta">
               <div className="cs-hero-meta-item"><div className="cs-hero-meta-label">Client</div><div className="cs-hero-meta-val">{cs.hero.meta.client}</div></div>
               <div className="cs-hero-meta-item"><div className="cs-hero-meta-label">Role</div><div className="cs-hero-meta-val">{cs.hero.meta.role}</div></div>
-              <div className="cs-hero-meta-item"><div className="cs-hero-meta-label">Timeline</div><div className="cs-hero-meta-val">{cs.hero.meta.timeline}</div></div>
+              
               <div className="cs-hero-meta-item"><div className="cs-hero-meta-label">Tools</div><div className="cs-hero-meta-val">{cs.hero.meta.tools}</div></div>
             </div>
           </div>
         </div>
         <div className="cs-hero-mockup">
           <div className="cs-page" style={{ paddingBottom: "0" }}>
-            <img src="/projects/mbkm.png" alt="MBKM UT Web & Mobile App Mockups" />
+            <img src="/projects/mbkm-new.png" alt="MBKM UT Web & Mobile App Mockups" />
           </div>
         </div>
       </div>

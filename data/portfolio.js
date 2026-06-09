@@ -72,7 +72,17 @@ export const strengths = [
     description:
       "Design decisions are tied to clarity, efficiency, accessibility, and measurable improvement.",
   },
-];
+  {
+  id: 8, title: "Petsu E-Commerce", client: "Personal Project", sector: "Pet E-Commerce", year: "2024", role: "UI/UX Design",
+  myRole: "Sole designer — designed the mobile app concept from research to hi-fi",
+  process: ["Conducted market research on pet supplies", "Created user personas and journey maps", "Wireframed key shopping flows", "Designed high-fidelity mockups", "Prototyped interactive checkout flow"],
+  impact: "Showcases a modern, clean approach to mobile e-commerce design",
+  description: "Petsu is an e-commerce app concept dedicated to pet needs. The design focuses on a seamless shopping experience with clear categorization, quick reordering, and an engaging visual language suited for pet owners.",
+  result: "A comprehensive UI/UX case study demonstrating end-to-end product design skills",
+  color: "from-orange-950 to-orange-800", emoji: "🐶", image: "/projects/petsu/thumbnail.png", imagePosition: "object-top", logo: "/logos/petsu.png", tags: ["Mobile App", "E-Commerce", "UI/UX"],
+  link: "/projects/petsu/Case_Study_Ecommerce_Petsu.pdf",
+  },
+ ];
 
 export const processSteps = [
   {
@@ -99,7 +109,17 @@ export const processSteps = [
     description:
       "Prototype, gather feedback, align with stakeholders, and improve until the solution feels right.",
   },
-];
+  {
+  id: 8, title: "Petsu E-Commerce", client: "Personal Project", sector: "Pet E-Commerce", year: "2024", role: "UI/UX Design",
+  myRole: "Sole designer — designed the mobile app concept from research to hi-fi",
+  process: ["Conducted market research on pet supplies", "Created user personas and journey maps", "Wireframed key shopping flows", "Designed high-fidelity mockups", "Prototyped interactive checkout flow"],
+  impact: "Showcases a modern, clean approach to mobile e-commerce design",
+  description: "Petsu is an e-commerce app concept dedicated to pet needs. The design focuses on a seamless shopping experience with clear categorization, quick reordering, and an engaging visual language suited for pet owners.",
+  result: "A comprehensive UI/UX case study demonstrating end-to-end product design skills",
+  color: "from-orange-950 to-orange-800", emoji: "🐶", image: "/projects/petsu/thumbnail.png", imagePosition: "object-top", logo: "/logos/petsu.png", tags: ["Mobile App", "E-Commerce", "UI/UX"],
+  link: "/projects/petsu/Case_Study_Ecommerce_Petsu.pdf",
+  },
+ ];
 
 export const experiences = [
   {
@@ -186,7 +206,17 @@ export const experiences = [
     ],
     tags: ["Design Thinking", "User Research", "E-commerce", "Figma", "Prototyping"],
   },
-];
+  {
+  id: 8, title: "Petsu E-Commerce", client: "Personal Project", sector: "Pet E-Commerce", year: "2024", role: "UI/UX Design",
+  myRole: "Sole designer — designed the mobile app concept from research to hi-fi",
+  process: ["Conducted market research on pet supplies", "Created user personas and journey maps", "Wireframed key shopping flows", "Designed high-fidelity mockups", "Prototyped interactive checkout flow"],
+  impact: "Showcases a modern, clean approach to mobile e-commerce design",
+  description: "Petsu is an e-commerce app concept dedicated to pet needs. The design focuses on a seamless shopping experience with clear categorization, quick reordering, and an engaging visual language suited for pet owners.",
+  result: "A comprehensive UI/UX case study demonstrating end-to-end product design skills",
+  color: "from-orange-950 to-orange-800", emoji: "🐶", image: "/projects/petsu/thumbnail.png", imagePosition: "object-top", logo: "/logos/petsu.png", tags: ["Mobile App", "E-Commerce", "UI/UX"],
+  link: "/projects/petsu/Case_Study_Ecommerce_Petsu.pdf",
+  },
+ ];
 
 export const projects = [
   {
@@ -231,26 +261,46 @@ export const projects = [
   },
   {
     id: 3,
-    title: "MBKM UT + TTM App",
+    title: "MBKM UT",
     client: "Universitas Terbuka",
     sector: "Education Product",
     year: "2024",
-    role: "Web & Mobile Design",
-    myRole: "Sole designer — designed both web platform and mobile app from scratch",
-    process: ["Researched student pain points across registration & attendance", "Mapped unified user flow for web + mobile", "Wireframed key screens with accessibility in mind", "Designed hi-fi UI for both platforms with shared design system", "Iterated based on internal review & student demographic considerations"],
-    impact: "Unified registration and attendance into one seamless platform",
+    role: "Web Platform Design",
+    myRole: "Sole designer — designed the web platform from scratch",
+    process: ["Researched student pain points across MBKM registration", "Mapped unified user flow for the web", "Wireframed key screens with accessibility in mind", "Designed hi-fi UI with shared design system", "Iterated based on internal review"],
+    impact: "Unified registration and dossier management into one seamless platform",
     description:
-      "Students previously had to use separate systems for MBKM registration and attendance marking. I designed a unified web + mobile experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
-    result: "Students can now register and mark attendance from one platform without switching tools",
+      "Students previously had to use separate systems for MBKM registration. I designed a unified web experience with a single login, clear step-by-step flows, and accessibility considerations for diverse student demographics.",
+    result: "Students can now register and discover programs from one platform",
     color: "from-violet-950 to-violet-800",
     emoji: "🎓",
     logo: "/logos/ut.png",
-    tags: ["Mobile App", "Web Design", "Education"],
+    tags: ["Web Design", "Education", "Platform"],
     caseStudyUrl: "/case-study/mbkm-ut",
     link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
   },
   {
     id: 4,
+    title: "TTM UT App",
+    client: "Universitas Terbuka",
+    sector: "Mobile Application",
+    year: "2024",
+    role: "Mobile App Design",
+    myRole: "Sole designer — designed the mobile attendance app from scratch",
+    process: ["Researched pain points for field attendance", "Mapped user flow optimized for mobile check-ins", "Wireframed key screens with large tap targets", "Designed hi-fi mobile UI", "Iterated based on student demographic considerations"],
+    impact: "Created a frictionless field attendance tool for students",
+    description:
+      "Students needed a reliable way to log attendance (Tatap Muka/TTM) during MBKM activities. I designed a lightweight mobile app focusing on quick check-in actions and clear feedback, preventing errors during field operations.",
+    result: "Dramatically reduced support inquiries regarding attendance logs",
+    color: "from-fuchsia-950 to-fuchsia-800",
+    emoji: "📱",
+    logo: "/logos/ut.png",
+    tags: ["Mobile App", "Education", "UX"],
+    caseStudyUrl: "/case-study/ttm-ut",
+    link: "https://www.figma.com/proto/HNlXQro4eRAhzKJqN95LTM/MBKM?node-id=386-40441&viewport=2829%2C584%2C0.16&t=iTpBL81CtL8iewjp-1&scaling=min-zoom&content-scaling=fixed&page-id=386%3A37335",
+  },
+  {
+    id: 5,
     title: "BRAVO System Redesign",
     client: "PUPR",
     sector: "Monitoring Dashboard",
@@ -269,7 +319,7 @@ export const projects = [
     link: "https://www.behance.net/arrozyadifalaqi",
   },
   {
-    id: 5,
+    id: 6,
     title: "Public Service App Prototype",
     client: "Government Client",
     sector: "Mobile Service",
@@ -287,7 +337,7 @@ export const projects = [
     link: "https://www.behance.net/arrozyadifalaqi",
   },
   {
-    id: 6,
+    id: 7,
     title: "Data Analytics Dashboard",
     client: "Government Client",
     sector: "Data Visualization",
@@ -304,7 +354,17 @@ export const projects = [
     tags: ["Data Viz", "Dashboard", "Analytics"],
     link: "https://www.behance.net/arrozyadifalaqi",
   },
-];
+  {
+  id: 8, title: "Petsu E-Commerce", client: "Personal Project", sector: "Pet E-Commerce", year: "2024", role: "UI/UX Design",
+  myRole: "Sole designer — designed the mobile app concept from research to hi-fi",
+  process: ["Conducted market research on pet supplies", "Created user personas and journey maps", "Wireframed key shopping flows", "Designed high-fidelity mockups", "Prototyped interactive checkout flow"],
+  impact: "Showcases a modern, clean approach to mobile e-commerce design",
+  description: "Petsu is an e-commerce app concept dedicated to pet needs. The design focuses on a seamless shopping experience with clear categorization, quick reordering, and an engaging visual language suited for pet owners.",
+  result: "A comprehensive UI/UX case study demonstrating end-to-end product design skills",
+  color: "from-orange-950 to-orange-800", emoji: "🐶", image: "/projects/petsu/thumbnail.png", imagePosition: "object-top", logo: "/logos/petsu.png", tags: ["Mobile App", "E-Commerce", "UI/UX"],
+  link: "/projects/petsu/Case_Study_Ecommerce_Petsu.pdf",
+  },
+ ];
 
 export const skills = [
   { name: "Figma", level: 95, category: "Design" },
@@ -338,4 +398,14 @@ export const certifications = [
     issuer: "Certification Body",
     year: "2022",
   },
-];
+  {
+  id: 8, title: "Petsu E-Commerce", client: "Personal Project", sector: "Pet E-Commerce", year: "2024", role: "UI/UX Design",
+  myRole: "Sole designer — designed the mobile app concept from research to hi-fi",
+  process: ["Conducted market research on pet supplies", "Created user personas and journey maps", "Wireframed key shopping flows", "Designed high-fidelity mockups", "Prototyped interactive checkout flow"],
+  impact: "Showcases a modern, clean approach to mobile e-commerce design",
+  description: "Petsu is an e-commerce app concept dedicated to pet needs. The design focuses on a seamless shopping experience with clear categorization, quick reordering, and an engaging visual language suited for pet owners.",
+  result: "A comprehensive UI/UX case study demonstrating end-to-end product design skills",
+  color: "from-orange-950 to-orange-800", emoji: "🐶", image: "/projects/petsu/thumbnail.png", imagePosition: "object-top", logo: "/logos/petsu.png", tags: ["Mobile App", "E-Commerce", "UI/UX"],
+  link: "/projects/petsu/Case_Study_Ecommerce_Petsu.pdf",
+  },
+ ];

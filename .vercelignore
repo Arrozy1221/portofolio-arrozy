@@ -1,0 +1,11 @@
+# Exclude large directories not needed for deployment
+Case Study/
+Case Study.zip
+scratch/
+scripts/
+node_modules/
+.next/
+*.html
+*.zip
+SIMONTILA_CaseStudy_v2.html
+eSertifikat_NextGen_CaseStudy_v2.html

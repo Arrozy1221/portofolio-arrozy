@@ -5,11 +5,11 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useLang } from "./LangProvider";
 
-function ProjectCard({ project, index, inView, t, featured }) {
+function ProjectCard({ project, index, inView, t }) {
+  const href = project.caseStudyUrl || project.link;
+  const target = project.caseStudyUrl ? "_self" : "_blank";
+  const rel = project.caseStudyUrl ? undefined : "noreferrer";
   const hasCaseStudy = !!project.caseStudyUrl;
-  const href = hasCaseStudy ? project.caseStudyUrl : project.link;
-  const target = hasCaseStudy ? "_self" : "_blank";
-  const rel = hasCaseStudy ? undefined : "noreferrer";
 
   return (
     <motion.a
@@ -18,17 +18,16 @@ function ProjectCard({ project, index, inView, t, featured }) {
       rel={rel}
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className={`project-card group ${featured ? "project-featured" : ""}`}
+      transition={{ duration: 0.7, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      className="project-card group"
     >
-      <div className={`project-thumb ${featured ? "" : ""}`}>
+      <div className="project-thumb">
         {project.image && (
-          <Image src={project.image} alt={project.title} fill className="object-cover" />
+          <Image src={project.image} alt={project.title} fill className={`object-cover ${project.imagePosition || "object-center"}`} />
         )}
         <div className="project-thumb-overlay">
           <div className="project-thumb-tags">
             <span className="project-thumb-tag">{project.sector}</span>
-            <span className="project-thumb-tag">{project.year}</span>
           </div>
           <h3 className="project-thumb-title">{project.title}</h3>
         </div>
@@ -67,9 +66,38 @@ function ProjectCard({ project, index, inView, t, featured }) {
   );
 }
 
+function GroupHeader({ emoji, title, subtitle, inView }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="project-group-header"
+    >
+      <div className="project-group-label">
+        <span className="project-group-emoji">{emoji}</span>
+        <span>{title}</span>
+      </div>
+      {subtitle && <p className="project-group-sub">{subtitle}</p>}
+    </motion.div>
+  );
+}
+
 export default function Projects() {
-  const { ref, inView } = useInView({ threshold: 0.08, triggerOnce: true });
-  const { t } = useLang();
+  const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true });
+  const { t, lang } = useLang();
+
+  const mstProjects = t.projectsList.filter((p) => p.group === "mst");
+  const personalProjects = t.projectsList.filter((p) => p.group === "personal");
+
+  const mstLabel = lang === "en" ? "MST — Government & Enterprise Projects" : "MST — Proyek Pemerintah & Enterprise";
+  const mstSub = lang === "en"
+    ? "Work delivered at PT Mitra Sinerji Teknoindo for public sector clients"
+    : "Proyek yang dikerjakan di PT Mitra Sinerji Teknoindo untuk klien sektor publik";
+  const personalLabel = lang === "en" ? "Personal & Bootcamp Projects" : "Proyek Personal & Bootcamp";
+  const personalSub = lang === "en"
+    ? "Self-initiated and bootcamp work showcasing end-to-end design thinking"
+    : "Karya mandiri dan bootcamp yang menampilkan proses desain dari awal hingga akhir";
 
   return (
     <section id="projects" ref={ref} className="section">
@@ -84,18 +112,49 @@ export default function Projects() {
           <h2 className="section-title">{t.projects.title}</h2>
         </motion.div>
 
-        <div className="project-grid">
-          {t.projectsList.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-              inView={inView}
-              t={t}
-              featured={index === 0}
-            />
-          ))}
+        {/* MST Projects Group */}
+        <div className="project-group">
+          <GroupHeader
+            emoji="🏛️"
+            title={mstLabel}
+            subtitle={mstSub}
+            inView={inView}
+          />
+          <div className="project-grid">
+            {mstProjects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                inView={inView}
+                t={t}
+              />
+            ))}
+          </div>
         </div>
+
+        {/* Personal Projects Group */}
+        {personalProjects.length > 0 && (
+          <div className="project-group" style={{ marginTop: "64px" }}>
+            <GroupHeader
+              emoji="🎨"
+              title={personalLabel}
+              subtitle={personalSub}
+              inView={inView}
+            />
+            <div className="project-grid">
+              {personalProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  inView={inView}
+                  t={t}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
