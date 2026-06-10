@@ -187,16 +187,16 @@ export const caseStudiesEn = {
       titleBold: "with consistency and efficiency",
       p1: "As part of the e-Sertifikat Next Gen platform overhaul, I designed a comprehensive, centralized Design System from scratch. This system was built to support multiple applications—ranging from public website portals to corporate customer dashboards and dense government operator panels—ensuring a unified visual language and a highly efficient development workflow.",
       p2: "By establishing strict design tokens, accessible components, and a modular layout grid, the design system serves as the single source of truth for both design and engineering teams, dramatically reducing prototyping and front-end development time.",
-      pills: ["Color Palette", "Typography", "Buttons & Inputs", "Navigation Components", "Data Visualizations", "Figma Variables"],
+      pills: ["Project Cover", "Problem & Insights", "Lean Canvas & Persona", "Journey & Storyboard", "Stories & Features", "Metrics & SWOT", "Flow & IA", "Design & Testing"],
       sheets: [
-        { title: "Visual Style Guide", caption: "The brand identity details, combining a modern royal purple with professional slate grays to build a sense of modern government authority." },
-        { title: "Typography & Spacing Grid", caption: "Strict typographic hierarchies utilizing DM Sans to balance readability in text-heavy administrative forms and public portal layouts." },
-        { title: "Buttons & Controls", caption: "Button variations including primary, secondary, and tertiary actions with fully defined hover, focus, active, and disabled states." },
-        { title: "Input Fields & Forms", caption: "Text inputs, search boxes, and dropdown menus mapped with clear validation feedback, focus states, and inline error messages." },
-        { title: "Status Badges & Chips", caption: "Consistent status pill configurations (BATAL, SP2 KADALUARSA, DRAFT) utilizing semantic colors to let operators scan queues in under a second." },
-        { title: "Data Tables & Filters", caption: "High-density table rows, batch action headers, pagination controls, and filter panels optimized for administrative dashboard workflows." },
-        { title: "Cards & Containers", caption: "Modular information card designs and layout containers with unified shadows and border radii for dashboard summaries." },
-        { title: "Modals & Popups", caption: "Standardized alert dialogs, confirmation popups, and detail drawers that ensure a consistent context-switching experience." }
+        { title: "Cover & Table of Contents", caption: "Overview of the e-Sertifikat Next Gen case study, project metadata (Role, Tools, Duration), and Table of Contents spanning 22 sections." },
+        { title: "Problem & Research Insights", caption: "Detailed problem statement showing fragmented processes and research insights indicating key requirements like real-time status tracking." },
+        { title: "Lean Canvas & User Persona", caption: "Business modeling via Lean Canvas paired with a representative User Persona (Rani Pratama) detailing goals, needs, and frustrations." },
+        { title: "User Journey & Storyboard", caption: "Visualization of the user's path from discovery to certificate verification, supported by a step-by-step comic storyboard." },
+        { title: "User Stories & Key Features", caption: "Detailed user stories and acceptance criteria for both applicants and admins, highlighting 5 core platform features." },
+        { title: "Success Metrics & SWOT", caption: "Target metrics (92% completion rate, 68% faster processing), SWOT analysis, and a comparative matrix against manual and legacy systems." },
+        { title: "User Flow & IA", caption: "Mapping the interactive steps for applicant and admin roles alongside a comprehensive system-wide Information Architecture." },
+        { title: "Design System & Testing", caption: "Visual guidelines (typography, colors), component library, hi-fi screen mockups, and usability testing results showing an 87.5 SUS score." }
       ]
     }
   },
@@ -298,16 +298,16 @@ export const caseStudiesEn = {
       titleBold: "built on modular UI tokens",
       p1: "To support the consolidation of the MBKM UT platform across public pages, student registration wizards, and Program Chair (Kaprodi) data dashboards, I designed a tailored, responsive Design System. It focuses on clarity, high contrast ratios, and lightweight components optimized for diverse student devices and varying internet connections.",
       p2: "By establishing standardized colors, input states, validation feedback, and batch action cards, the system eliminates UI fragmentation and accelerates front-end implementation time significantly.",
-      pills: ["Color System", "Responsive Grids", "Form Components", "Status Pills", "Interactive Cards", "Auto-Layout Figma"],
+      pills: ["Project Cover", "Problem & Insights", "Lean Canvas & Persona", "Journey & Storyboard", "Stories & Features", "Metrics & SWOT", "Flow & IA", "Design & Testing"],
       sheets: [
-        { title: "Visual Style Guide", caption: "UT corporate branding colors mapped into responsive UI states, maintaining institutional identity while optimizing for web contrast." },
-        { title: "Typography & Spacing Grid", caption: "Clean typography settings using DM Sans with strict hierarchies to fit dense validation sheets and wizard guides." },
-        { title: "Buttons & Controls", caption: "Standardized button sets (primary, secondary, outlined) with clearly visible hover, active, and disabled states." },
-        { title: "Input Fields & Forms", caption: "Text fields, search inputs, dropdowns, and file upload zones with inline error and success feedback." },
-        { title: "Status Badges & Chips", caption: "Color-coded status indicators (Approved, Pending Validation, Resubmission) designed to draw admin focus to urgent items." },
-        { title: "Data Tables & Filters", caption: "Dense data structures, sorting columns, filter controls, and action toolbars for efficient student audits by Kaprodi." },
-        { title: "Cards & Containers", caption: "Modular card layouts and dashboard summaries with consistent elevation, padding, and corner radius settings." },
-        { title: "Modals & Popups", caption: "Verification popup templates, status alert modals, and side-drawers for quick context-switching without data loss." }
+        { title: "Cover & Overview", caption: "Overview of the MBKM UT platform case study, project metadata (Role, Tools, Duration), and core mission values (Clarity, Efficiency, Trust, Integration)." },
+        { title: "Problem & Research Insights", caption: "Detailed problem statement showing scattered channels and research insights highlighting requirements for simple registration and validation tracking." },
+        { title: "Lean Canvas & User Persona", caption: "Business modeling via Lean Canvas paired with a representative student Persona (Dinda Ramadhani) outlining goals, needs, and frustrations." },
+        { title: "Journey Map & Storyboard", caption: "Visualization of the student's journey from discovery to logbook submission, supported by a step-by-step comic storyboard." },
+        { title: "User Stories & Key Features", caption: "Detailed user stories and acceptance criteria for students and academic admins, highlighting key features like the Program Catalog and Course Equivalency." },
+        { title: "Success Metrics & SWOT", caption: "Target metrics (88% task success rate, 70% fewer document corrections), SWOT analysis, and a comparative matrix against legacy systems." },
+        { title: "User Flow & IA", caption: "Mapping the interactive steps for student and admin roles, information architecture tree, and project visual moodboard." },
+        { title: "Design Guidelines & Testing", caption: "Visual style guide (typography, colors), component library, high-fidelity mockups, and usability testing results showing a 94% task success rate and 86.5 SUS score." }
       ]
     }
   },
@@ -882,16 +882,16 @@ export const caseStudiesId = {
       titleBold: "dengan konsistensi dan efisiensi",
       p1: "Sebagai bagian dari perombakan platform e-Sertifikat Next Gen, saya merancang Design System terpusat yang komprehensif dari awal. Sistem ini dirancang untuk mendukung berbagai aplikasi—mulai dari portal situs publik hingga dashboard pelanggan korporat dan panel operator pemerintah yang padat data—memastikan konsistensi bahasa visual dan alur kerja pengembangan yang efisien.",
       p2: "Dengan menetapkan token desain yang ketat, komponen yang aksesibel, dan grid layout modular, sistem desain ini berfungsi sebagai satu-satunya sumber kebenaran (single source of truth) untuk tim desainer dan developer, secara dramatis mengurangi waktu pembuatan prototipe dan coding front-end.",
-      pills: ["Palet Warna", "Tipografi", "Tombol & Input", "Komponen Navigasi", "Visualisasi Data", "Variabel Figma"],
+      pills: ["Cover Proyek", "Masalah & Wawasan", "Lean Canvas & Persona", "Journey & Storyboard", "Stories & Fitur", "Metrik & SWOT", "Alur & IA", "Desain & Pengujian"],
       sheets: [
-        { title: "Style Guide Visual", caption: "Detail identitas visual, menggabungkan warna ungu royal yang modern dengan abu-abu slate profesional untuk membangun kesan otoritas pemerintah yang modern." },
-        { title: "Tipografi & Spacing Grid", caption: "Hierarki tipografi yang ketat menggunakan font DM Sans untuk menyeimbangkan keterbacaan pada formulir admin yang padat dan layout portal publik." },
-        { title: "Tombol & Kontrol Interaktif", caption: "Variasi tombol termasuk aksi primer, sekunder, dan tersier dengan status hover, focus, active, dan disabled yang terdefinisi lengkap." },
-        { title: "Form Input & Status Input", caption: "Input teks, pencarian, dan dropdown yang dirancang dengan feedback validasi yang jelas, status focus, dan pesan error inline." },
-        { title: "Lencana & Chip Status", caption: "Konfigurasi pill status yang konsisten (BATAL, SP2 KADALUARSA, DRAFT) dengan warna semantik untuk memudahkan operator memindai antrean." },
-        { title: "Tabel Data & Toolbar", caption: "Baris tabel dengan kepadatan tinggi, header aksi massal, kontrol paginasi, dan panel filter yang dioptimalkan untuk alur kerja admin." },
-        { title: "Layout Card & Container", caption: "Desain kartu informasi modular dan container layout dengan bayangan dan border radius yang seragam untuk ringkasan dashboard." },
-        { title: "Modals & Komponen Popup", caption: "Dialog peringatan standar, konfirmasi popup, dan laci detail (drawer) yang memastikan pengalaman peralihan konteks yang konsisten." }
+        { title: "Cover & Daftar Isi", caption: "Tampilan awal studi kasus e-Sertifikat Next Gen, metadata proyek (Peran, Tools, Durasi), serta Daftar Isi yang mencakup 22 bagian." },
+        { title: "Masalah & Wawasan Riset", caption: "Pernyataan masalah mendalam terkait alur yang terfragmentasi serta wawasan riset dari pengguna untuk kebutuhan pelacakan status real-time." },
+        { title: "Lean Canvas & Persona Pengguna", caption: "Pemodelan bisnis melalui Lean Canvas yang dipasangkan dengan Persona Pengguna (Rani Pratama) lengkap dengan tujuan, kebutuhan, dan kendala." },
+        { title: "User Journey & Storyboard", caption: "Visualisasi perjalanan pengguna mulai dari mencari informasi hingga verifikasi sertifikat, didukung storyboard komik langkah demi langkah." },
+        { title: "User Stories & Fitur Utama", caption: "Daftar user stories dan kriteria penerimaan untuk pendaftar dan admin, serta sorotan terhadap 5 fitur utama platform." },
+        { title: "Metrik Sukses & Analisis SWOT", caption: "Metrik target (92% keberhasilan tugas, 68% proses lebih cepat), analisis SWOT, serta tabel komparasi sistem baru dibanding sistem lama dan manual." },
+        { title: "User Flow & Arsitektur Informasi", caption: "Pemetaan alur interaktif untuk peran pendaftar dan admin serta pohon Arsitektur Informasi yang komprehensif untuk seluruh sistem." },
+        { title: "Sistem Desain & Usability Testing", caption: "Panduan visual (warna, tipografi), pustaka komponen, mockup layar hi-fi, dan hasil usability testing dengan skor SUS 87.5." }
       ]
     }
   },
@@ -993,16 +993,16 @@ export const caseStudiesId = {
       titleBold: "berbasis token UI modular",
       p1: "Untuk mendukung konsolidasi platform MBKM UT di seluruh halaman publik, wizard pendaftaran mahasiswa, dan dashboard data Kaprodi, saya merancang Sistem Desain responsif khusus. Fokus utamanya adalah kejelasan, rasio kontras tinggi, dan komponen ringan yang dioptimalkan untuk berbagai perangkat mahasiswa dan koneksi internet yang bervariasi.",
       p2: "Dengan menetapkan standarisasi warna, status input, feedback validasi, dan kartu tindakan massal, sistem ini menghilangkan fragmentasi UI dan mempercepat waktu implementasi front-end secara signifikan.",
-      pills: ["Sistem Warna", "Grid Responsif", "Komponen Formulir", "Pill Status", "Kartu Interaktif", "Komponen Figma"],
+      pills: ["Cover Proyek", "Masalah & Wawasan", "Lean Canvas & Persona", "Journey & Storyboard", "Stories & Fitur", "Metrik & SWOT", "Alur & IA", "Desain & Pengujian"],
       sheets: [
-        { title: "Style Guide Visual", caption: "Warna branding Universitas Terbuka yang dipetakan ke dalam status UI, menjaga identitas institusi sekaligus mengoptimalkan kontras web." },
-        { title: "Tipografi & Spacing Grid", caption: "Pengaturan tipografi bersih menggunakan font DM Sans dengan hierarki ketat agar sesuai dengan lembar validasi padat dan panduan langkah." },
-        { title: "Tombol & Kontrol Interaktif", caption: "Kumpulan tombol standar (primer, sekunder, outline) dengan status hover, active, dan disabled yang terlihat jelas." },
-        { title: "Form Input & Status Input", caption: "Input teks, input pencarian, dropdown, dan zona unggah file dengan umpan balik error dan sukses yang jelas." },
-        { title: "Lencana & Chip Status", caption: "Indikator status berkode warna (Disetujui, Menunggu Validasi, Revisi) yang dirancang untuk menarik fokus admin ke item penting." },
-        { title: "Tabel Data & Toolbar", caption: "Struktur data padat, kolom pengurutan, kontrol filter, dan toolbar tindakan untuk audit mahasiswa yang efisien oleh Kaprodi." },
-        { title: "Layout Card & Container", caption: "Desain kartu modular dan ringkasan dashboard dengan pengaturan elevasi, padding, dan radius sudut yang konsisten." },
-        { title: "Modals & Komponen Popup", caption: "Template popup verifikasi, modal peringatan status, dan laci samping (drawer) untuk beralih konteks tanpa takut kehilangan data." }
+        { title: "Cover & Gambaran Umum", caption: "Tampilan awal studi kasus platform MBKM UT, metadata proyek (Peran, Tools, Durasi), serta nilai-nilai misi utama (Kejelasan, Efisiensi, Kepercayaan, Integrasi)." },
+        { title: "Masalah & Wawasan Riset", caption: "Pernyataan masalah mendalam terkait saluran informasi yang terfragmentasi serta wawasan riset dari mahasiswa untuk pelacakan registrasi dan validasi." },
+        { title: "Lean Canvas & Persona Pengguna", caption: "Pemodelan bisnis melalui Lean Canvas yang dipasangkan dengan Persona Mahasiswa (Dinda Ramadhani) lengkap dengan tujuan, kebutuhan, dan kendala." },
+        { title: "Journey Map & Storyboard", caption: "Visualisasi perjalanan mahasiswa dari pencarian program hingga pengiriman logbook, didukung storyboard komik langkah demi langkah." },
+        { title: "User Stories & Fitur Utama", caption: "Daftar user stories dan kriteria penerimaan untuk mahasiswa dan admin akademis, serta sorotan terhadap fitur Katalog Program dan Penyetaraan Mata Kuliah." },
+        { title: "Metrik Sukses & Analisis SWOT", caption: "Metrik target (88% keberhasilan tugas, 70% pengurangan koreksi berkas), analisis SWOT, serta tabel komparasi sistem baru dibanding proses lama." },
+        { title: "User Flow & Arsitektur Informasi", caption: "Pemetaan alur interaktif untuk peran mahasiswa dan admin, pohon Arsitektur Informasi, serta moodboard visual proyek." },
+        { title: "Sistem Desain & Usability Testing", caption: "Panduan gaya visual (warna, tipografi), pustaka komponen, mockup layar high-fidelity, dan hasil usability testing dengan skor SUS 86.5." }
       ]
     }
   },
