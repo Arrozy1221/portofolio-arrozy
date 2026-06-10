@@ -180,6 +180,24 @@ export const caseStudiesEn = {
         "Data Checklist", "Daftar Acuan", "Daftar Balai Uji", "Informasi Pembayaran", "Kontak", "List Berita", "FAQ",
         "Tarif Sertifikat", "Template Dokumen", "Prosedure Sertifikasi", "Prosedure Perubahan", "Redesign Website"
       ]
+    },
+    designSystem: {
+      label: "Design System",
+      title: "Scaling digital products",
+      titleBold: "with consistency and efficiency",
+      p1: "As part of the e-Sertifikat Next Gen platform overhaul, I designed a comprehensive, centralized Design System from scratch. This system was built to support multiple applications—ranging from public website portals to corporate customer dashboards and dense government operator panels—ensuring a unified visual language and a highly efficient development workflow.",
+      p2: "By establishing strict design tokens, accessible components, and a modular layout grid, the design system serves as the single source of truth for both design and engineering teams, dramatically reducing prototyping and front-end development time.",
+      pills: ["Color Palette", "Typography", "Buttons & Inputs", "Navigation Components", "Data Visualizations", "Figma Variables"],
+      sheets: [
+        { title: "Visual Style Guide", caption: "The brand identity details, combining a modern royal purple with professional slate grays to build a sense of modern government authority." },
+        { title: "Typography & Spacing Grid", caption: "Strict typographic hierarchies utilizing DM Sans to balance readability in text-heavy administrative forms and public portal layouts." },
+        { title: "Buttons & Controls", caption: "Button variations including primary, secondary, and tertiary actions with fully defined hover, focus, active, and disabled states." },
+        { title: "Input Fields & Forms", caption: "Text inputs, search boxes, and dropdown menus mapped with clear validation feedback, focus states, and inline error messages." },
+        { title: "Status Badges & Chips", caption: "Consistent status pill configurations (BATAL, SP2 KADALUARSA, DRAFT) utilizing semantic colors to let operators scan queues in under a second." },
+        { title: "Data Tables & Filters", caption: "High-density table rows, batch action headers, pagination controls, and filter panels optimized for administrative dashboard workflows." },
+        { title: "Cards & Containers", caption: "Modular information card designs and layout containers with unified shadows and border radii for dashboard summaries." },
+        { title: "Modals & Popups", caption: "Standardized alert dialogs, confirmation popups, and detail drawers that ensure a consistent context-switching experience." }
+      ]
     }
   },
   mbkm: {
@@ -838,6 +856,24 @@ export const caseStudiesId = {
         "Login", "Beranda Kustomer", "Beranda Admin", "Aplikasi", "Detail Aplikasi", "Detail Aplikasi Admin", "Sertifikat Terbit",
         "Data Checklist", "Daftar Acuan", "Daftar Balai Uji", "Informasi Pembayaran", "Kontak", "List Berita", "FAQ",
         "Tarif Sertifikat", "Template Dokumen", "Prosedur Sertifikasi", "Prosedur Perubahan", "Redesign Website"
+      ]
+    },
+    designSystem: {
+      label: "Sistem Desain",
+      title: "Menskalakan produk digital",
+      titleBold: "dengan konsistensi dan efisiensi",
+      p1: "Sebagai bagian dari perombakan platform e-Sertifikat Next Gen, saya merancang Design System terpusat yang komprehensif dari awal. Sistem ini dirancang untuk mendukung berbagai aplikasi—mulai dari portal situs publik hingga dashboard pelanggan korporat dan panel operator pemerintah yang padat data—memastikan konsistensi bahasa visual dan alur kerja pengembangan yang efisien.",
+      p2: "Dengan menetapkan token desain yang ketat, komponen yang aksesibel, dan grid layout modular, sistem desain ini berfungsi sebagai satu-satunya sumber kebenaran (single source of truth) untuk tim desainer dan developer, secara dramatis mengurangi waktu pembuatan prototipe dan coding front-end.",
+      pills: ["Palet Warna", "Tipografi", "Tombol & Input", "Komponen Navigasi", "Visualisasi Data", "Variabel Figma"],
+      sheets: [
+        { title: "Style Guide Visual", caption: "Detail identitas visual, menggabungkan warna ungu royal yang modern dengan abu-abu slate profesional untuk membangun kesan otoritas pemerintah yang modern." },
+        { title: "Tipografi & Spacing Grid", caption: "Hierarki tipografi yang ketat menggunakan font DM Sans untuk menyeimbangkan keterbacaan pada formulir admin yang padat dan layout portal publik." },
+        { title: "Tombol & Kontrol Interaktif", caption: "Variasi tombol termasuk aksi primer, sekunder, dan tersier dengan status hover, focus, active, dan disabled yang terdefinisi lengkap." },
+        { title: "Form Input & Status Input", caption: "Input teks, pencarian, dan dropdown yang dirancang dengan feedback validasi yang jelas, status focus, dan pesan error inline." },
+        { title: "Lencana & Chip Status", caption: "Konfigurasi pill status yang konsisten (BATAL, SP2 KADALUARSA, DRAFT) dengan warna semantik untuk memudahkan operator memindai antrean." },
+        { title: "Tabel Data & Toolbar", caption: "Baris tabel dengan kepadatan tinggi, header aksi massal, kontrol paginasi, dan panel filter yang dioptimalkan untuk alur kerja admin." },
+        { title: "Layout Card & Container", caption: "Desain kartu informasi modular dan container layout dengan bayangan dan border radius yang seragam untuk ringkasan dashboard." },
+        { title: "Modals & Komponen Popup", caption: "Dialog peringatan standar, konfirmasi popup, dan laci detail (drawer) yang memastikan pengalaman peralihan konteks yang konsisten." }
       ]
     }
   },

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../case-study.css";
 import Link from "next/link";
 import { useLang } from "../../../components/LangProvider";
@@ -7,6 +9,9 @@ import { useLang } from "../../../components/LangProvider";
 export default function Page() {
   const { lang, t, toggleLang } = useLang();
   const cs = t.caseStudies.esertifikat;
+  const [activeTab, setActiveTab] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const ds = cs.designSystem;
 
   return (
     <div className="cs-case-study-wrapper" style={{ '--primary': '#6C3FE8', '--purple': '#6C3FE8', '--purple-dark': '#4A1FA8', '--blue': '#2563EB', '--teal': '#0EA5C8', '--purple-light': '#EEE8FF', '--dark': '#0D0D1A', '--dark2': '#13102B', '--mid': '#3D3860', '--muted': '#6B6890', '--border': '#E8E6F4', '--surface': '#F7F5FF', '--white': '#FFFFFF', '--grad': 'linear-gradient(135deg, #6C3FE8 0%, #2563EB 60%, #0EA5C8 100%)' }}>
@@ -28,7 +33,7 @@ export default function Page() {
         <div className="cs-page" style={{ paddingBottom: "0" }}>
           <div className="cs-hero-inner">
             <div className="cs-hero-label"><span></span>{cs.hero.label}</div>
-            <h1>{cs.hero.title}<br /><strong>{cs.hero.titleBold}</strong></h1>
+            <h1>{cs.hero.title} <strong>{cs.hero.titleBold}</strong></h1>
             <p className="cs-hero-sub">{cs.hero.sub}</p>
             <div className="cs-hero-tags">
               {cs.hero.tags.map((tag, i) => <span key={i} className="cs-tag">{tag}</span>)}
@@ -51,7 +56,7 @@ export default function Page() {
       <div className="cs-page">
         <section>
           <div className="cs-section-label">{cs.overview.label}</div>
-          <h2>{cs.overview.title}<br /><strong>{cs.overview.titleBold}</strong></h2>
+          <h2>{cs.overview.title} <strong>{cs.overview.titleBold}</strong></h2>
           <p>{cs.overview.p1}</p>
           <p>{cs.overview.p2}</p>
           <div className="cs-scope-pills">
@@ -61,7 +66,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.problem.label}</div>
-          <h2>{cs.problem.title}<br /><strong>{cs.problem.titleBold}</strong></h2>
+          <h2>{cs.problem.title} <strong>{cs.problem.titleBold}</strong></h2>
           <p>{cs.problem.p}</p>
           <div className="cs-challenge-grid">
             {cs.problem.cards.map((card, i) => (
@@ -76,7 +81,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.users.label}</div>
-          <h2>{cs.users.title}<br /><strong>{cs.users.titleBold}</strong></h2>
+          <h2>{cs.users.title} <strong>{cs.users.titleBold}</strong></h2>
           <p>{cs.users.p}</p>
           <div className="cs-user-grid">
             <div className="cs-user-card cs-admin">
@@ -98,7 +103,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.process.label}</div>
-          <h2>{cs.process.title}<br /><strong>{cs.process.titleBold}</strong></h2>
+          <h2>{cs.process.title} <strong>{cs.process.titleBold}</strong></h2>
           <div className="cs-process-steps">
             {cs.process.steps.map((step, i) => (
               <div key={i} className="cs-process-step">
@@ -109,9 +114,166 @@ export default function Page() {
           </div>
         </section>
 
+        {ds && (
+          <section className="cs-design-system-section">
+            <div className="cs-section-label">{ds.label}</div>
+            <h2>{ds.title} <strong>{ds.titleBold}</strong></h2>
+            <p>{ds.p1}</p>
+            <p>{ds.p2}</p>
+            
+            <div className="cs-scope-pills" style={{ marginBottom: "32px", marginTop: "24px" }}>
+              {ds.pills.map((pill, i) => (
+                <div key={i} className="cs-scope-pill">
+                  <div className="cs-dot"></div>
+                  {pill}
+                </div>
+              ))}
+            </div>
+
+            {/* Interactive Workspace */}
+            <div className="cs-ds-workspace">
+              {/* Tab Selector */}
+              <div className="cs-ds-tabs-container">
+                <div className="cs-ds-tabs-scroll">
+                  {ds.sheets.map((sheet, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveTab(i)}
+                      className={`cs-ds-tab-btn ${activeTab === i ? 'active' : ''}`}
+                      type="button"
+                    >
+                      <span className="cs-ds-tab-num">0{i + 1}</span>
+                      <span className="cs-ds-tab-name">{sheet.title}</span>
+                      {activeTab === i && (
+                        <motion.div
+                          layoutId="activeTabUnderline"
+                          className="cs-ds-tab-underline"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Active Sheet Display */}
+              <div className="cs-ds-display-card">
+                <div className="cs-ds-display-body" onClick={() => setIsLightboxOpen(true)}>
+                  <div className="cs-ds-img-container">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeTab}
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.25 }}
+                        className="cs-ds-img-wrapper"
+                      >
+                        <img
+                          src={`/images/case-study/esertifikat-nextgen/design-system/img_${activeTab + 1}.png`}
+                          alt={ds.sheets[activeTab].title}
+                          className="cs-ds-img"
+                        />
+                        <div className="cs-ds-zoom-overlay">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zoom-in">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                          </svg>
+                          <span>{lang === "en" ? "Click to view full size" : "Klik untuk memperbesar"}</span>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Navigation Arrows inside display */}
+                  <button
+                    className="cs-ds-nav-arrow prev"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveTab((prev) => (prev === 0 ? ds.sheets.length - 1 : prev - 1));
+                    }}
+                    type="button"
+                    aria-label="Previous sheet"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </button>
+                  <button
+                    className="cs-ds-nav-arrow next"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveTab((prev) => (prev === ds.sheets.length - 1 ? 0 : prev + 1));
+                    }}
+                    type="button"
+                    aria-label="Next sheet"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div className="cs-ds-display-footer">
+                  <div className="cs-ds-sheet-title">
+                    <h4>{ds.sheets[activeTab].title}</h4>
+                    <span className="cs-ds-sheet-counter">Sheet {activeTab + 1} of {ds.sheets.length}</span>
+                  </div>
+                  <p className="cs-ds-sheet-caption">{ds.sheets[activeTab].caption}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+              {isLightboxOpen && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="cs-lightbox-modal"
+                  onClick={() => setIsLightboxOpen(false)}
+                >
+                  <motion.div
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0.95 }}
+                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                    className="cs-lightbox-content"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      className="cs-lightbox-close"
+                      onClick={() => setIsLightboxOpen(false)}
+                      type="button"
+                      aria-label="Close lightbox"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
+                    </button>
+                    <img
+                      src={`/images/case-study/esertifikat-nextgen/design-system/img_${activeTab + 1}.png`}
+                      alt={ds.sheets[activeTab].title}
+                      className="cs-lightbox-img"
+                    />
+                    <div className="cs-lightbox-caption">
+                      <h3>{ds.sheets[activeTab].title}</h3>
+                      <p>{ds.sheets[activeTab].caption}</p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </section>
+        )}
+
         <section>
           <div className="cs-section-label">{cs.screens.label}</div>
-          <h2>{cs.screens.title}<br /><strong>{cs.screens.titleBold}</strong></h2>
+          <h2>{cs.screens.title} <strong>{cs.screens.titleBold}</strong></h2>
 
           <div className="cs-screen-block">
             <div className="cs-screen-label">{cs.screens.s1.label}</div>
@@ -160,7 +322,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.decisions.label}</div>
-          <h2>{cs.decisions.title}<br /><strong>{cs.decisions.titleBold}</strong></h2>
+          <h2>{cs.decisions.title} <strong>{cs.decisions.titleBold}</strong></h2>
           <div className="cs-decisions">
             {[cs.decisions.d1, cs.decisions.d2, cs.decisions.d3, cs.decisions.d4].map((d, i) => (
               <div key={i} className="cs-decision">
@@ -173,7 +335,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.results.label}</div>
-          <h2>{cs.results.title}<br /><strong>{cs.results.titleBold}</strong></h2>
+          <h2>{cs.results.title} <strong>{cs.results.titleBold}</strong></h2>
           <div className="cs-results-grid">
             {[cs.results.r1, cs.results.r2, cs.results.r3].map((r, i) => (
               <div key={i} className="cs-result-card"><div className="cs-result-num">{r.num}</div><div className="cs-result-label">{r.label}</div></div>
@@ -187,7 +349,7 @@ export default function Page() {
 
         <section>
           <div className="cs-section-label">{cs.reflection.label}</div>
-          <h2>{cs.reflection.title}<br /><strong>{cs.reflection.titleBold}</strong></h2>
+          <h2>{cs.reflection.title} <strong>{cs.reflection.titleBold}</strong></h2>
           <div className="cs-reflection-box">
             <p>{cs.reflection.p1}</p>
             <p style={{ marginTop: "16px" }}>{cs.reflection.p2}</p>
@@ -196,10 +358,10 @@ export default function Page() {
         </section>
       </div>
 
-      <div className="cs-page">
-        <div className="cs-all-screens-section">
+      <div className="cs-all-screens-wrap">
+        <div className="cs-page">
           <div className="cs-section-label">{cs.allScreens.label}</div>
-          <h2>{cs.allScreens.title}<br /><strong>{cs.allScreens.titleBold}</strong></h2>
+          <h2>{cs.allScreens.title} <strong>{cs.allScreens.titleBold}</strong></h2>
           <p>{cs.allScreens.p}</p>
           <div className="cs-screens-grid">
             {cs.allScreens.items.map((item, i) => (

@@ -279,3 +279,341 @@
 @media (max-width: 480px) {
   .cs-hero-meta { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* DESIGN SYSTEM WORKSPACE styles */
+.cs-design-system-section {
+  position: relative;
+}
+
+.cs-ds-workspace {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs-ds-tabs-container {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-ds-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cs-ds-tabs-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.cs-ds-tabs-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cs-ds-tabs-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 10px;
+}
+.cs-ds-tabs-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+}
+
+.cs-ds-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.cs-ds-tab-btn:hover {
+  color: var(--primary);
+  background-color: rgba(108, 63, 232, 0.04);
+}
+
+.cs-ds-tab-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cs-ds-tab-num {
+  font-family: monospace;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.cs-ds-tab-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.cs-ds-display-card {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-ds-display-body {
+  position: relative;
+  background: var(--surface);
+  cursor: zoom-in;
+  overflow: hidden;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.cs-ds-img-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-ds-img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cs-ds-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-ds-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 26, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--white);
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* so click propagates to parent */
+}
+
+.cs-ds-display-body:hover .cs-ds-zoom-overlay {
+  opacity: 1;
+}
+
+.cs-ds-display-body:hover .cs-ds-img-wrapper {
+  transform: scale(1.01);
+}
+
+/* Nav arrows inside display */
+.cs-ds-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.cs-ds-nav-arrow:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.cs-ds-nav-arrow.prev {
+  left: 20px;
+}
+.cs-ds-nav-arrow.next {
+  right: 20px;
+}
+
+.cs-ds-display-footer {
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.cs-ds-sheet-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cs-ds-sheet-title h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.cs-ds-sheet-counter {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: var(--purple-light);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.cs-ds-sheet-caption {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Lightbox styles */
+.cs-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 9, 17, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+}
+
+.cs-lightbox-content {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  cursor: default;
+}
+
+.cs-lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-lightbox-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.cs-lightbox-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.cs-lightbox-caption {
+  text-align: center;
+  color: var(--white);
+  max-width: 700px;
+}
+
+.cs-lightbox-caption h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.cs-lightbox-caption p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Lightbox responsiveness */
+@media (max-width: 768px) {
+  .cs-ds-display-body {
+    padding: 20px;
+    min-height: 280px;
+  }
+  .cs-ds-nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .cs-ds-nav-arrow.prev {
+    left: 10px;
+  }
+  .cs-ds-nav-arrow.next {
+    right: 10px;
+  }
+  .cs-lightbox-modal {
+    padding: 16px;
+  }
+  .cs-lightbox-close {
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 10002;
+  }
+}
