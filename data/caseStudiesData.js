@@ -291,6 +291,24 @@ export const caseStudiesEn = {
         "Admin Dashboard (System Config)", "Admin Dashboard (Logs Panel)", "Admin Dashboard (Analytics Graph)",
         "Admin Dashboard (Dossier Audit)", "Admin Dashboard (Student DB)", "Admin Dashboard (Faculty DB)", "Admin Dashboard (Partners DB)"
       ]
+    },
+    designSystem: {
+      label: "Design System",
+      title: "Consistent student experiences",
+      titleBold: "built on modular UI tokens",
+      p1: "To support the consolidation of the MBKM UT platform across public pages, student registration wizards, and Program Chair (Kaprodi) data dashboards, I designed a tailored, responsive Design System. It focuses on clarity, high contrast ratios, and lightweight components optimized for diverse student devices and varying internet connections.",
+      p2: "By establishing standardized colors, input states, validation feedback, and batch action cards, the system eliminates UI fragmentation and accelerates front-end implementation time significantly.",
+      pills: ["Color System", "Responsive Grids", "Form Components", "Status Pills", "Interactive Cards", "Auto-Layout Figma"],
+      sheets: [
+        { title: "Visual Style Guide", caption: "UT corporate branding colors mapped into responsive UI states, maintaining institutional identity while optimizing for web contrast." },
+        { title: "Typography & Spacing Grid", caption: "Clean typography settings using DM Sans with strict hierarchies to fit dense validation sheets and wizard guides." },
+        { title: "Buttons & Controls", caption: "Standardized button sets (primary, secondary, outlined) with clearly visible hover, active, and disabled states." },
+        { title: "Input Fields & Forms", caption: "Text fields, search inputs, dropdowns, and file upload zones with inline error and success feedback." },
+        { title: "Status Badges & Chips", caption: "Color-coded status indicators (Approved, Pending Validation, Resubmission) designed to draw admin focus to urgent items." },
+        { title: "Data Tables & Filters", caption: "Dense data structures, sorting columns, filter controls, and action toolbars for efficient student audits by Kaprodi." },
+        { title: "Cards & Containers", caption: "Modular card layouts and dashboard summaries with consistent elevation, padding, and corner radius settings." },
+        { title: "Modals & Popups", caption: "Verification popup templates, status alert modals, and side-drawers for quick context-switching without data loss." }
+      ]
     }
   },
   ttm: {
@@ -967,6 +985,24 @@ export const caseStudiesId = {
         "Portal Kaprodi (Review Berkas)", "Portal Wakil Dekan (Panel Persetujuan)", "Portal Admin (Laporan Validasi)",
         "Dashboard Admin (Konfigurasi Sistem)", "Dashboard Admin (Panel Log)", "Dashboard Admin (Grafik Analitik)",
         "Dashboard Admin (Audit Berkas)", "Dashboard Admin (Data Mahasiswa)", "Dashboard Admin (Data Fakultas)", "Dashboard Admin (Data Mitra)"
+      ]
+    },
+    designSystem: {
+      label: "Sistem Desain",
+      title: "Pengalaman mahasiswa konsisten",
+      titleBold: "berbasis token UI modular",
+      p1: "Untuk mendukung konsolidasi platform MBKM UT di seluruh halaman publik, wizard pendaftaran mahasiswa, dan dashboard data Kaprodi, saya merancang Sistem Desain responsif khusus. Fokus utamanya adalah kejelasan, rasio kontras tinggi, dan komponen ringan yang dioptimalkan untuk berbagai perangkat mahasiswa dan koneksi internet yang bervariasi.",
+      p2: "Dengan menetapkan standarisasi warna, status input, feedback validasi, dan kartu tindakan massal, sistem ini menghilangkan fragmentasi UI dan mempercepat waktu implementasi front-end secara signifikan.",
+      pills: ["Sistem Warna", "Grid Responsif", "Komponen Formulir", "Pill Status", "Kartu Interaktif", "Komponen Figma"],
+      sheets: [
+        { title: "Style Guide Visual", caption: "Warna branding Universitas Terbuka yang dipetakan ke dalam status UI, menjaga identitas institusi sekaligus mengoptimalkan kontras web." },
+        { title: "Tipografi & Spacing Grid", caption: "Pengaturan tipografi bersih menggunakan font DM Sans dengan hierarki ketat agar sesuai dengan lembar validasi padat dan panduan langkah." },
+        { title: "Tombol & Kontrol Interaktif", caption: "Kumpulan tombol standar (primer, sekunder, outline) dengan status hover, active, dan disabled yang terlihat jelas." },
+        { title: "Form Input & Status Input", caption: "Input teks, input pencarian, dropdown, dan zona unggah file dengan umpan balik error dan sukses yang jelas." },
+        { title: "Lencana & Chip Status", caption: "Indikator status berkode warna (Disetujui, Menunggu Validasi, Revisi) yang dirancang untuk menarik fokus admin ke item penting." },
+        { title: "Tabel Data & Toolbar", caption: "Struktur data padat, kolom pengurutan, kontrol filter, dan toolbar tindakan untuk audit mahasiswa yang efisien oleh Kaprodi." },
+        { title: "Layout Card & Container", caption: "Desain kartu modular dan ringkasan dashboard dengan pengaturan elevasi, padding, dan radius sudut yang konsisten." },
+        { title: "Modals & Komponen Popup", caption: "Template popup verifikasi, modal peringatan status, dan laci samping (drawer) untuk beralih konteks tanpa takut kehilangan data." }
       ]
     }
   },
