@@ -63,6 +63,8 @@ export const i18n = {
  { step: "02", title: "Structure", description: "Turn findings into flows, priorities, and information architecture that reduce friction." },
  { step: "03", title: "Design", description: "Create wireframes and polished UI with strong hierarchy, accessibility, and consistency." },
  { step: "04", title: "Refine", description: "Prototype, gather feedback, align with stakeholders, and improve until the solution feels right." },
+ { step: "05", title: "Handoff", description: "Deliver specs, assets, and documentation to developers for seamless implementation." },
+ { step: "06", title: "Measure", description: "Track post-launch metrics and user feedback to identify areas for future improvement." },
  ],
  bio: [
  "Hi! I'm Arrozy — a UI/UX Designer with a Computer Science background who enjoys turning complex requirements into interfaces that feel simple, structured, and easy to use.",
@@ -394,6 +396,8 @@ export const i18n = {
  { step: "02", title: "Strukturkan", description: "Mengubah temuan menjadi alur, prioritas, dan arsitektur informasi yang mengurangi hambatan." },
  { step: "03", title: "Desain", description: "Membuat wireframe dan UI yang rapi dengan hierarki kuat, aksesibilitas, dan konsistensi." },
  { step: "04", title: "Perbaiki", description: "Prototipe, kumpulkan feedback, selaraskan dengan stakeholder, dan perbaiki hingga solusi terasa tepat." },
+ { step: "05", title: "Handoff", description: "Memberikan spesifikasi, aset, dan dokumentasi kepada developer untuk implementasi yang lancar." },
+ { step: "06", title: "Ukur", description: "Melacak metrik pasca-peluncuran dan umpan balik pengguna untuk mengidentifikasi area perbaikan." },
  ],
  bio: [
  "Hai! Saya Arrozy — UI/UX Designer dengan latar belakang Ilmu Komputer yang senang mengubah kebutuhan kompleks menjadi antarmuka yang terasa sederhana, terstruktur, dan mudah digunakan.",

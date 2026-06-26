@@ -157,12 +157,14 @@ export default function About() {
             {/* Visual flow diagram */}
             <div className="flex flex-col flex-1">
               {t.processSteps.map((step, i) => {
-                const icons = ["🔍", "🧩", "🎨", "🔄"];
+                const icons = ["🔍", "🧩", "🎨", "🔄", "🚀", "📊"];
                 const colors = [
                   { bg: "rgba(108,92,231,0.08)", border: "rgba(108,92,231,0.15)", accent: "var(--accent-light)" },
                   { bg: "rgba(0,206,201,0.08)", border: "rgba(0,206,201,0.15)", accent: "var(--accent-2)" },
                   { bg: "rgba(253,121,168,0.08)", border: "rgba(253,121,168,0.15)", accent: "#fd79a8" },
                   { bg: "rgba(108,92,231,0.08)", border: "rgba(108,92,231,0.15)", accent: "var(--accent-light)" },
+                  { bg: "rgba(0,206,201,0.08)", border: "rgba(0,206,201,0.15)", accent: "var(--accent-2)" },
+                  { bg: "rgba(253,121,168,0.08)", border: "rgba(253,121,168,0.15)", accent: "#fd79a8" },
                 ];
                 return (
                   <div key={step.step} className={i < t.processSteps.length - 1 ? "flex flex-col flex-1" : "flex flex-col"}>
