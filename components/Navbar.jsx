@@ -6,6 +6,7 @@ import { Sun, Moon } from "lucide-react";
 import { personal } from "../data/portfolio";
 import { useTheme } from "./ThemeProvider";
 import { useLang } from "./LangProvider";
+import MagneticButton from "./MagneticButton";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -75,7 +76,9 @@ export default function Navbar() {
             <button onClick={toggleTheme} className="nav-toggle" type="button" aria-label="Toggle theme">
               {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
-            <a href="#contact" className="nav-hire">{t.nav.hireMe}</a>
+            <MagneticButton strength={0.35}>
+              <a href="#contact" className="nav-hire">{t.nav.hireMe}</a>
+            </MagneticButton>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">

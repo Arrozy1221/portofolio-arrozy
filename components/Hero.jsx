@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { personal } from "../data/portfolio";
 import { useLang } from "./LangProvider";
+import TextReveal from "./TextReveal";
+import MagneticButton from "./MagneticButton";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -28,10 +30,10 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1 {...fadeUp(0.15)} className="hero-name">
-              {personal.name}
+              <TextReveal text={personal.name} delay={0.2} />
             </motion.h1>
             <motion.p {...fadeUp(0.25)} className="hero-role text-gradient">
-              {personal.role}
+              <TextReveal text={personal.role} delay={0.5} />
             </motion.p>
 
             <motion.p {...fadeUp(0.35)} className="hero-desc">
@@ -39,13 +41,17 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...fadeUp(0.45)} className="hero-cta">
-              <a href="#projects" className="btn btn-primary">{t.hero.viewWork}</a>
-              <a href="#contact" className="btn btn-outline">{t.hero.collaborate}</a>
+              <MagneticButton strength={0.25}>
+                <a href="#projects" className="btn btn-primary">{t.hero.viewWork}</a>
+              </MagneticButton>
+              <MagneticButton strength={0.25}>
+                <a href="#contact" className="btn btn-outline">{t.hero.collaborate}</a>
+              </MagneticButton>
             </motion.div>
 
             <motion.div {...fadeUp(0.55)} className="hero-stats">
               {t.stats.map((s) => (
-                <div key={s.label} className="hero-stat">
+                <div key={s.label} className="hero-stat glow-pulse-hover">
                   <div className="hero-stat-value text-gradient">{s.value}</div>
                   <div className="hero-stat-label">{s.label}</div>
                 </div>
@@ -70,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="hero-floating-card hero-floating-card-1"
+              className="hero-floating-card hero-floating-card-1 parallax-float"
             >
               <p className="text-[0.65rem] font-semibold uppercase tracking-widest text-accent-2 mb-1" style={{ color: "var(--accent-2)" }}>
                 {t.hero.basedIn}
@@ -83,7 +89,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.85 }}
-              className="hero-floating-card hero-floating-card-2"
+              className="hero-floating-card hero-floating-card-2 parallax-float-delayed"
             >
               <p className="text-[0.65rem] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "var(--accent-light)" }}>
                 Focus

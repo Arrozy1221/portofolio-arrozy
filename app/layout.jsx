@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import ThemeProvider from "../components/ThemeProvider";
 import LangProvider from "../components/LangProvider";
+import CursorTrail from "../components/CursorTrail";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`light ${poppins.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="antialiased">
+        <CursorTrail />
         <ThemeProvider>
           <LangProvider>
             {children}
@@ -49,3 +51,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
