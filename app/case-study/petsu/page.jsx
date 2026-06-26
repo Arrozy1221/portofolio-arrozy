@@ -3,6 +3,7 @@
 import "../case-study.css";
 import Link from "next/link";
 import { useLang } from "../../../components/LangProvider";
+import ImageZoom from "../../../components/ImageZoom";
 
 export default function Page() {
   const { lang, toggleLang } = useLang();
@@ -80,13 +81,12 @@ export default function Page() {
               background: '#ffffff' 
             }}
           >
-            <img 
+          <ImageZoom 
               src={`/projects/petsu/page-${num}.jpg`} 
               alt={`Petsu Case Study Slide ${num}`} 
               style={{ 
                 width: '100%', 
-                height: 'auto', 
-                display: 'block' 
+                height: 'auto'
               }}
               loading="lazy"
             />

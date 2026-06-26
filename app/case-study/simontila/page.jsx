@@ -3,6 +3,7 @@
 import "../case-study.css";
 import Link from "next/link";
 import { useLang } from "../../../components/LangProvider";
+import ImageZoom from "../../../components/ImageZoom";
 
 export default function Page() {
   const { lang, t, toggleLang } = useLang();
@@ -63,11 +64,11 @@ export default function Page() {
           <div className="cs-ba-grid">
             <div className="cs-ba-card cs-before">
               <div className="cs-ba-badge">{cs.beforeAfter.badgeBefore}</div>
-              <img src="/images/case-study/simontila/img_2.png" alt="Before redesign" />
+              <ImageZoom src="/images/case-study/simontila/img_2.png" alt="Before redesign" lensSize={160} />
             </div>
             <div className="cs-ba-card cs-after">
               <div className="cs-ba-badge">{cs.beforeAfter.badgeAfter}</div>
-              <img src="/images/case-study/simontila/img_3.png" alt="After redesign" />
+              <ImageZoom src="/images/case-study/simontila/img_3.png" alt="After redesign" lensSize={160} />
             </div>
           </div>
         </section>
@@ -106,38 +107,38 @@ export default function Page() {
 
           <div className="cs-screen-block">
             <div className="cs-screen-label">{cs.screens.s1.label}</div>
-            <img className="cs-screen-img" src="/images/case-study/simontila/img_4.png" alt="Login" />
+            <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_4.png" alt="Login" />
             <p className="cs-screen-caption">{cs.screens.s1.caption}</p>
           </div>
 
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s2.label}</div>
-              <img className="cs-screen-img" src="/images/case-study/simontila/img_5.png" alt="Manajemen LHP" />
+              <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_5.png" alt="Manajemen LHP" />
               <p className="cs-screen-caption">{cs.screens.s2.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s3.label}</div>
-              <img className="cs-screen-img" src="/images/case-study/simontila/img_6.png" alt="Pelaporan" />
+              <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_6.png" alt="Pelaporan" />
               <p className="cs-screen-caption">{cs.screens.s3.caption}</p>
             </div>
           </div>
 
           <div className="cs-screen-block">
             <div className="cs-screen-label">{cs.screens.s4.label}</div>
-            <img className="cs-screen-img" src="/images/case-study/simontila/img_7.png" alt="Tindak Lanjut" />
+            <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_7.png" alt="Tindak Lanjut" />
             <p className="cs-screen-caption">{cs.screens.s4.caption}</p>
           </div>
 
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s5.label}</div>
-              <img className="cs-screen-img" src="/images/case-study/simontila/img_8.png" alt="Data Temuan" />
+              <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_8.png" alt="Data Temuan" />
               <p className="cs-screen-caption">{cs.screens.s5.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s6.label}</div>
-              <img className="cs-screen-img" src="/images/case-study/simontila/img_9.png" alt="Container" />
+              <ImageZoom className="cs-screen-img" src="/images/case-study/simontila/img_9.png" alt="Container" />
               <p className="cs-screen-caption">{cs.screens.s6.caption}</p>
             </div>
           </div>
@@ -189,7 +190,7 @@ export default function Page() {
           <div className="cs-screens-grid">
             {cs.allScreens.items.map((item, i) => (
               <div key={i} className="cs-grid-item">
-                <img src={`/images/case-study/simontila/img_${i+10}.png`} alt={item} loading="lazy" />
+                <ImageZoom src={`/images/case-study/simontila/img_${i+10}.png`} alt={item} loading="lazy" lensSize={140} />
                 <div className="cs-grid-label">{item}</div>
               </div>
             ))}

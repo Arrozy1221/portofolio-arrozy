@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../case-study.css";
 import Link from "next/link";
 import { useLang } from "../../../components/LangProvider";
+import ImageZoom from "../../../components/ImageZoom";
 
 export default function Page() {
   const { lang, t, toggleLang } = useLang();
   const cs = t.caseStudies.mbkm;
   const [activeTab, setActiveTab] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const ds = cs.designSystem;
 
   const imageFiles = [
@@ -164,7 +164,7 @@ export default function Page() {
 
               {/* Active Sheet Display */}
               <div className="cs-ds-display-card">
-                <div className="cs-ds-display-body" onClick={() => setIsLightboxOpen(true)}>
+                <div className="cs-ds-display-body" style={{ cursor: "default" }}>
                   <div className="cs-ds-img-container">
                     <AnimatePresence mode="wait">
                       <motion.div
@@ -175,20 +175,14 @@ export default function Page() {
                         transition={{ duration: 0.25 }}
                         className="cs-ds-img-wrapper"
                       >
-                        <img
+                        <ImageZoom
+                          key={activeTab}
                           src={`/images/case-study/mbkm-ut/design-system/img_${activeTab + 1}.png`}
                           alt={ds.sheets[activeTab].title}
                           className="cs-ds-img"
+                          lensSize={160}
+                          showControls={true}
                         />
-                        <div className="cs-ds-zoom-overlay">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zoom-in">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            <line x1="11" y1="8" x2="11" y2="14" />
-                            <line x1="8" y1="11" x2="14" y2="11" />
-                          </svg>
-                          <span>{lang === "en" ? "Click to view full size" : "Klik untuk memperbesar"}</span>
-                        </div>
                       </motion.div>
                     </AnimatePresence>
                   </div>
@@ -231,49 +225,6 @@ export default function Page() {
                 </div>
               </div>
             </div>
-
-            {/* Lightbox Modal */}
-            <AnimatePresence>
-              {isLightboxOpen && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="cs-lightbox-modal"
-                  onClick={() => setIsLightboxOpen(false)}
-                >
-                  <motion.div
-                    initial={{ scale: 0.95 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0.95 }}
-                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                    className="cs-lightbox-content"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <button
-                      className="cs-lightbox-close"
-                      onClick={() => setIsLightboxOpen(false)}
-                      type="button"
-                      aria-label="Close lightbox"
-                    >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                      </svg>
-                    </button>
-                    <img
-                      src={`/images/case-study/mbkm-ut/design-system/img_${activeTab + 1}.png`}
-                      alt={ds.sheets[activeTab].title}
-                      className="cs-lightbox-img"
-                    />
-                    <div className="cs-lightbox-caption">
-                      <h3>{ds.sheets[activeTab].title}</h3>
-                      <p>{ds.sheets[activeTab].caption}</p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </section>
         )}
 
@@ -283,38 +234,38 @@ export default function Page() {
           
           <div className="cs-screen-block">
             <div className="cs-screen-label">{cs.screens.s1.label}</div>
-            <img className="cs-screen-img" src="/projects/mbkm/MBKM Non PP.png" alt="Student portal MBKM dashboard" />
+            <ImageZoom className="cs-screen-img" src="/projects/mbkm/MBKM Non PP.png" alt="Student portal MBKM dashboard" />
             <p className="cs-screen-caption">{cs.screens.s1.caption}</p>
           </div>
 
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s2.label}</div>
-              <img className="cs-screen-img" src="/projects/mbkm/Login.png" alt="Login screen" />
+              <ImageZoom className="cs-screen-img" src="/projects/mbkm/Login.png" alt="Login screen" />
               <p className="cs-screen-caption">{cs.screens.s2.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s3.label}</div>
-              <img className="cs-screen-img" src="/projects/mbkm/Inbound PP UT.png" alt="Inbound registration flow" />
+              <ImageZoom className="cs-screen-img" src="/projects/mbkm/Inbound PP UT.png" alt="Inbound registration flow" />
               <p className="cs-screen-caption">{cs.screens.s3.caption}</p>
             </div>
           </div>
 
           <div className="cs-screen-block">
             <div className="cs-screen-label">{cs.screens.s4.label}</div>
-            <img className="cs-screen-img" src="/projects/mbkm/Kaprodi.png" alt="Kaprodi dashboard screen" />
+            <ImageZoom className="cs-screen-img" src="/projects/mbkm/Kaprodi.png" alt="Kaprodi dashboard screen" />
             <p className="cs-screen-caption">{cs.screens.s4.caption}</p>
           </div>
 
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s5.label}</div>
-              <img className="cs-screen-img" src="/projects/mbkm/Pertukaran Pelajar.png" alt="Pertukaran Pelajar registration" />
+              <ImageZoom className="cs-screen-img" src="/projects/mbkm/Pertukaran Pelajar.png" alt="Pertukaran Pelajar registration" />
               <p className="cs-screen-caption">{cs.screens.s5.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s6.label}</div>
-              <img className="cs-screen-img" src="/projects/mbkm/Summer Course.png" alt="Summer course selection interface" />
+              <ImageZoom className="cs-screen-img" src="/projects/mbkm/Summer Course.png" alt="Summer course selection interface" />
               <p className="cs-screen-caption">{cs.screens.s6.caption}</p>
             </div>
           </div>
@@ -370,7 +321,7 @@ export default function Page() {
           <div className="cs-screens-grid">
             {cs.allScreens.items.map((item, i) => (
               <div key={i} className="cs-grid-item">
-                <img src={`/projects/mbkm/${imageFiles[i]}`} alt={item} loading="lazy" />
+                <ImageZoom src={`/projects/mbkm/${imageFiles[i]}`} alt={item} loading="lazy" lensSize={140} />
                 <div className="cs-grid-label">{item}</div>
               </div>
             ))}

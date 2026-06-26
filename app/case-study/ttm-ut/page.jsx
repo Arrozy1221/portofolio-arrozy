@@ -3,6 +3,7 @@
 import "../case-study.css";
 import Link from "next/link";
 import { useLang } from "../../../components/LangProvider";
+import ImageZoom from "../../../components/ImageZoom";
 
 export default function Page() {
   const { lang, t, toggleLang } = useLang();
@@ -118,12 +119,12 @@ export default function Page() {
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s1.label}</div>
-              <img className="cs-screen-img" src="/projects/ttm/Login.png" alt="Login screen" />
+              <ImageZoom className="cs-screen-img" src="/projects/ttm/Login.png" alt="Login screen" />
               <p className="cs-screen-caption">{cs.screens.s1.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s2.label}</div>
-              <img className="cs-screen-img" src="/projects/ttm/Dashboard__Sudah_Presensi.png" alt="Dashboard" />
+              <ImageZoom className="cs-screen-img" src="/projects/ttm/Dashboard__Sudah_Presensi.png" alt="Dashboard" />
               <p className="cs-screen-caption">{cs.screens.s2.caption}</p>
             </div>
           </div>
@@ -131,12 +132,12 @@ export default function Page() {
           <div className="cs-screen-2col">
             <div>
               <div className="cs-screen-label">{cs.screens.s3.label}</div>
-              <img className="cs-screen-img" src="/projects/ttm/Absensi.png" alt="Attendance Check-in" />
+              <ImageZoom className="cs-screen-img" src="/projects/ttm/Absensi.png" alt="Attendance Check-in" />
               <p className="cs-screen-caption">{cs.screens.s3.caption}</p>
             </div>
             <div>
               <div className="cs-screen-label">{cs.screens.s4.label}</div>
-              <img className="cs-screen-img" src="/projects/ttm/Detail Kelas TTM.png" alt="Class Details" />
+              <ImageZoom className="cs-screen-img" src="/projects/ttm/Detail Kelas TTM.png" alt="Class Details" />
               <p className="cs-screen-caption">{cs.screens.s4.caption}</p>
             </div>
           </div>
@@ -193,7 +194,7 @@ export default function Page() {
           <div className="cs-screens-grid">
             {cs.allScreens.items.map((item, i) => (
               <div key={i} className="cs-grid-item">
-                <img src={`/projects/ttm/${imageFiles[i]}`} alt={item} loading="lazy" style={{ maxHeight: '400px', objectFit: 'contain' }} />
+                <ImageZoom src={`/projects/ttm/${imageFiles[i]}`} alt={item} loading="lazy" lensSize={140} style={{ maxHeight: '400px', objectFit: 'contain' }} />
                 <div className="cs-grid-label">{item}</div>
               </div>
             ))}
