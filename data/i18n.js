@@ -15,7 +15,7 @@ export const i18n = {
  hero: {
  available: "Available for selected projects",
  unavailable: "Currently unavailable",
- basedIn: "Based in Bandung",
+ basedIn: "Willing to relocate",
  portfolioLabel: "UI/UX Portfolio",
  headline: "Designing clear, usable digital products for public services and modern teams.",
  tagline: "UI/UX Designer with 2+ years of experience crafting user-centered products across government, education, and internal business systems.",
@@ -346,7 +346,7 @@ export const i18n = {
  hero: {
  available: "Tersedia untuk proyek terpilih",
  unavailable: "Sedang tidak tersedia",
- basedIn: "Berbasis di Bandung",
+ basedIn: "Bisa kerja dimana saja",
  portfolioLabel: "Portofolio UI/UX",
  headline: "Mendesain produk digital yang jelas, mudah digunakan untuk layanan publik dan tim modern.",
  tagline: "UI/UX Designer dengan 2+ tahun pengalaman merancang produk berpusat pada pengguna di sektor pemerintahan, pendidikan, dan sistem bisnis internal.",

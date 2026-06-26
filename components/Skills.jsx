@@ -6,9 +6,10 @@ import { skills } from "../data/portfolio";
 import { useLang } from "./LangProvider";
 
 const groups = [
-  { key: "Design", color: "var(--accent)", barColor: "linear-gradient(90deg, #6c5ce7, #a29bfe)" },
-  { key: "Research", color: "var(--accent-2)", barColor: "linear-gradient(90deg, #00cec9, #55efc4)" },
-  { key: "Dev", color: "#fd79a8", barColor: "linear-gradient(90deg, #fd79a8, #fab1a0)" },
+  { key: "Design", color: "var(--accent)" },
+  { key: "Research", color: "var(--accent-2)" },
+  { key: "AI Tools", color: "#f39c12" },
+  { key: "Dev", color: "#fd79a8" },
 ];
 
 export default function Skills() {
@@ -43,23 +44,20 @@ export default function Skills() {
                   <span className="skill-group-dot" style={{ background: group.color }} />
                   {group.key}
                 </div>
-                {groupSkills.map((skill, si) => (
-                  <div key={skill.name} className="skill-item">
-                    <span className="skill-name">{skill.name}</span>
-                    <div className="skill-level">
-                      <div className="skill-bar-wrap">
-                        <motion.div
-                          className="skill-bar-fill"
-                          style={{ background: group.barColor }}
-                          initial={{ width: 0 }}
-                          animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ duration: 1.2, delay: gi * 0.1 + si * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                        />
-                      </div>
-                      <span className="skill-pct">{skill.level}%</span>
-                    </div>
-                  </div>
-                ))}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {groupSkills.map((skill, si) => (
+                    <motion.span
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: gi * 0.1 + si * 0.05 }}
+                      className="tag"
+                      style={{ border: `1px solid ${group.color}`, color: group.color, backgroundColor: 'transparent' }}
+                    >
+                      {skill.name}
+                    </motion.span>
+                  ))}
+                </div>
               </motion.div>
             );
           })}
