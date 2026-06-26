@@ -150,12 +150,12 @@ export default function About() {
           </motion.div>
 
           {/* Process — Visual Flow */}
-          <motion.div {...anim(0.3)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-6">
+          <motion.div {...anim(0.3)} animate={inView ? { opacity: 1, y: 0 } : {}} className="card p-6 flex flex-col h-full">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--accent-light)" }}>{t.about.approach}</p>
             <h3 className="font-heading text-lg font-bold mb-5" style={{ color: "var(--fg)" }}>{t.about.approachTitle}</h3>
 
             {/* Visual flow diagram */}
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col flex-1">
               {t.processSteps.map((step, i) => {
                 const icons = ["🔍", "🧩", "🎨", "🔄"];
                 const colors = [
@@ -165,7 +165,7 @@ export default function About() {
                   { bg: "rgba(108,92,231,0.08)", border: "rgba(108,92,231,0.15)", accent: "var(--accent-light)" },
                 ];
                 return (
-                  <div key={step.step}>
+                  <div key={step.step} className={i < t.processSteps.length - 1 ? "flex flex-col flex-1" : "flex flex-col"}>
                     <div className="flex items-start gap-3.5 p-3.5 rounded-xl transition-all hover:scale-[1.01]"
                       style={{ background: colors[i].bg, border: `1px solid ${colors[i].border}` }}
                     >
@@ -180,10 +180,10 @@ export default function About() {
                     </div>
                     {/* Arrow connector */}
                     {i < t.processSteps.length - 1 && (
-                      <div className="flex justify-center py-1">
-                        <div className="flex flex-col items-center">
-                          <div className="w-0.5 h-3 rounded-full" style={{ background: "var(--border)" }} />
-                          <span className="text-[0.6rem]" style={{ color: "var(--fg-dim)" }}>▼</span>
+                      <div className="flex justify-center flex-1 min-h-[1.5rem]">
+                        <div className="flex flex-col items-center justify-center w-full h-full py-1">
+                          <div className="w-0.5 flex-1 rounded-full" style={{ background: "var(--border)", minHeight: "1rem" }} />
+                          <span className="text-[0.6rem] leading-none mt-1" style={{ color: "var(--fg-dim)" }}>▼</span>
                         </div>
                       </div>
                     )}
