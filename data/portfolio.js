@@ -368,18 +368,24 @@ export const projects = [
 
 export const skills = [
   { name: "Figma", level: 95, category: "Design" },
+  { name: "Framer", level: 85, category: "Design" },
+  { name: "Design Systems", level: 90, category: "Design" },
+  { name: "Webflow", level: 80, category: "Design" },
+  { name: "UI Animation", level: 85, category: "Design" },
   { name: "Adobe Photoshop", level: 85, category: "Design" },
   { name: "Adobe Illustrator", level: 82, category: "Design" },
-  { name: "Prototyping", level: 93, category: "Design" },
   { name: "UX Research", level: 88, category: "Research" },
   { name: "User Testing", level: 84, category: "Research" },
+  { name: "Journey Mapping", level: 85, category: "Research" },
+  { name: "A/B Testing", level: 80, category: "Research" },
   { name: "ChatGPT", level: 90, category: "AI Tools" },
   { name: "Claude", level: 85, category: "AI Tools" },
   { name: "Gemini", level: 85, category: "AI Tools" },
   { name: "Midjourney", level: 80, category: "AI Tools" },
   { name: "HTML / CSS", level: 75, category: "Dev" },
   { name: "JavaScript", level: 65, category: "Dev" },
-  { name: "InVision / Sketch", level: 70, category: "Design" },
+  { name: "React / Next.js", level: 60, category: "Dev" },
+  { name: "Tailwind CSS", level: 85, category: "Dev" },
 ];
 
 export const softSkills = [
