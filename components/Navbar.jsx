@@ -66,6 +66,24 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="/cv"
+                style={{
+                  color: "var(--accent-light)",
+                  fontWeight: 700,
+                  background: "rgba(108,92,231,0.10)",
+                  border: "1px solid rgba(108,92,231,0.25)",
+                  borderRadius: "999px",
+                  padding: "0.2rem 0.85rem",
+                  fontSize: "0.82rem",
+                  letterSpacing: "0.02em",
+                  transition: "background 0.2s",
+                }}
+              >
+                CV
+              </a>
+            </li>
           </ul>
 
           <div className="nav-actions hidden lg:flex">
@@ -112,6 +130,13 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/cv"
+                onClick={() => setMenuOpen(false)}
+                style={{ color: "var(--accent-light)", fontWeight: 700 }}
+              >
+                CV
+              </a>
               <div className="mt-4 flex flex-col gap-2">
                 <a href="#contact" onClick={() => setMenuOpen(false)} className="btn btn-primary text-center">
                   {t.nav.contactMe}

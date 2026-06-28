@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Arrozy Adi Falaqi — UI/UX Designer | CV</title>
+  <meta name="description" content="CV of Arrozy Adi Falaqi — UI/UX Designer with 2+ years of experience in government, education, and private sector digital products. Based in Bandung, Indonesia." />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #ffffff;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 48px 64px;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #111;
+      margin-bottom: 3px;
+    }
+
+    .role {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13pt;
+      font-weight: 600;
+      color: #3d34c8;
+      margin-bottom: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      color: #444;
+      margin-top: 8px;
+    }
+
+    .contact-row a {
+      color: #3d34c8;
+      text-decoration: none;
+    }
+
+    .contact-row span::before {
+      content: "•  ";
+      color: #999;
+    }
+
+    .contact-row span:first-child::before { content: ""; }
+
+    /* ── Section titles ── */
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #3d34c8;
+      border-bottom: 1px solid #d0d0d0;
+      padding-bottom: 4px;
+      margin: 20px 0 10px;
+    }
+
+    /* ── Summary ── */
+    .summary p {
+      font-size: 10.5pt;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    .summary p + p { margin-top: 8px; }
+
+    /* ── Experience ── */
+    .exp-item {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .exp-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .exp-period {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      color: #3d34c8;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .exp-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px;
+    }
+
+    .exp-highlights li {
+      font-size: 10pt;
+      color: #333;
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .exp-highlights li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #3d34c8;
+      font-size: 9pt;
+    }
+
+    .exp-tags {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8.5pt;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 5px 12px;
+      align-items: baseline;
+    }
+
+    .skill-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #444;
+    }
+
+    .skill-values {
+      font-size: 10pt;
+      color: #333;
+    }
+
+    /* ── Projects ── */
+    .project-item {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+
+    .project-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .project-client {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9pt;
+      color: #3d34c8;
+      font-weight: 600;
+    }
+
+    .project-impact {
+      font-size: 10pt;
+      color: #444;
+      margin-top: 2px;
+    }
+
+    /* ── Education ── */
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .edu-uni {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .edu-period {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      color: #666;
+    }
+
+    .edu-major {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      color: #3d34c8;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .edu-detail {
+      font-size: 10pt;
+      color: #444;
+      margin-top: 2px;
+    }
+
+    /* ── Certs & Languages ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+    }
+
+    .cert-item, .lang-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10pt;
+      color: #333;
+      padding: 3px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .cert-issuer, .lang-level {
+      color: #888;
+      font-size: 9.5pt;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 28px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8.5pt;
+      color: #999;
+      text-align: center;
+    }
+
+    footer a { color: #3d34c8; text-decoration: none; }
+
+    /* ── Print ── */
+    @media print {
+      body { padding: 20px 32px; font-size: 10pt; }
+      h1 { font-size: 22pt; }
+      @page { margin: 1.5cm; }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 24px 20px; }
+      .two-col { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 110px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════ HEADER ════════════════ -->
+  <header>
+    <h1>Arrozy Adi Falaqi</h1>
+    <p class="role">UI/UX Designer</p>
+    <p style="font-family:Arial,sans-serif;font-size:10pt;color:#444;margin-bottom:6px;">
+      Designing clear, usable digital products for public services and modern teams.
+    </p>
+    <div class="contact-row">
+      <span><a href="mailto:arrozyadifalaqioi@gmail.com">arrozyadifalaqioi@gmail.com</a></span>
+      <span><a href="tel:+6281298023537">+62 812 9802 3537</a></span>
+      <span>Bandung, Indonesia</span>
+      <span><a href="https://www.linkedin.com/in/arrozy-adi-falaqi-6a25ba14a" target="_blank">linkedin.com/in/arrozy-adi-falaqi</a></span>
+      <span><a href="https://www.behance.net/arrozyadifalaqi" target="_blank">behance.net/arrozyadifalaqi</a></span>
+      <span><a href="https://portofolio-arrozy.vercel.app" target="_blank">Portfolio Website</a></span>
+    </div>
+  </header>
+
+  <!-- ════════════════ SUMMARY ════════════════ -->
+  <section class="summary" aria-label="Professional Summary">
+    <h2>Summary</h2>
+    <p>
+      UI/UX Designer with 2+ years of experience crafting user-centered products across government,
+      education, and internal business systems. Computer Science graduate with a strong foundation in
+      design thinking, UX research, and prototyping.
+    </p>
+    <p>
+      My work covers the full design process — from research and information architecture to
+      wireframing, high-fidelity UI, and interactive prototyping. I've worked on public-sector
+      dashboards, education platforms, and internal systems where clarity and usability matter most.
+      Comfortable collaborating with stakeholders and developers to ship practical, outcome-driven solutions.
+    </p>
+  </section>
+
+  <!-- ════════════════ EXPERIENCE ════════════════ -->
+  <section aria-label="Work Experience">
+    <h2>Work Experience</h2>
+
+    <!-- MST -->
+    <article class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">UI/UX Designer</span>
+        <span class="exp-period">Aug 2023 – Present</span>
+      </div>
+      <p class="exp-company">PT Mitra Sinerji Teknoindo · Bandung (IT Consulting &amp; Government Digital Transformation)</p>
+      <ul class="exp-highlights">
+        <li>Redesigned Kominfo e-certificate platform — simplified the issuance flow from 7 steps to 4, reducing user confusion reported in stakeholder feedback sessions.</li>
+        <li>Overhauled Kemendikbud SIMONTILA admin dashboard — restructured navigation and data tables so admins could locate records without switching between multiple pages.</li>
+        <li>Redesigned PUPR BRAVO project monitoring system — replaced a cluttered legacy interface with a card-based layout that groups projects by status and priority.</li>
+        <li>Designed Universitas Terbuka MBKM website and mobile attendance app — created a unified flow so students could register and mark attendance from one platform.</li>
+        <li>Created a public service mobile app prototype — conducted user interviews with 12 citizens, iterated on pain points, and validated the final flow with usability testing.</li>
+        <li>Built an interactive analytics dashboard for a government client — consolidated scattered spreadsheet data into filterable visual charts for weekly reporting.</li>
+        <li>Developed an internal company information system — centralized employee data access that previously required manual requests to HR.</li>
+      </ul>
+      <p class="exp-tags"><strong>Tools &amp; Skills:</strong> Figma, UX Research, Prototyping, Design Systems, Government Platforms, Mobile App Design</p>
+    </article>
+
+    <!-- Intelligo -->
+    <article class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Graphic Designer</span>
+        <span class="exp-period">Jan 2023 – Mar 2023</span>
+      </div>
+      <p class="exp-company">PT Intelligo · Bandung (Digital Marketing &amp; Creative Agency)</p>
+      <ul class="exp-highlights">
+        <li>Created social media and marketing assets — designed carousel posts and story templates that received noticeably higher saves and shares compared to previous content.</li>
+        <li>Worked directly with clients to align visual output with brand guidelines, revising based on feedback within tight turnaround times.</li>
+        <li>Produced digital assets using Adobe Photoshop and Illustrator for product launches and promotional campaigns.</li>
+      </ul>
+      <p class="exp-tags"><strong>Tools:</strong> Adobe Photoshop, Adobe Illustrator, Social Media Design, Marketing</p>
+    </article>
+
+    <!-- MYX -->
+    <article class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Web Developer</span>
+        <span class="exp-period">Sep 2022 – Nov 2022</span>
+      </div>
+      <p class="exp-company">CV Mitra Yudha Xaviera · Bandung (Web Development &amp; IT Services)</p>
+      <ul class="exp-highlights">
+        <li>Developed website features using HTML, CSS, and JavaScript — optimized image loading and minified assets, resulting in faster page render times.</li>
+        <li>Improved database security by implementing parameterized queries and regular backup routines.</li>
+        <li>Restructured site navigation and page layout, making key information easier to find for first-time visitors.</li>
+      </ul>
+      <p class="exp-tags"><strong>Tools:</strong> HTML, CSS, JavaScript, Database Management, Web Development</p>
+    </article>
+
+    <!-- Binar -->
+    <article class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">UI/UX Design Bootcamp Graduate</span>
+        <span class="exp-period">Feb 2022 – Jul 2022</span>
+      </div>
+      <p class="exp-company">Binar Academy · Remote (Tech Education)</p>
+      <ul class="exp-highlights">
+        <li>Designed mobile and web prototypes for an e-commerce final project — full flow from product discovery to checkout.</li>
+        <li>Conducted surveys (50+ respondents) and 5 user interviews to identify pain points, then iterated the design based on findings.</li>
+        <li>Presented the final project to mentors and received positive feedback on information architecture and visual consistency.</li>
+      </ul>
+      <p class="exp-tags"><strong>Skills:</strong> Design Thinking, User Research, E-commerce UX, Figma, Prototyping</p>
+    </article>
+  </section>
+
+  <!-- ════════════════ SELECTED PROJECTS ════════════════ -->
+  <section aria-label="Selected Projects">
+    <h2>Selected Projects</h2>
+
+    <article class="project-item">
+      <span class="project-name">e-Sertifikat Next Gen</span> —
+      <span class="project-client">Kominfo (Government)</span>
+      <p class="project-impact">Sole designer — Simplified e-certificate issuance flow from 7 steps to 4 using Double Diamond process. Reduced stakeholder-reported user confusion after implementation.</p>
+    </article>
+
+    <article class="project-item">
+      <span class="project-name">Admin SIMONTILA Dashboard</span> —
+      <span class="project-client">Kemendikbud (Government)</span>
+      <p class="project-impact">Lead UI/UX — Restructured information architecture and introduced filterable data tables. Admins can now find records without switching between multiple pages.</p>
+    </article>
+
+    <article class="project-item">
+      <span class="project-name">MBKM Platform &amp; TTM Attendance App</span> —
+      <span class="project-client">Universitas Terbuka (Education)</span>
+      <p class="project-impact">Sole designer — Unified MBKM registration and field attendance into one platform; dramatically reduced student support inquiries.</p>
+    </article>
+
+    <article class="project-item">
+      <span class="project-name">BRAVO System Redesign</span> —
+      <span class="project-client">PUPR (Government)</span>
+      <p class="project-impact">Sole designer — Replaced dense legacy tables with a card-based project status view; project managers reported faster identification of at-risk projects.</p>
+    </article>
+
+    <article class="project-item">
+      <span class="project-name">Public Service Mobile App</span> —
+      <span class="project-client">Government Client</span>
+      <p class="project-impact">UX researcher &amp; designer — Conducted field interviews with 12 citizens, synthesized pain points, and validated the final prototype with usability testing.</p>
+    </article>
+
+    <article class="project-item">
+      <span class="project-name">Petsu E-Commerce App</span> —
+      <span class="project-client">Personal Project</span>
+      <p class="project-impact">Sole designer — End-to-end mobile e-commerce concept for pet supplies; full case study from user research to high-fidelity prototype.</p>
+    </article>
+  </section>
+
+  <!-- ════════════════ SKILLS ════════════════ -->
+  <section aria-label="Skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-label">Design &amp; Tools</span>
+      <span class="skill-values">Figma, Framer, Webflow, Design Systems, UI Animation, Adobe Photoshop, Adobe Illustrator</span>
+
+      <span class="skill-label">UX Research</span>
+      <span class="skill-values">UX Research, User Interviews, Usability Testing, Journey Mapping, A/B Testing, Persona Development</span>
+
+      <span class="skill-label">Development</span>
+      <span class="skill-values">HTML, CSS, JavaScript, React, Next.js, Tailwind CSS</span>
+
+      <span class="skill-label">AI Tools</span>
+      <span class="skill-values">ChatGPT, Claude, Gemini, Midjourney</span>
+
+      <span class="skill-label">Soft Skills</span>
+      <span class="skill-values">Collaboration &amp; Teamwork, Communication, Stakeholder Management, Problem Solving, Adaptability, Fast Learner</span>
+
+      <span class="skill-label">Methodology</span>
+      <span class="skill-values">Design Thinking, Double Diamond, Agile/Scrum collaboration, Information Architecture</span>
+    </div>
+  </section>
+
+  <!-- ════════════════ EDUCATION ════════════════ -->
+  <section aria-label="Education">
+    <h2>Education</h2>
+    <div>
+      <div class="edu-header">
+        <span class="edu-uni">Universitas Pendidikan Indonesia</span>
+        <span class="edu-period">2019 – 2024</span>
+      </div>
+      <p class="edu-major">Bachelor of Computer Science — GPA: 3.73 / 4.00</p>
+      <p class="edu-detail">
+        <strong>Thesis:</strong> Website Design and Development for Orion Guest House Using the Double Diamond Method and Content Marketing Strategy.
+        Applied Double Diamond design methodology (Discover, Define, Develop, Deliver) combined with Content Marketing to increase online visibility and direct bookings.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════ CERTIFICATIONS & LANGUAGES ════════════════ -->
+  <div class="two-col">
+    <section aria-label="Certifications">
+      <h2>Certifications</h2>
+      <div class="cert-item">
+        <span>UI/UX Design</span>
+        <span class="cert-issuer">Binar Academy, 2022</span>
+      </div>
+      <div class="cert-item">
+        <span>AV Web Developer</span>
+        <span class="cert-issuer">Certification Body, 2022</span>
+      </div>
+    </section>
+
+    <section aria-label="Languages">
+      <h2>Languages</h2>
+      <div class="lang-item">
+        <span>Indonesian</span>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="lang-item">
+        <span>English</span>
+        <span class="lang-level">Professional Working Proficiency</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <p>
+      Portfolio: <a href="https://portofolio-arrozy.vercel.app">portofolio-arrozy.vercel.app</a> &nbsp;|&nbsp;
+      LinkedIn: <a href="https://www.linkedin.com/in/arrozy-adi-falaqi-6a25ba14a">arrozy-adi-falaqi</a> &nbsp;|&nbsp;
+      Behance: <a href="https://www.behance.net/arrozyadifalaqi">arrozyadifalaqi</a> &nbsp;|&nbsp;
+      Email: <a href="mailto:arrozyadifalaqioi@gmail.com">arrozyadifalaqioi@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
