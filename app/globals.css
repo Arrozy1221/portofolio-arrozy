@@ -2224,3 +2224,146 @@ html.light .cv-chip { background: rgba(0,0,0,0.04); }
   .cv-edu-card,
   .cv-cert-item { break-inside: avoid; }
 }
+
+/* ═══════════════════════════════════════════
+   WHATSAPP FLOATING — ARROZY GIF STYLE
+   ═══════════════════════════════════════════ */
+.wa-float-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ── Close button ── */
+.wa-close-btn {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(20, 20, 30, 0.82);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 0.65rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.wa-close-btn:hover {
+  background: rgba(220, 48, 48, 0.9);
+  transform: scale(1.14);
+}
+
+/* ── Clickable area: bubble + character side by side ── */
+.wa-float-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.625rem;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  padding-top: 1.75rem; /* room for close button */
+}
+
+/* ── Speech bubble ── */
+.wa-bubble {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25d366;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  margin-bottom: 3.75rem;
+  white-space: nowrap;
+  transition: box-shadow 0.2s;
+}
+
+.wa-float-inner:hover .wa-bubble {
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
+}
+
+/* Tail pointing right toward character */
+.wa-bubble-tail {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 11px solid #25d366;
+}
+
+.wa-bubble-icon {
+  flex-shrink: 0;
+  opacity: 0.92;
+}
+
+.wa-bubble-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.wa-bubble-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.wa-bubble-sub {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.88;
+}
+
+/* ── Character image ── */
+.wa-char-wrap {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.wa-float-gif {
+  display: block;
+  width: 190px;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.13));
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .wa-float-wrapper {
+    right: 0.25rem;
+  }
+  .wa-float-gif {
+    width: 140px;
+  }
+  .wa-bubble {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+  }
+  .wa-bubble-title { font-size: 0.75rem; }
+  .wa-bubble-sub   { font-size: 0.64rem; }
+}
+
