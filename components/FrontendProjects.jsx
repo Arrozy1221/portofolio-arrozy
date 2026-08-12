@@ -15,30 +15,66 @@ function FrontendCard({ project, index, inView, onOpenManual, manualCta }) {
       transition={{ duration: 0.7, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
       className="project-card h-full"
     >
-      <div className="project-thumb">
-        <Image src={project.image} alt={project.title} fill className="object-cover object-top" />
-        <div className="project-thumb-overlay">
-          <div className="project-thumb-tags">
-            <span className="project-thumb-tag">{project.sector}</span>
+      {project.link && (
+        <a href={project.link} target="_blank" rel="noreferrer" style={{ display: "contents" }}>
+          <div className="project-thumb">
+            <Image src={project.image} alt={project.title} fill className="object-cover object-top" />
+            <div className="project-thumb-overlay">
+              <div className="project-thumb-tags">
+                <span className="project-thumb-tag">{project.sector}</span>
+              </div>
+              <h3 className="project-thumb-title">{project.title}</h3>
+            </div>
           </div>
-          <h3 className="project-thumb-title">{project.title}</h3>
+        </a>
+      )}
+      {!project.link && (
+        <div className="project-thumb">
+          <Image src={project.image} alt={project.title} fill className="object-cover object-top" />
+          <div className="project-thumb-overlay">
+            <div className="project-thumb-tags">
+              <span className="project-thumb-tag">{project.sector}</span>
+            </div>
+            <h3 className="project-thumb-title">{project.title}</h3>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="project-content">
-        <div className="project-client">
-          <span className="project-client-name">{project.client}</span>
-        </div>
+        {project.link ? (
+          <a href={project.link} target="_blank" rel="noreferrer" style={{ display: "contents" }}>
+            <div className="project-client">
+              <span className="project-client-name">{project.client}</span>
+            </div>
 
-        <p className="project-desc">{project.description}</p>
+            <p className="project-desc">{project.description}</p>
 
-        <div className="project-footer">
-          <div className="project-tags">
-            {project.tags.map((tag) => (
-              <span key={tag} className="tag">{tag}</span>
-            ))}
-          </div>
-        </div>
+            <div className="project-footer">
+              <div className="project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <span className="project-arrow">↗</span>
+            </div>
+          </a>
+        ) : (
+          <>
+            <div className="project-client">
+              <span className="project-client-name">{project.client}</span>
+            </div>
+
+            <p className="project-desc">{project.description}</p>
+
+            <div className="project-footer">
+              <div className="project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
 
         {project.manualUrl && (
           <button type="button" className="manual-cta" onClick={() => onOpenManual(project)}>

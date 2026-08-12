@@ -321,6 +321,7 @@ export const i18n = {
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
  manualUrl: "/manuals/user-manual-sijack.pdf",
+ link: "https://sijack.ciptakarya.pu.go.id/",
  },
  {
  id: 2,
@@ -330,6 +331,7 @@ export const i18n = {
  description: "Sistem Informasi PNBP Online for the Ministry of Finance. I helped build the frontend for the Geothermal (Panas Bumi) module.",
  image: "/SIMPONI.png",
  tags: ["React.js", "Laravel", "Frontend"],
+ link: "https://simponiv2.kemenkeu.go.id/portal/login",
  },
  ],
  creativeWorks: {
@@ -684,6 +686,7 @@ export const i18n = {
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
  manualUrl: "/manuals/user-manual-sijack.pdf",
+ link: "https://sijack.ciptakarya.pu.go.id/",
  },
  {
  id: 2,
@@ -693,6 +696,7 @@ export const i18n = {
  description: "Sistem Informasi PNBP Online untuk Kementerian Keuangan. Saya membantu pengembangan frontend untuk modul Panas Bumi.",
  image: "/SIMPONI.png",
  tags: ["React.js", "Laravel", "Frontend"],
+ link: "https://simponiv2.kemenkeu.go.id/portal/login",
  },
  ],
  creativeWorks: {
