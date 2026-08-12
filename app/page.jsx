@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
+import FrontendProjects from "../components/FrontendProjects";
 import Skills from "../components/Skills";
 import CreativeWorks from "../components/CreativeWorks";
 import Contact from "../components/Contact";
@@ -27,6 +28,8 @@ export default function Home() {
           <Experience />
           <Divider />
           <Projects />
+          <Divider />
+          <FrontendProjects />
           <Divider />
           <CreativeWorks />
           <Divider />
