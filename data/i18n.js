@@ -307,6 +307,9 @@ export const i18n = {
  eyebrow: "Frontend Development",
  title: "Frontend work I've contributed to",
  subtitle: "Beyond design, I also help implement the frontend on select production systems at PT Mitra Sinerji Teknoindo.",
+ manualCta: "View User Manual",
+ manualOpenNewTab: "Open in new tab",
+ manualDownload: "Download PDF",
  },
  frontendProjectsList: [
  {
@@ -317,6 +320,7 @@ export const i18n = {
  description: "Assessment information system for PUPR serving 4,500+ users. I helped build the frontend for the Home page, including the interactive functional-officer distribution map.",
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
+ manualUrl: "/manuals/user-manual-sijack.pdf",
  },
  {
  id: 2,
@@ -666,6 +670,9 @@ export const i18n = {
  eyebrow: "Frontend Development",
  title: "Kontribusi saya di pengembangan frontend",
  subtitle: "Selain desain, saya juga membantu implementasi frontend pada beberapa sistem produksi di PT Mitra Sinerji Teknoindo.",
+ manualCta: "Lihat User Manual",
+ manualOpenNewTab: "Buka di tab baru",
+ manualDownload: "Download PDF",
  },
  frontendProjectsList: [
  {
@@ -676,6 +683,7 @@ export const i18n = {
  description: "Sistem informasi asesmen untuk PUPR yang melayani 4.500+ pengguna. Saya membantu pengembangan frontend untuk halaman Beranda, termasuk peta interaktif sebaran pejabat fungsional.",
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
+ manualUrl: "/manuals/user-manual-sijack.pdf",
  },
  {
  id: 2,
