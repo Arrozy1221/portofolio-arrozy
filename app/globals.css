@@ -957,36 +957,56 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project-figma-badge {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem 0.4rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(20, 18, 30, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
 }
 
-.project-figma-badge svg {
+.project-action {
+  flex: 1 1 0;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-action svg {
   flex-shrink: 0;
 }
 
-.project-figma-badge:hover {
-  background: #fff;
-  color: #18181b;
-  transform: scale(1.06);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+.project-action-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.project-action-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+.project-action-figma {
+  background: var(--bg-elevated);
+  color: var(--fg);
+}
+
+.project-action-figma:hover {
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .project-card:hover {
@@ -1048,30 +1068,6 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
 
 .project-featured .project-thumb-title {
   font-size: 1.8rem;
-}
-
-.project-case-study-badge {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  z-index: 2;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  box-shadow: 0 2px 12px rgba(108, 92, 231, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.project-card:hover .project-case-study-badge {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.5);
 }
 
 .project-content {

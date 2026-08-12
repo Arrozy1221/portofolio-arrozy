@@ -18,10 +18,8 @@ function FigmaIcon() {
 }
 
 function ProjectCard({ project, index, inView, t }) {
-  const href = project.caseStudyUrl || project.link;
-  const target = project.caseStudyUrl ? "_self" : "_blank";
-  const rel = project.caseStudyUrl ? undefined : "noreferrer";
-  const hasCaseStudy = !!project.caseStudyUrl;
+  const caseStudyHref = project.caseStudyUrl || project.link;
+  const isInternalCase = !!project.caseStudyUrl;
 
   return (
     <motion.div
@@ -30,62 +28,66 @@ function ProjectCard({ project, index, inView, t }) {
       transition={{ duration: 0.7, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
       className="project-card group h-full"
     >
-      <a href={href} target={target} rel={rel} style={{ display: "contents" }}>
-        <div className="project-thumb">
-          {project.image && (
-            <Image src={project.image} alt={project.title} fill className={`object-cover ${project.imagePosition || "object-center"}`} />
-          )}
-          <div className="project-thumb-overlay">
-            <div className="project-thumb-tags">
-              <span className="project-thumb-tag">{project.sector}</span>
-            </div>
-            <h3 className="project-thumb-title">{project.title}</h3>
+      <div className="project-thumb">
+        {project.image && (
+          <Image src={project.image} alt={project.title} fill className={`object-cover ${project.imagePosition || "object-center"}`} />
+        )}
+        <div className="project-thumb-overlay">
+          <div className="project-thumb-tags">
+            <span className="project-thumb-tag">{project.sector}</span>
           </div>
-          {hasCaseStudy && (
-            <span className="project-case-study-badge">Case Study</span>
+          <h3 className="project-thumb-title">{project.title}</h3>
+        </div>
+      </div>
+
+      <div className="project-content">
+        <div className="project-client">
+          {project.logo && (
+            <div className="project-client-logo">
+              <Image src={project.logo} alt={project.client} fill className="object-contain p-0.5" sizes="32px" />
+            </div>
           )}
+          <span className="project-client-name">{project.client}</span>
         </div>
 
-        <div className="project-content">
-          <div className="project-client">
-            {project.logo && (
-              <div className="project-client-logo">
-                <Image src={project.logo} alt={project.client} fill className="object-contain p-0.5" sizes="32px" />
-              </div>
-            )}
-            <span className="project-client-name">{project.client}</span>
-          </div>
+        <p className="project-desc">{project.description}</p>
 
-          <p className="project-desc">{project.description}</p>
-
-          <div className="project-impact">
-            <p className="project-impact-label">{t.projects.impact}</p>
-            <p className="project-impact-text">{project.impact}</p>
-          </div>
-
-          <div className="project-footer">
-            <div className="project-tags">
-              {project.tags.map((tag) => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
-            <span className="project-arrow">{hasCaseStudy ? "→" : "↗"}</span>
-          </div>
+        <div className="project-impact">
+          <p className="project-impact-label">{t.projects.impact}</p>
+          <p className="project-impact-text">{project.impact}</p>
         </div>
-      </a>
 
-      {project.figmaUrl && (
-        <a
-          href={project.figmaUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="project-figma-badge"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <FigmaIcon />
-          Prototype
-        </a>
-      )}
+        <div className="project-tags" style={{ marginTop: "1rem" }}>
+          {project.tags.map((tag) => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}
+        </div>
+
+        <div className="project-actions">
+          {caseStudyHref && (
+            <a
+              href={caseStudyHref}
+              target={isInternalCase ? "_self" : "_blank"}
+              rel={isInternalCase ? undefined : "noreferrer"}
+              className="project-action project-action-primary"
+            >
+              {t.projects.viewCaseStudy}
+              <span aria-hidden="true">{isInternalCase ? "→" : "↗"}</span>
+            </a>
+          )}
+          {project.figmaUrl && (
+            <a
+              href={project.figmaUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project-action project-action-figma"
+            >
+              <FigmaIcon />
+              {t.projects.viewPrototype}
+            </a>
+          )}
+        </div>
+      </div>
     </motion.div>
   );
 }

@@ -312,6 +312,8 @@ export const i18n = {
  selectedCase: "Selected case",
  impact: "Impact",
  process: "My Process",
+ viewCaseStudy: "Case Study",
+ viewPrototype: "Figma Prototype",
  },
  frontendProjects: {
  eyebrow: "Frontend Development",
@@ -765,6 +767,8 @@ export const i18n = {
  selectedCase: "Studi kasus",
  impact: "Dampak",
  process: "Proses Saya",
+ viewCaseStudy: "Studi Kasus",
+ viewPrototype: "Prototype Figma",
  },
  frontendProjects: {
  eyebrow: "Frontend Development",
