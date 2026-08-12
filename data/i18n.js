@@ -162,6 +162,7 @@ export const i18n = {
       logo: "/logos/kominfo.svg",
       tags: ["Figma", "Web Design", "Accessibility"],
       caseStudyUrl: "/case-study/esertifikat-nextgen",
+      figmaUrl: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=1107%2C1060%2C0.31&t=NZHaldLItCmyyZ3C-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&show-proto-sidebar=1&page-id=240%3A2",
       group: "mst",
     },
     {
@@ -200,6 +201,7 @@ export const i18n = {
       logo: "/logos/ut.png",
       tags: ["Web Design", "Education", "Figma"],
       caseStudyUrl: "/case-study/mbkm-ut",
+      figmaUrl: "https://www.figma.com/proto/bFCTVDk3FYtl30guFKQizs/MBKM---UT?node-id=2953-3771&viewport=1350%2C809%2C0.09&t=3yVbJwK0Udq21pHS-1&scaling=min-zoom&content-scaling=fixed&page-id=2953%3A3410",
       group: "mst",
     },
     {
@@ -219,6 +221,7 @@ export const i18n = {
       logo: "/logos/ut.png",
       tags: ["Mobile App", "Education", "Figma"],
       caseStudyUrl: "/case-study/ttm-ut",
+      figmaUrl: "https://www.figma.com/proto/AmDeKk4Xs3RlgN74jcnj66/UT-Presensi-TTM?node-id=237-4600&viewport=1918%2C1189%2C0.29&t=ypEm1b2173xni4Di-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=237%3A4600&show-proto-sidebar=1&page-id=0%3A1",
       group: "mst",
     },
     {
@@ -238,6 +241,7 @@ export const i18n = {
       logo: "/logos/bpbd.png",
       tags: ["Figma", "Dashboard", "GIS", "Telemetry"],
       caseStudyUrl: "/case-study/barata",
+      figmaUrl: "https://www.figma.com/proto/As5G3PJWLc5AxraBb7OdIj/Redesign-Barata?node-id=89-7844&viewport=163%2C54%2C0.88&t=vLcLGS8VDvcHCD9x-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=255%3A6335&page-id=89%3A7842",
       group: "mst",
     },
     {
@@ -257,6 +261,7 @@ export const i18n = {
       logo: "/logos/pu.jpg",
       tags: ["Figma", "Dashboard", "Telemetry", "Hydrology"],
       caseStudyUrl: "/case-study/hidrolika",
+      figmaUrl: "https://www.figma.com/proto/hYWCYhHyFXBXhDKFD6QKwx/Redesign-Web-Hidrolika?node-id=38-2101&viewport=82%2C358%2C0.07&t=0vbcgZy9vDXbD7rb-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A854&show-proto-sidebar=1&page-id=0%3A1",
       group: "mst",
     },
     {
@@ -276,6 +281,7 @@ export const i18n = {
       logo: "/logos/pu.jpg",
       tags: ["Figma", "Web Design", "Irrigation"],
       caseStudyUrl: "/case-study/irigasi",
+      figmaUrl: "https://www.figma.com/proto/iVk8gbGJUATNfzNSrfpQCx/Redesign-Irigasi?node-id=42-123&viewport=1018%2C769%2C0.24&t=5IER32p8H0Nq6T4E-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
       group: "mst",
     },
     {
@@ -609,6 +615,7 @@ export const i18n = {
       logo: "/logos/kominfo.svg",
       tags: ["Figma", "Desain Web", "Aksesibilitas"],
       caseStudyUrl: "/case-study/esertifikat-nextgen",
+      figmaUrl: "https://www.figma.com/proto/cgbQnvbWBuwTqg78dWXLMG/Redesign-e-Sertifikasi-Next-Gen-2024?node-id=327-2891&viewport=1107%2C1060%2C0.31&t=NZHaldLItCmyyZ3C-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=327%3A2891&show-proto-sidebar=1&page-id=240%3A2",
       group: "mst",
     },
     {
@@ -647,6 +654,7 @@ export const i18n = {
       logo: "/logos/ut.png",
       tags: ["Desain Web", "Pendidikan", "Figma"],
       caseStudyUrl: "/case-study/mbkm-ut",
+      figmaUrl: "https://www.figma.com/proto/bFCTVDk3FYtl30guFKQizs/MBKM---UT?node-id=2953-3771&viewport=1350%2C809%2C0.09&t=3yVbJwK0Udq21pHS-1&scaling=min-zoom&content-scaling=fixed&page-id=2953%3A3410",
       group: "mst",
     },
     {
@@ -666,6 +674,7 @@ export const i18n = {
       logo: "/logos/ut.png",
       tags: ["Aplikasi Mobile", "Pendidikan", "Figma"],
       caseStudyUrl: "/case-study/ttm-ut",
+      figmaUrl: "https://www.figma.com/proto/AmDeKk4Xs3RlgN74jcnj66/UT-Presensi-TTM?node-id=237-4600&viewport=1918%2C1189%2C0.29&t=ypEm1b2173xni4Di-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=237%3A4600&show-proto-sidebar=1&page-id=0%3A1",
       group: "mst",
     },
     {
@@ -685,6 +694,7 @@ export const i18n = {
       logo: "/logos/bpbd.png",
       tags: ["Figma", "Dashboard", "GIS", "Telemetry"],
       caseStudyUrl: "/case-study/barata",
+      figmaUrl: "https://www.figma.com/proto/As5G3PJWLc5AxraBb7OdIj/Redesign-Barata?node-id=89-7844&viewport=163%2C54%2C0.88&t=vLcLGS8VDvcHCD9x-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=255%3A6335&page-id=89%3A7842",
       group: "mst",
     },
     {
@@ -704,6 +714,7 @@ export const i18n = {
       logo: "/logos/pu.jpg",
       tags: ["Figma", "Dashboard", "Telemetry", "Hydrology"],
       caseStudyUrl: "/case-study/hidrolika",
+      figmaUrl: "https://www.figma.com/proto/hYWCYhHyFXBXhDKFD6QKwx/Redesign-Web-Hidrolika?node-id=38-2101&viewport=82%2C358%2C0.07&t=0vbcgZy9vDXbD7rb-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A854&show-proto-sidebar=1&page-id=0%3A1",
       group: "mst",
     },
     {
@@ -723,6 +734,7 @@ export const i18n = {
       logo: "/logos/pu.jpg",
       tags: ["Figma", "Desain Web", "Irigasi"],
       caseStudyUrl: "/case-study/irigasi",
+      figmaUrl: "https://www.figma.com/proto/iVk8gbGJUATNfzNSrfpQCx/Redesign-Irigasi?node-id=42-123&viewport=1018%2C769%2C0.24&t=5IER32p8H0Nq6T4E-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
       group: "mst",
     },
     {

@@ -945,6 +945,7 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
 
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-lg);
@@ -954,6 +955,38 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
   text-decoration: none;
   color: inherit;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-figma-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(20, 18, 30, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-figma-badge svg {
+  flex-shrink: 0;
+}
+
+.project-figma-badge:hover {
+  background: #fff;
+  color: #18181b;
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover {
