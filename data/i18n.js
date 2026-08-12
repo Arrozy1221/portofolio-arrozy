@@ -5,13 +5,17 @@ export const i18n = {
  nav: {
  about: "About",
  experience: "Experience",
- projects: "Projects",
- frontend: "Frontend Dev",
+ projects: "Work",
  skills: "Skills",
  contact: "Contact",
  hireMe: "Hire me",
  viewBehance: "View Behance",
  contactMe: "Contact me",
+ },
+ workTabs: {
+ design: "UI/UX Design",
+ frontend: "Frontend Development",
+ manual: "User Manual",
  },
  hero: {
  available: "Available for selected projects",
@@ -307,9 +311,6 @@ export const i18n = {
  eyebrow: "Frontend Development",
  title: "Frontend work I've contributed to",
  subtitle: "Beyond design, I also help implement the frontend on select production systems at PT Mitra Sinerji Teknoindo.",
- manualCta: "View User Manual",
- manualOpenNewTab: "Open in new tab",
- manualDownload: "Download PDF",
  },
  frontendProjectsList: [
  {
@@ -320,7 +321,6 @@ export const i18n = {
  description: "Assessment information system for PUPR serving 4,500+ users. I helped build the frontend for the Home page, including the interactive functional-officer distribution map.",
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
- manualUrl: "/manuals/user-manual-sijack.pdf",
  link: "https://sijack.ciptakarya.pu.go.id/",
  },
  {
@@ -332,6 +332,24 @@ export const i18n = {
  image: "/SIMPONI.png",
  tags: ["React.js", "Laravel", "Frontend"],
  link: "https://simponiv2.kemenkeu.go.id/portal/login",
+ },
+ ],
+ userManuals: {
+ eyebrow: "Documentation",
+ title: "User manuals I've prepared",
+ subtitle: "Step-by-step guides written for end-users and admins so teams can adopt these systems without needing a developer on standby.",
+ previewCta: "Preview",
+ openNewTab: "Open in new tab",
+ download: "Download PDF",
+ },
+ userManualsList: [
+ {
+ id: 1,
+ title: "Si-JACK User Manual",
+ project: "PUPR — Ministry of Public Works",
+ description: "Full step-by-step guide covering both the end-user (Frontend) and admin (Backend) sides of the Si-JACK assessment platform.",
+ fileUrl: "/manuals/user-manual-sijack.pdf",
+ meta: "140 pages · PDF",
  },
  ],
  creativeWorks: {
@@ -370,13 +388,17 @@ export const i18n = {
  nav: {
  about: "Tentang",
  experience: "Pengalaman",
- projects: "Proyek",
- frontend: "Frontend Dev",
+ projects: "Karya",
  skills: "Keahlian",
  contact: "Kontak",
  hireMe: "Hubungi saya",
  viewBehance: "Lihat Behance",
  contactMe: "Hubungi saya",
+ },
+ workTabs: {
+ design: "Desain UI/UX",
+ frontend: "Frontend Development",
+ manual: "User Manual",
  },
  hero: {
  available: "Tersedia untuk proyek terpilih",
@@ -672,9 +694,6 @@ export const i18n = {
  eyebrow: "Frontend Development",
  title: "Kontribusi saya di pengembangan frontend",
  subtitle: "Selain desain, saya juga membantu implementasi frontend pada beberapa sistem produksi di PT Mitra Sinerji Teknoindo.",
- manualCta: "Lihat User Manual",
- manualOpenNewTab: "Buka di tab baru",
- manualDownload: "Download PDF",
  },
  frontendProjectsList: [
  {
@@ -685,7 +704,6 @@ export const i18n = {
  description: "Sistem informasi asesmen untuk PUPR yang melayani 4.500+ pengguna. Saya membantu pengembangan frontend untuk halaman Beranda, termasuk peta interaktif sebaran pejabat fungsional.",
  image: "/Sijack.png",
  tags: ["Vue.js", "Laravel", "Frontend"],
- manualUrl: "/manuals/user-manual-sijack.pdf",
  link: "https://sijack.ciptakarya.pu.go.id/",
  },
  {
@@ -697,6 +715,24 @@ export const i18n = {
  image: "/SIMPONI.png",
  tags: ["React.js", "Laravel", "Frontend"],
  link: "https://simponiv2.kemenkeu.go.id/portal/login",
+ },
+ ],
+ userManuals: {
+ eyebrow: "Dokumentasi",
+ title: "User manual yang sudah saya buat",
+ subtitle: "Panduan langkah demi langkah untuk end-user maupun admin, supaya tim bisa memakai sistemnya tanpa harus selalu ditemani developer.",
+ previewCta: "Preview",
+ openNewTab: "Buka di tab baru",
+ download: "Download PDF",
+ },
+ userManualsList: [
+ {
+ id: 1,
+ title: "User Manual Si-JACK",
+ project: "PUPR — Kementerian Pekerjaan Umum",
+ description: "Panduan lengkap langkah demi langkah untuk sisi pengguna (Frontend) maupun admin (Backend) platform asesmen Si-JACK.",
+ fileUrl: "/manuals/user-manual-sijack.pdf",
+ meta: "140 halaman · PDF",
  },
  ],
  creativeWorks: {

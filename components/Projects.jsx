@@ -103,28 +103,49 @@ export default function Projects() {
     : "Karya mandiri dan bootcamp yang menampilkan proses desain dari awal hingga akhir";
 
   return (
-    <section id="projects" ref={ref} className="section">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="section-header"
-        >
-          <p className="eyebrow">{t.projects.eyebrow}</p>
-          <h2 className="section-title">{t.projects.title}</h2>
-        </motion.div>
+    <div ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7 }}
+        className="section-header"
+      >
+        <p className="eyebrow">{t.projects.eyebrow}</p>
+        <h2 className="section-title">{t.projects.title}</h2>
+      </motion.div>
 
-        {/* MST Projects Group */}
-        <div className="project-group">
+      {/* MST Projects Group */}
+      <div className="project-group">
+        <GroupHeader
+          emoji="🏛️"
+          title={mstLabel}
+          subtitle={mstSub}
+          inView={inView}
+        />
+        <div className="project-grid">
+          {mstProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              inView={inView}
+              t={t}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Personal Projects Group */}
+      {personalProjects.length > 0 && (
+        <div className="project-group" style={{ marginTop: "64px" }}>
           <GroupHeader
-            emoji="🏛️"
-            title={mstLabel}
-            subtitle={mstSub}
+            emoji="🎨"
+            title={personalLabel}
+            subtitle={personalSub}
             inView={inView}
           />
           <div className="project-grid">
-            {mstProjects.map((project, index) => (
+            {personalProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
                 project={project}
@@ -135,30 +156,7 @@ export default function Projects() {
             ))}
           </div>
         </div>
-
-        {/* Personal Projects Group */}
-        {personalProjects.length > 0 && (
-          <div className="project-group" style={{ marginTop: "64px" }}>
-            <GroupHeader
-              emoji="🎨"
-              title={personalLabel}
-              subtitle={personalSub}
-              inView={inView}
-            />
-            <div className="project-grid">
-              {personalProjects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={index}
-                  inView={inView}
-                  t={t}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
+      )}
+    </div>
   );
 }

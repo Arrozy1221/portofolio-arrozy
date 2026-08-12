@@ -42,7 +42,7 @@ export default function Hero() {
 
             <motion.div {...fadeUp(0.45)} className="hero-cta">
               <MagneticButton strength={0.25}>
-                <a href="#projects" className="btn btn-primary">{t.hero.viewWork}</a>
+                <a href="#work" className="btn btn-primary">{t.hero.viewWork}</a>
               </MagneticButton>
               <MagneticButton strength={0.25}>
                 <a href="#contact" className="btn btn-outline">{t.hero.collaborate}</a>
