@@ -33,7 +33,7 @@ export default function About() {
           >
             <div className="relative w-full h-full min-h-[360px]">
               <Image
-                src={personal.photo}
+                src={personal.photoAbout || personal.photo}
                 alt="Arrozy Adi Falaqi"
                 fill
                 className="object-cover"

@@ -64,17 +64,6 @@ function ProjectCard({ project, index, inView, t }) {
         </div>
 
         <div className="project-actions">
-          {caseStudyHref && (
-            <a
-              href={caseStudyHref}
-              target={isInternalCase ? "_self" : "_blank"}
-              rel={isInternalCase ? undefined : "noreferrer"}
-              className="project-action project-action-primary"
-            >
-              {t.projects.viewCaseStudy}
-              <span aria-hidden="true">{isInternalCase ? "→" : "↗"}</span>
-            </a>
-          )}
           {project.figmaUrl && (
             <a
               href={project.figmaUrl}
@@ -84,6 +73,17 @@ function ProjectCard({ project, index, inView, t }) {
             >
               <FigmaIcon />
               {t.projects.viewPrototype}
+            </a>
+          )}
+          {caseStudyHref && (
+            <a
+              href={caseStudyHref}
+              target={isInternalCase ? "_self" : "_blank"}
+              rel={isInternalCase ? undefined : "noreferrer"}
+              className="project-action project-action-primary"
+            >
+              {t.projects.viewCaseStudy}
+              <span aria-hidden="true">{isInternalCase ? "→" : "↗"}</span>
             </a>
           )}
         </div>

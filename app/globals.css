@@ -999,14 +999,17 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
 }
 
 .project-action-figma {
-  background: var(--bg-elevated);
-  color: var(--fg);
+  background: #18181b;
+  border-color: #18181b;
+  color: #fff;
 }
 
 .project-action-figma:hover {
-  border-color: var(--border-active);
+  background: #fff;
+  border-color: #d4d4d8;
+  color: #18181b;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .project-card:hover {

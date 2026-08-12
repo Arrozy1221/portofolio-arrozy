@@ -10,7 +10,8 @@ export const personal = {
   whatsapp: "6281298023537",
   linkedin: "https://www.linkedin.com/in/arrozy-adi-falaqi-6a25ba14a",
   behance: "https://www.behance.net/arrozyadifalaqi",
-  photo: "/Photo2.jpeg",
+  photo: "/photo.png",
+  photoAbout: "/Photo2.jpeg",
   available: true,
   responseTime: "Usually replies within 24 hours",
   specialties: [
