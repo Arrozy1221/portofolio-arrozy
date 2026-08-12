@@ -1012,6 +1012,13 @@ html.light .exp-period { background: rgba(0,0,0,0.03); }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 480px) {
+  .project-action {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
 .project-card:hover {
   border-color: var(--border-active);
   box-shadow: var(--shadow-lg), 0 0 48px var(--glow);
@@ -1434,19 +1441,26 @@ html.light .skill-bar-wrap { background: rgba(0,0,0,0.06); }
 
 /* Work section tabs */
 .work-tabbar {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
   gap: 0.35rem;
   padding: 0.35rem;
   border-radius: 999px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   margin-bottom: 3rem;
+  width: fit-content;
   max-width: 100%;
   overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.work-tabbar::-webkit-scrollbar {
+  display: none;
 }
 
 .work-tab {
+  flex: 0 0 auto;
   padding: 0.6rem 1.25rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -1457,6 +1471,25 @@ html.light .skill-bar-wrap { background: rgba(0,0,0,0.06); }
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .work-tabbar {
+    width: 100%;
+    border-radius: var(--radius);
+    padding: 0.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .work-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.65rem 0.4rem;
+    font-size: 0.72rem;
+    border-radius: calc(var(--radius) - 0.3rem);
+    white-space: normal;
+    line-height: 1.25;
+  }
 }
 
 .work-tab:hover {
