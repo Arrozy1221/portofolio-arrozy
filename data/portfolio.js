@@ -1,9 +1,9 @@
 export const personal = {
   name: "Arrozy Adi Falaqi",
-  role: "UI/UX Designer",
-  headline: "Designing clear, usable digital products for public services and modern teams.",
+  role: "UI/UX Designer & Technical Writer",
+  headline: "Designing clear, usable digital products and comprehensive technical documentation for public services and enterprise teams.",
   tagline:
-    "UI/UX Designer with 2+ years of experience crafting user-centered products across government, education, and internal business systems.",
+    "UI/UX Designer & Technical Writer with 3+ years of experience crafting user-centered products and structured technical documentation across government, education, and internal business systems.",
   location: "Remote / On-site",
   email: "arrozyadifalaqioi@gmail.com",
   phone: "+6281298023537",
@@ -16,19 +16,20 @@ export const personal = {
   responseTime: "Usually replies within 24 hours",
   specialties: [
     "Product Design",
+    "Technical Documentation",
     "Dashboard & Admin UX",
-    "Mobile App Design",
+    "User Manuals & SOP",
     "Design Systems",
   ],
   focusAreas: [
     "Government platforms",
     "Education products",
-    "Complex internal tools",
+    "Complex internal tools & documentation",
   ],
   bio: [
-    "Hi! I'm Arrozy — a UI/UX Designer with a Computer Science background who enjoys turning complex requirements into interfaces that feel simple, structured, and easy to use.",
-    "My work covers the full design process, from research and information architecture to wireframing, high-fidelity UI, and interactive prototyping. I’ve worked on public-sector dashboards, education platforms, and internal systems where clarity and usability matter a lot.",
-    "I’m especially comfortable collaborating with stakeholders and developers to ship practical solutions — not just polished screens, but designs that support real user goals and business outcomes.",
+    "Hi! I'm Arrozy — a UI/UX Designer & Technical Writer with a Computer Science background who enjoys turning complex requirements into interfaces that feel simple, structured, and easy to use.",
+    "My work covers the full digital product lifecycle: from research, information architecture, wireframing, and design systems to authoring comprehensive technical documentation like official User Manuals, SOPs, Data Dictionaries, and UAT test plans.",
+    "I’m especially comfortable bridging business stakeholders, operations, and engineering teams to ship practical solutions with clear documentation that reduces friction and speeds up team adoption.",
   ],
   education: {
     university: "Universitas Pendidikan Indonesia",
@@ -125,7 +126,7 @@ export const processSteps = [
 export const experiences = [
   {
     id: 1,
-    role: "UI/UX Designer",
+    role: "UI/UX Designer & Technical Writer",
     company: "PT Mitra Sinerji Teknoindo",
     location: "Bandung",
     period: "Aug 2023 – Present",
@@ -137,15 +138,16 @@ export const experiences = [
       website: "",
     },
     highlights: [
+      "Led end-to-end UI/UX design and technical documentation for 10+ delivered enterprise and government platforms (Komdigi, Kemendikbud, PUPR, Universitas Terbuka).",
+      "Authored official User Manuals and digital SOPs (up to 240+ pages per system) covering end-user and administrator workflows, reducing onboarding inquiries by 40%.",
+      "Drafted comprehensive Data Dictionaries, Entity-Relationship Diagrams (ERD), and BPMN process flowcharts for licensing and testing systems (Non-SIMS & SIMPEL Pengujian).",
+      "Formulated UAT execution suites and acceptance criteria for financial billing modules (SIMPONI V2), coordinating stakeholder verification before release.",
       "Redesigned Kominfo e-certificate platform — simplified the issuance flow from 7 steps to 4, reducing user confusion reported in stakeholder feedback sessions.",
       "Overhauled Kemendikbud SIMONTILA admin dashboard — restructured navigation and data tables so admins could locate records without switching between multiple pages.",
       "Redesigned PUPR BRAVO project monitoring system — replaced a cluttered legacy interface with a card-based layout that groups projects by status and priority.",
-      "Designed Universitas Terbuka MBKM website and mobile attendance app — created a unified flow so students could register and mark attendance from one platform.",
-      "Built an interactive analytics dashboard for a government client — consolidated scattered spreadsheet data into filterable visual charts for weekly reporting.",
-      "Created a public service mobile app prototype — conducted user interviews with 12 citizens, iterated on pain points, and validated the final flow with usability testing.",
-      "Developed an internal company information system — centralized employee data access that previously required manual requests to HR.",
+      "Established standardized Figma design system matching React and Tailwind CSS specs, accelerating sprint velocity by ~30% and eliminating handoff friction.",
     ],
-    tags: ["Figma", "UX Research", "Prototyping", "Government", "Mobile App"],
+    tags: ["UI/UX Design", "Technical Writing", "User Manual", "Figma", "Data Dictionary & ERD", "UAT", "Government"],
   },
   {
     id: 2,

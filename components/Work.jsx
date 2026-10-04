@@ -13,8 +13,8 @@ export default function Work() {
 
   const tabs = [
     { key: "design", label: t.workTabs.design },
+    { key: "technicalWriter", label: t.workTabs.technicalWriter },
     { key: "frontend", label: t.workTabs.frontend },
-    { key: "manual", label: t.workTabs.manual },
   ];
 
   return (
@@ -42,8 +42,8 @@ export default function Work() {
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           {tab === "design" && <Projects />}
+          {tab === "technicalWriter" && <UserManuals />}
           {tab === "frontend" && <FrontendProjects />}
-          {tab === "manual" && <UserManuals />}
         </motion.div>
       </div>
     </section>

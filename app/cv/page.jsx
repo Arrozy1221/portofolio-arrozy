@@ -26,17 +26,19 @@ const fadeUp = (delay = 0) => ({
 });
 
 const TOOL_SKILLS = ["Figma", "Framer", "Design Systems", "Adobe Photoshop", "Adobe Illustrator", "UI Animation", "Webflow"];
-const RESEARCH_SKILLS = ["UX Research", "User Testing", "Journey Mapping", "A/B Testing"];
-const DEV_SKILLS = ["HTML / CSS", "JavaScript", "React / Next.js", "Tailwind CSS"];
+const DOC_SKILLS = ["User Manuals & SOP", "Kamus Data & Data Dictionaries", "Database ERD Modeling", "UAT Test Scenarios", "FSD & System Flowcharts", "Release Notes"];
+const RESEARCH_SKILLS = ["UX Research", "User Testing", "Journey Mapping", "Information Architecture", "Heuristic Evaluation"];
+const DEV_SKILLS = ["HTML / CSS", "JavaScript", "React / Next.js", "Tailwind CSS", "Database Schema"];
 const AI_SKILLS = ["ChatGPT", "Claude", "Gemini", "Midjourney"];
 
 const SELECTED_PROJECTS = [
   { name: "e-Sertifikat Next Gen", client: "Kominfo", impact: "Simplified issuance flow from 7 steps to 4", tags: ["Web", "Gov Platform"] },
+  { name: "SIMPEL Pengujian NG Docs", client: "Komdigi / BBPPT", impact: "Complete database architecture, ERD & data dictionary (86 pages)", tags: ["Kamus Data", "ERD", "Doc"] },
+  { name: "UAT Billing SIMPONI V2", client: "Kemenkeu", impact: "UAT execution test scripts for zero-tariff billing and portal APIs", tags: ["UAT", "Testing", "QA"] },
+  { name: "Kurikulum Kaprodi 3.0 Guide", client: "Universitas Terbuka", impact: "242-page official user manual cutting onboarding inquiries by 40%", tags: ["User Manual", "SOP"] },
   { name: "Admin SIMONTILA", client: "Kemendikbud", impact: "Restructured dashboard navigation for faster admin workflows", tags: ["Dashboard", "Admin UX"] },
-  { name: "MBKM UT Platform", client: "Universitas Terbuka", impact: "Unified student registration into one seamless platform", tags: ["Education", "Web Design"] },
-  { name: "TTM UT Attendance App", client: "Universitas Terbuka", impact: "Friction-free field attendance for students", tags: ["Mobile App", "Education"] },
+  { name: "CAT Komdigi Platform & Manual", client: "Komdigi", impact: "Exam room UX with Safe Exam Browser + Admin & Participant guides", tags: ["Exam UX", "User Manual"] },
   { name: "BRAVO System Redesign", client: "PUPR", impact: "Replaced dense legacy tables with card-based status view", tags: ["Redesign", "Dashboard"] },
-  { name: "Public Service App", client: "Government Client", impact: "Validated with 12 citizen usability tests", tags: ["Mobile", "UX Research"] },
 ];
 
 export default function CVPage() {
@@ -61,12 +63,20 @@ export default function CVPage() {
               Open to opportunities
             </span>
             <a
-              href="/Arrozy_Adi_Falaqi_CV_UIUX_Designer.pdf"
+              href="/CV_Arrozy_Adi_Falaqi_UIUX_Technical_Writer_EN.pdf"
               download
               className="btn btn-primary cv-download-btn"
             >
               <Download size={14} />
-              Download PDF
+              Download CV (EN)
+            </a>
+            <a
+              href="/CV_Arrozy_Adi_Falaqi_UIUX_Technical_Writer_ID.pdf"
+              download
+              className="btn btn-outline cv-download-btn"
+            >
+              <Download size={14} />
+              CV Indonesia
             </a>
           </div>
         </div>
@@ -235,6 +245,13 @@ export default function CVPage() {
                 <p className="cv-skill-label">UX Research</p>
                 <div className="cv-skill-chips">
                   {RESEARCH_SKILLS.map((s) => <span key={s} className="cv-chip cv-chip-teal">{s}</span>)}
+                </div>
+              </div>
+
+              <div className="cv-skill-group">
+                <p className="cv-skill-label">Technical Documentation</p>
+                <div className="cv-skill-chips">
+                  {DOC_SKILLS.map((s) => <span key={s} className="cv-chip cv-chip-teal">{s}</span>)}
                 </div>
               </div>
 
