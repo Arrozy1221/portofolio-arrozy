@@ -6,7 +6,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.03,
+      staggerChildren: 0.025,
       delayChildren: 0.1,
     },
   },
@@ -15,15 +15,15 @@ const containerVariants = {
 const charVariants = {
   hidden: {
     opacity: 0,
-    y: 20,
-    filter: "blur(8px)",
+    y: 18,
+    filter: "blur(6px)",
   },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -36,7 +36,8 @@ export default function TextReveal({
   as = "span",
   ...props
 }) {
-  const chars = text.split("");
+  // Split by words to guarantee that individual words never get broken across lines
+  const words = text.split(" ");
 
   return (
     <motion.span
@@ -44,21 +45,30 @@ export default function TextReveal({
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      style={{ display: "inline-flex", flexWrap: "wrap" }}
+      style={{
+        display: "inline-flex",
+        flexWrap: "wrap",
+        rowGap: "0.15em",
+        columnGap: "0.28em",
+      }}
       transition={{ delayChildren: delay }}
       {...props}
     >
-      {chars.map((char, i) => (
-        <motion.span
-          key={`${char}-${i}`}
-          variants={charVariants}
-          style={{
-            display: "inline-block",
-            whiteSpace: char === " " ? "pre" : "normal",
-          }}
+      {words.map((word, wordIdx) => (
+        <span
+          key={`word-${wordIdx}`}
+          style={{ display: "inline-flex", whiteSpace: "nowrap" }}
         >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
+          {word.split("").map((char, charIdx) => (
+            <motion.span
+              key={`char-${wordIdx}-${charIdx}`}
+              variants={charVariants}
+              style={{ display: "inline-block" }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </span>
       ))}
     </motion.span>
   );

@@ -520,11 +520,10 @@ html.light .nav-toggle { background: rgba(0,0,0,0.03); }
 
 .hero-role {
   font-family: var(--font-poppins), sans-serif;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.75rem);
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.03em;
-  white-space: nowrap;
   padding: 0.15em 0;
 }
 
