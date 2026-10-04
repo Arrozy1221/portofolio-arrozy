@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FileText, X, ShieldCheck, Database, BookOpen, CheckCircle2 } from "lucide-react";
+import { FileText, X, ShieldCheck, Database, BookOpen, CheckCircle2, Layers } from "lucide-react";
 import { useLang } from "./LangProvider";
 
 function getDocIcon(docType) {
@@ -12,6 +12,12 @@ function getDocIcon(docType) {
   }
   if (docType?.includes("UAT")) {
     return <CheckCircle2 size={18} />;
+  }
+  if (docType?.includes("Application Model") || docType?.includes("BPMN") || docType?.includes("Arsitektur")) {
+    return <Layers size={18} />;
+  }
+  if (docType?.includes("Laporan") || docType?.includes("SRS") || docType?.includes("FSD")) {
+    return <FileText size={18} />;
   }
   return <BookOpen size={18} />;
 }
@@ -96,6 +102,7 @@ export default function UserManuals() {
     { key: "komdigi", label: t.userManuals?.ministries?.komdigi || "Kementerian Komdigi" },
     { key: "kemendikbud", label: t.userManuals?.ministries?.kemendikbud || "Kemendikbud / UT" },
     { key: "kemenkeu", label: t.userManuals?.ministries?.kemenkeu || "Kementerian Keuangan" },
+    { key: "kemenhub", label: t.userManuals?.ministries?.kemenhub || "Kemenhub (Baketrans)" },
     { key: "swasta", label: t.userManuals?.ministries?.swasta || "Enterprise / Swasta" },
   ];
 
