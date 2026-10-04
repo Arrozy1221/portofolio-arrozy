@@ -473,7 +473,7 @@ export const i18n = {
    docType: "UAT & QA Testing",
    description: "Dokumen pelaksanaan pengujian User Acceptance Testing (UAT) resmi — pengujian pembatalan billing tarif 0 via portal & service API, skenario pengujian, expected result, dan berita acara kelayakan rilis.",
    fileUrl: "/manuals/uat-billing-simponi-v2.pdf",
-   meta: "Skenario UAT & Matriks Uji · PDF",
+   meta: "Sampel Cuplikan · 3 hal PDF",
  },
  // --- ENTERPRISE / SWASTA ---
  {
